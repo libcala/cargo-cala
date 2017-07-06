@@ -1,0 +1,11 @@
+[package]
+name = "gsp_demo"
+version = "0.1.0"
+authors = ["Jeron Aldaron Lau <jeron.lau@plopgrizzly.tech>"]
+homepage = "https://aldarons-tech.github.io/gsp_demo.html"
+description = "_Demo:Packager-_Software-Graphical"
+keywords = [ "gsp", "demo" ]
+categories = [ "demo" ]
+
+[dependencies]
+cargo-gsp = { path = ".." }

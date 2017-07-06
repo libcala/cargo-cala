@@ -1,24 +1,23 @@
-// main.rs
-// Packager
+// bin/ndk.rs
+// Graphical Software Packager
 // Copyright 2017 (c) Aldaron's Tech
 // Copyright 2017 (c) Jeron Lau
 // Licensed under the MIT LICENSE
 
-extern crate rand;
-
-use std::path::Path;
 use std::env;
+use std::path::Path;
 use std::ffi::OsString;
 
-mod cli;
-mod file;
-mod password;
-mod program;
+use parse;
+use resources;
+use program;
+use file;
+use password;
+use PASSWORD;
 
 const KEYSTORE: &'static str = "app/android-release-key.keystore";
 const UNSIGNED: &'static str = "app/build/outputs/apk/app-release-unsigned.apk";
 const APK_OUT: &'static str = "app/build/outputs/apk/todo.apk"; // TODO
-const PASSWORD: &'static str = ".packager/password.text";
 
 /// Deploy the apk.
 fn deploy(adb: &str) {
@@ -32,16 +31,16 @@ fn deploy(adb: &str) {
 		"couldn't run adb install", "adb install failed");
 }
 
-fn execute(adb: &str) {
+fn execute_app(_: &str) {
 	// Start app from adb.
-	program::execute_log(adb,
-		vec![
-			"shell",
-			"am",
-			"start",
-			"-n", "com.android.gl2jni/com.android.gl2jni.GL2JNIActivity"
-		],
-		"couldn't run adb shell", "adb failed to start app");
+//	program::execute_log(adb,
+//		vec![
+//			"shell",
+//			"am",
+//			"start",
+//			"-n", "com.android.gl2jni/com.android.gl2jni.GL2JNIActivity"
+//		],
+//		"couldn't run adb shell", "adb failed to start app");
 
 	// Log output from adb.
 //	program::execute_log(adb,
@@ -65,13 +64,10 @@ fn run(android_home: OsString) {
 	deploy(adb);
 
 	// Run the APK on the Phone
-	execute(adb);
+	execute_app(adb);
 }
 
-fn main() {
-	// Start of program
-	cli::print("*Packager* - Aldaron's Tech");
-
+pub fn execute(cargo_toml: parse::CargoToml, translations: resources::Lang) {
 	// Get Android Home.
 	let android_home = match env::var_os("ANDROID_HOME") {
 		Some(val) => val,

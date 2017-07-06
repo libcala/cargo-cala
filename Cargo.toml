@@ -1,7 +1,18 @@
 [package]
-name = "packager"
+name = "cargo-gsp"
 version = "0.1.0"
 authors = ["Jeron Aldaron Lau <jeron.lau@plopgrizzly.tech>"]
 
+[lib]
+name = "gsp"
+path = "src/lib/mod.rs"
+
+[[bin]]
+name = "cargo-gsp"
+
 [dependencies]
+ami = { path = "/home/aldaron/aldarons_tech/ami" }
 rand = "0.3.15"
+toml = "0.4.2"
+serde = "1.0.9"
+# abxml = "0.2.0"
