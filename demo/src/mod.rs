@@ -1,15 +1,12 @@
-// main.rs
+// mod.rs
 // Graphical Software Packager Demo
 // Copyright 2017 (c) Aldaron's Tech
 // Copyright 2017 (c) Jeron Lau
 // Licensed under the MIT LICENSE
 
-#[macro_use]
-extern crate gsp;
+use window::{ Window, InputQueue };
 
-use gsp::{ Window, Input, InputQueue, Msg };
-
-fn main() {
+pub fn main() -> () {
 	let mut window = connect!();
 	let mut queue = InputQueue::create();
 
@@ -17,8 +14,8 @@ fn main() {
 		window.update(&mut queue);
 
 		for input in queue.iter() {
-			use Input::*;
-			use Msg::*;
+			use window::Input::*;
+			use window::Msg::*;
 
 			match *input {
 				Msg(Quit) | Msg(Back) => break 'mainloop,

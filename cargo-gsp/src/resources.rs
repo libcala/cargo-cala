@@ -10,6 +10,8 @@ use file;
 use parse;
 use program;
 
+// use MAIN;
+
 const LANG_EN : &'static str = "res/text_en.toml";
 
 pub struct English {
@@ -97,6 +99,18 @@ pub fn execute(cargo_toml: &parse::CargoToml) -> Lang {
 
 		file::save(&file, data.as_bytes());
 	}
+
+	// Write main.rs
+/*	{
+		let file = {
+			let mut x = resources.clone();
+
+			x.push_str("main.rs");
+			x
+		};
+
+		file::save(&file, MAIN);
+	}*/
 
 	lang
 }

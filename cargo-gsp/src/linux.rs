@@ -6,6 +6,7 @@
 
 use RES_ICON;
 use RES_SYMBOL;
+use TARGET_DIR;
 
 use file;
 use program;
@@ -21,8 +22,9 @@ pub fn domain(cargo_toml: &parse::CargoToml) -> String {
 }
 
 pub fn execute(cargo_toml: parse::CargoToml, translations: resources::Lang) {
+	let name = &cargo_toml.subdomain;
+
 	let flatpak = "target/flatpak/".to_string();
-	let target_dir = "target/release/".to_string();
 	let flatpak_app = {
 		let mut x = flatpak.clone();
 		x.push_str("app/");
@@ -36,8 +38,11 @@ pub fn execute(cargo_toml: parse::CargoToml, translations: resources::Lang) {
 	let repo_name = "gsp-local";
 
 	// Build the program
-	program::execute_log("cargo", vec!["build", "--release"],
-		"Cargo not found!", "cargo build failed!");
+	{
+		program::execute_log("cargo", vec![
+			"build", "--release", "--bin", "gsp_program",
+		]);
+	}
 
 	// App Domain
 	let app_domain = format!("{}.{}", &domain(&cargo_toml),
@@ -45,21 +50,9 @@ pub fn execute(cargo_toml: parse::CargoToml, translations: resources::Lang) {
 
 	// Copy Executable Into FlatPak
 	{
-		let src = {
-			let mut x = target_dir.clone();
-			x.push_str(&cargo_toml.subdomain);
-			x
-		};
-
-		let dst = {
-			let mut x = flatpak_app.clone();
-
-			x.push_str("files/bin/");
-			x.push_str(&cargo_toml.subdomain);
-			x
-		};
-
-		file::copy(&src, &dst);
+		file::copy("target/release/gsp_program",
+			&format!("target/flatpak/app/files/bin/{}", name))
+			.unwrap();
 	}
 
 	// Copy Icon Into FlatPak
@@ -89,9 +82,9 @@ pub fn execute(cargo_toml: parse::CargoToml, translations: resources::Lang) {
 			x
 		};
 
-		file::copy(RES_ICON, &dst);
-		file::copy(RES_ICON, &dst32);
-		file::copy(RES_ICON, &dst48);
+		file::copy(RES_ICON, &dst).unwrap();
+		file::copy(RES_ICON, &dst32).unwrap();
+		file::copy(RES_ICON, &dst48).unwrap();
 	}
 
 	// Copy Symbol Into FlatPak
@@ -105,10 +98,10 @@ pub fn execute(cargo_toml: parse::CargoToml, translations: resources::Lang) {
 			x
 		};
 
-		file::copy(RES_SYMBOL, &dst);
+		file::copy(RES_SYMBOL, &dst).unwrap();
 	}
 
-	// Create Manifest
+	// Create Metadata
 	{
 		let metadata_data = format!(
 			"\
@@ -194,8 +187,6 @@ pub fn execute(cargo_toml: parse::CargoToml, translations: resources::Lang) {
 			vec!["--user", "update", &app_domain],
 			"flatpak not found(4)!", "flatpak update failed!");
 
-		program::execute_log("flatpak",
-			vec!["run", &app_domain],
-			"flatpak not found(5)!", "flatpak run failed!");
+		program::execute_log("flatpak", vec!["run", &app_domain]);
 	}
 }

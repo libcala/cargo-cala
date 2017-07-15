@@ -14,7 +14,7 @@ mod windows;
 #[cfg(target_os = "windows")]
 pub use self::windows::Joystick;
 
-#[cfg(not(any(target_os = "macos",target_os = "linux",target_os = "windows")))]
+#[cfg(not(any(target_os = "macos",target_os = "linux",target_os = "windows",target_os = "android")))]
 mod emulated;
-#[cfg(not(any(target_os = "macos",target_os = "linux",target_os = "windows")))]
-pub use self::windows::Joystick;
+#[cfg(not(any(target_os = "macos",target_os = "linux",target_os = "windows",target_os = "android")))]
+pub use self::emulated::Joystick;

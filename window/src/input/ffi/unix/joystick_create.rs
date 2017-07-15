@@ -7,14 +7,14 @@
 use std::ffi::CString;
 
 extern {
-	fn open(pathname: *const i8, flags: i32) -> i32;
+	fn open(pathname: *const u8, flags: i32) -> i32;
 }
 
 fn open_joystick(name: &str) -> i32 {
 	let file_name = CString::new(name).unwrap();
 
 	unsafe {
-		open(file_name.as_ptr(), 0)
+		open(file_name.as_ptr() as *const _, 0)
 	}
 }
 

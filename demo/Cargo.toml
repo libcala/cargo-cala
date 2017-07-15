@@ -7,5 +7,14 @@ description = "_Demo:Packager-_Software-Graphical"
 keywords = [ "gsp", "demo" ]
 categories = [ "demo" ]
 
+[[bin]]
+name = "gsp_program"
+path = "target/crate/main.rs"
+
+[lib]
+name = "gsp_program"
+path = "target/crate/lib.rs"
+crate_type = ["staticlib"]
+
 [dependencies]
-cargo-gsp = { path = ".." }
+window = { path = "/home/aldaron/aldarons_tech/cargo-gsp/window" }

@@ -14,7 +14,9 @@ use program;
 pub struct CargoToml {
 	pub domain: String,
 	pub subdomain: String,
-	pub version: u32,
+	pub version: String,
+	pub version_number: u32,
+	pub dependencies: Vec<(String, String)>,
 }
 
 pub fn get(a: &toml::Value, vname: &str) -> toml::Value {
@@ -116,6 +118,38 @@ pub fn execute() -> CargoToml {
 		unreachable!()
 	};
 
+	let deps = get(&ct, "dependencies");
+
+	let dependencies = if let Some(deps_arr) = deps.as_table() {
+		let mut deps = Vec::new();
+		for elem in deps_arr {
+			let dep = if let Value::String(ref dep) = *elem.1 {
+				dep.to_string()
+			} else if let Value::Table(ref dep) = *elem.1 {
+				let mut string = String::new();
+
+				string.push_str("{ ");
+				for elem in dep {
+					string.push_str(&format!("{} = {}",
+						elem.0, elem.1));
+				}
+				string.push_str(" }");
+
+				string
+			} else {
+				println!("{}", elem.1);
+				program::exit("dependency is not a string!");
+				unreachable!()
+			};
+
+			deps.push((elem.0.to_string(), dep))
+		}
+		deps
+	} else {
+		program::exit("dependencies is not an array!");
+		unreachable!()
+	};
+
 	let domain = simplify(org_name.clone());
 	let subdomain = name.clone();
 	let version_number = version_num(version.clone());
@@ -128,6 +162,6 @@ pub fn execute() -> CargoToml {
 //	println!("Version Number: {}", version_number);
 
 	CargoToml {
-		domain, subdomain, version: version_number,
+		domain, subdomain, version, version_number, dependencies
 	}
 }

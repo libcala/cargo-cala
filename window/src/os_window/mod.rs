@@ -7,12 +7,12 @@
 #[cfg(target_os = "windows")]
 mod windows;
 #[cfg(target_os = "windows")]
-pub type OSWindow = self::windows::WindowsWindow;
+pub use self::windows::{ WindowsWindow as OSWindow, key };
 
 #[cfg(target_os = "android")]
 mod android;
 #[cfg(target_os = "android")]
-pub type OSWindow = self::android::AndroidWindow;
+pub use self::android::{ AndroidWindow as OSWindow, key, gsp_main };
 
 #[cfg(target_os = "ios")]
 mod ios;
@@ -33,24 +33,24 @@ pub use self::unix::{ UnixWindow as OSWindow, key };
 #[cfg(target_os = "aldarons_os")]
 mod aldarons_os;
 #[cfg(target_os = "aldarons_os")]
-pub type OSWindow = self::aldarons_os::AldaronsWindow;
+pub use self::aldarons_os::{ AldaronsWindow as OSWindow, key };
 
 #[cfg(target_os = "arduino")]
 mod arduino;
 #[cfg(target_os = "arduino")]
-pub type OSWindow = self::arduino::ArduinoWindow;
+pub use self::arduino::{ ArduinoWindow as OSWindow, key };
 
 #[cfg(target_os = "nintendo_switch")]
 mod nintendo_switch;
 #[cfg(target_os = "nintendo_switch")]
-pub type OSWindow = self::nintendo_switch::SwitchWindow;
+pub use self::nintendo_switch::{ SwitchWindow as OSWindow, key };
 
 #[cfg(target_os = "web_assembly")]
 mod web_assembly;
 #[cfg(target_os = "web_assembly")]
-pub type OSWindow = self::web_assembly::WebWindow;
+pub use self::web_assembly::{ WebWindow as OSWindow, key };
 
 #[cfg(target_os = "none")]
 mod no_os;
 #[cfg(target_os = "none")]
-pub type OSWindow = self::no_os::OSWindow;
+pub use self::no_os::{ OSWindow, key };

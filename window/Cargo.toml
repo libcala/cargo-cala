@@ -1,0 +1,7 @@
+[package]
+name = "window"
+version = "0.1.0"
+authors = ["Jeron Aldaron Lau <jeron.lau@plopgrizzly.tech>"]
+
+[dependencies]
+ami = { path = "/home/aldaron/aldarons_tech/ami" }

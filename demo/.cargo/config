@@ -1,0 +1,27 @@
+[profile.dev]
+opt-level = 0
+debug = true
+rpath = false
+lto = false
+debug-assertions = true
+panic = 'abort'
+
+[profile.release]
+opt-level = 3
+debug = false
+rpath = false
+lto = true
+debug-assertions = false
+panic = 'abort'
+
+[target.arm-linux-androideabi]
+linker = "/home/aldaron/Android/android-ndk-r15/standalone/arm/bin/arm-linux-androideabi-gcc"
+
+[target.armv7-linux-androideabi]
+linker = "/home/aldaron/Android/android-ndk-r15/standalone/arm/bin/arm-linux-androideabi-gcc"
+
+[target.aarch64-linux-android]
+linker = "/home/aldaron/Android/android-ndk-r15/standalone/arm64/bin/aarch64-linux-android-gcc"
+
+[target.i686-linux-android]
+linker = "/home/aldaron/Android/android-ndk-r15/standalone/x86/bin/i686-linux-android-gcc"

@@ -26,3 +26,17 @@ pub use window_ops::WindowOps;
 // Default Width and Height for a window.
 pub(crate) const MWW : u32 = 640;
 pub(crate) const MWH : u32 = 360;
+
+// Main
+/*#[cfg(target_os = "android")]
+#[allow(unused)]
+#[no_mangle]
+pub extern "C" fn gsp_main(activity: *mut ANativeActivity) -> () {
+	println!("Got Start");
+}*/
+
+/*#[cfg(not(target_os = "android"))]
+#[no_mangle]
+pub extern "C" fn gsp_main() -> () {
+	println!("Got Start");
+}*/

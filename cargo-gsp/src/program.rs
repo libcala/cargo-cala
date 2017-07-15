@@ -62,8 +62,12 @@ impl Pipe {
 }
 
 /// Start a program.
-pub fn spawn(prg: &str, args: Vec<&str>, fail: &str) -> process::Child {
-	Command::new(prg).args(args).stdout(Stdio::piped()).spawn().expect(fail)
+pub fn spawn(prg: &str, args: Vec<&str>) -> process::Child {
+	Command::new(prg)
+		.args(args)
+		.stdout(Stdio::piped())
+		.spawn()
+		.expect(&format!("Couldn't Start {}", prg))
 }
 
 /// Wait on a program until it quits, updating stdout as needed.
@@ -113,18 +117,26 @@ pub fn wait_on(mut program: process::Child, mut progress: Option<cli::Progress>,
 }
 
 pub fn execute(name: &str, prg: &str, args: Vec<&str>, fail: &str, error: &str){
-	let program = spawn(prg, args, fail);
+	let program = spawn(prg, args);
 	let progress = cli::Progress::new(name, "Starting....");
 	let pipe = Pipe::new();
 
-	wait_on(program, Some(progress), pipe, error);
+	wait_on(program, Some(progress), pipe, &format!("{} failed!", name));
 }
 
-pub fn execute_log(prg: &str, args: Vec<&str>, fail: &str, error: &str) {
-	let program = spawn(prg, args, fail);
+pub fn execute_log(prg: &str, args: Vec<&str>) {
+	let program = spawn(prg, args);
 	let pipe = Pipe::new();
 
-	wait_on(program, None, pipe, error);
+	wait_on(program, None, pipe, &format!("{} failed!", prg));
+}
+
+pub fn execute_in(wd: &str, prg: &str, args: Vec<&str>) {
+	let program = spawn(prg, args);
+	let progress = cli::Progress::new(prg, "Starting....");
+	let pipe = Pipe::new();
+
+	wait_on(program, Some(progress), pipe, &format!("{} failed!", prg));
 }
 
 pub fn exit(error: &str) {

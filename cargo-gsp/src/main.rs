@@ -18,9 +18,12 @@ pub(crate) mod password;
 pub(crate) mod program;
 pub(crate) mod resources;
 
-mod ndk;
+mod cargo; // Shared Between Platforms
+mod android;
 mod linux;
 
+pub(crate) const TARGET: &'static str = "target/";
+pub(crate) const TARGET_DIR: &'static str = "target/release/";
 pub(crate) const PASSWORD: &'static str = ".packager/password.text";
 pub(crate) const RES_ICON: &'static str = "res/icon.png";
 pub(crate) const RES_SYMBOL: &'static str = "res/symbol.svg";
@@ -64,10 +67,11 @@ fn main() {
 		let cargo_toml = parse::execute();
 		let translations = resources::execute(&cargo_toml);
 
+		cargo::execute(&cargo_toml);
+
 		match args[2].as_str() {
-			"ndk" => ndk::execute(cargo_toml, translations),
+			"android" => android::execute(cargo_toml, translations),
 			"linux" => linux::execute(cargo_toml, translations),
-//			"android" => android::execute(),
 			a => {
 				cli::print(&format!("Unknown Target: {}", a));
 				help()
