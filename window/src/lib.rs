@@ -4,6 +4,10 @@
 // Copyright 2017 (c) Jeron Lau
 // Licensed under the MIT LICENSE
 
+#![doc(html_logo_url = "http://at.plopgrizzly.tech/window/icon.png",
+       html_favicon_url = "http://at.plopgrizzly.tech/window/icon.png",
+       html_root_url = "http://at.plopgrizzly.tech/window/")]
+
 pub(crate) extern crate ami;
 
 pub(crate) mod input;
