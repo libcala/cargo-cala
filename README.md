@@ -1,5 +1,12 @@
-# Graphical Software Packager ( gsp )
-A program and library that makes cargo generate release packages instead of binaries.
+<img src="http://at.plopgrizzly.tech/gsp/banner.png" alt="Graphical Software Packager (cargo-gsp)" width="100%">
+
+A cargo plugin that makes cargo generate release packages instead of binaries.
+
+## Links
+* [Website](http://at.plopgrizzly.tech/gsp/)
+* [Cargo](https://crates.io/crates/cargo-gsp/)
+* [Documentation](http://at.plopgrizzly.tech/docs/gsp/)
+* [Tutorial](http://at.plopgrizzly.tech/demos/gsp)
 
 ## Linux: FlatPak
 
