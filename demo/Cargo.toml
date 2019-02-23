@@ -1,7 +1,7 @@
 [package]
 name = "gsp_demo"
 version = "0.1.0"
-authors = ["Jeron Aldaron Lau <jeron.lau@plopgrizzly.tech>"]
+authors = ["Jeron Aldaron Lau <jeronaldaron@plopgrizzly.com>"]
 homepage = "https://aldarons-tech.github.io/gsp_demo.html"
 description = "_Demo:Packager-_Software-Graphical"
 keywords = [ "gsp", "demo" ]
@@ -17,4 +17,4 @@ path = "target/crate/lib.rs"
 crate_type = ["staticlib"]
 
 [dependencies]
-window = { path = "/home/aldaron/aldarons_tech/cargo-gsp/window" }
+window = { path = "../window" }

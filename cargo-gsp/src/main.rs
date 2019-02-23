@@ -18,8 +18,8 @@ pub(crate) mod password;
 pub(crate) mod program;
 pub(crate) mod resources;
 
-mod cargo; // Shared Between Platforms
 mod android;
+mod cargo; // Shared Between Platforms
 mod linux;
 
 pub(crate) const TARGET: &'static str = "target/";
@@ -52,30 +52,30 @@ Note:
 ";
 
 fn help() {
-	cli::print(USAGE);
+    cli::print(USAGE);
 }
 
 fn main() {
-	let args: Vec<_> = env::args().collect();
+    let args: Vec<_> = env::args().collect();
 
-	if args[1] != "gsp" {
-		cli::print("\nPlease use `cargo gsp` instead of `cargo-gsp`")
-	} else if args.len() != 3 || args[2] == "-h" {
-		help()
-	} else {
-		// Read Cargo.toml
-		let cargo_toml = parse::execute();
-		let translations = resources::execute(&cargo_toml);
+    if args[1] != "gsp" {
+        cli::print("\nPlease use `cargo gsp` instead of `cargo-gsp`")
+    } else if args.len() != 3 || args[2] == "-h" {
+        help()
+    } else {
+        // Read Cargo.toml
+        let cargo_toml = parse::execute();
+        let translations = resources::execute(&cargo_toml);
 
-		cargo::execute(&cargo_toml);
+        cargo::execute(&cargo_toml);
 
-		match args[2].as_str() {
-			"android" => android::execute(cargo_toml, translations),
-			"linux" => linux::execute(cargo_toml, translations),
-			a => {
-				cli::print(&format!("Unknown Target: {}", a));
-				help()
-			}
-		}
-	}
+        match args[2].as_str() {
+            "android" => android::execute(cargo_toml, translations),
+            "linux" => linux::execute(cargo_toml, translations),
+            a => {
+                cli::print(&format!("Unknown Target: {}", a));
+                help()
+            }
+        }
+    }
 }

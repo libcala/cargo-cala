@@ -1,0 +1,1779 @@
+8171  execve("/bin/flatpak", ["flatpak", "--user", "update", "org.gnome.Platform/x86_64/3.24"], 0x7ffc7d9ae5b8 /* 57 vars */) = 0
+8171  brk(NULL)                         = 0x5632f59c2000
+8171  arch_prctl(0x3001 /* ARCH_??? */, 0x7ffcba520530) = -1 EINVAL (Invalid argument)
+8171  access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3</etc/ld.so.cache>
+8171  fstat(3</etc/ld.so.cache>, {st_mode=S_IFREG|0644, st_size=220737, ...}) = 0
+8171  mmap(NULL, 220737, PROT_READ, MAP_PRIVATE, 3</etc/ld.so.cache>, 0) = 0x7fca6de1b000
+8171  close(3</etc/ld.so.cache>)        = 0
+8171  openat(AT_FDCWD, "/lib64/libappstream-glib.so.8", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libappstream-glib.so.8.0.10>
+8171  read(3</usr/lib64/libappstream-glib.so.8.0.10>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0p\300\1\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libappstream-glib.so.8.0.10>, 454608, SEEK_SET) = 454608
+8171  read(3</usr/lib64/libappstream-glib.so.8.0.10>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libappstream-glib.so.8.0.10>, {st_mode=S_IFREG|0755, st_size=484208, ...}) = 0
+8171  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fca6de19000
+8171  lseek(3</usr/lib64/libappstream-glib.so.8.0.10>, 454608, SEEK_SET) = 454608
+8171  read(3</usr/lib64/libappstream-glib.so.8.0.10>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 473096, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libappstream-glib.so.8.0.10>, 0) = 0x7fca6dda5000
+8171  mprotect(0x7fca6ddbb000, 368640, PROT_NONE) = 0
+8171  mmap(0x7fca6ddbb000, 245760, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libappstream-glib.so.8.0.10>, 0x16000) = 0x7fca6ddbb000
+8171  mmap(0x7fca6ddf7000, 118784, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libappstream-glib.so.8.0.10>, 0x52000) = 0x7fca6ddf7000
+8171  mmap(0x7fca6de15000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libappstream-glib.so.8.0.10>, 0x6f000) = 0x7fca6de15000
+8171  close(3</usr/lib64/libappstream-glib.so.8.0.10>) = 0
+8171  openat(AT_FDCWD, "/lib64/libgdk_pixbuf-2.0.so.0", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libgdk_pixbuf-2.0.so.0.3800.0>
+8171  read(3</usr/lib64/libgdk_pixbuf-2.0.so.0.3800.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360\214\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libgdk_pixbuf-2.0.so.0.3800.0>, 166376, SEEK_SET) = 166376
+8171  read(3</usr/lib64/libgdk_pixbuf-2.0.so.0.3800.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libgdk_pixbuf-2.0.so.0.3800.0>, {st_mode=S_IFREG|0755, st_size=179216, ...}) = 0
+8171  lseek(3</usr/lib64/libgdk_pixbuf-2.0.so.0.3800.0>, 166376, SEEK_SET) = 166376
+8171  read(3</usr/lib64/libgdk_pixbuf-2.0.so.0.3800.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 176504, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libgdk_pixbuf-2.0.so.0.3800.0>, 0) = 0x7fca6dd79000
+8171  mprotect(0x7fca6dd80000, 143360, PROT_NONE) = 0
+8171  mmap(0x7fca6dd80000, 102400, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgdk_pixbuf-2.0.so.0.3800.0>, 0x7000) = 0x7fca6dd80000
+8171  mmap(0x7fca6dd99000, 36864, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgdk_pixbuf-2.0.so.0.3800.0>, 0x20000) = 0x7fca6dd99000
+8171  mmap(0x7fca6dda3000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgdk_pixbuf-2.0.so.0.3800.0>, 0x29000) = 0x7fca6dda3000
+8171  close(3</usr/lib64/libgdk_pixbuf-2.0.so.0.3800.0>) = 0
+8171  openat(AT_FDCWD, "/lib64/libpolkit-agent-1.so.0", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libpolkit-agent-1.so.0.0.0>
+8171  read(3</usr/lib64/libpolkit-agent-1.so.0.0.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320T\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libpolkit-agent-1.so.0.0.0>, 44512, SEEK_SET) = 44512
+8171  read(3</usr/lib64/libpolkit-agent-1.so.0.0.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libpolkit-agent-1.so.0.0.0>, {st_mode=S_IFREG|0755, st_size=53176, ...}) = 0
+8171  lseek(3</usr/lib64/libpolkit-agent-1.so.0.0.0>, 44512, SEEK_SET) = 44512
+8171  read(3</usr/lib64/libpolkit-agent-1.so.0.0.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 53344, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libpolkit-agent-1.so.0.0.0>, 0) = 0x7fca6dd6b000
+8171  mprotect(0x7fca6dd6f000, 32768, PROT_NONE) = 0
+8171  mmap(0x7fca6dd6f000, 20480, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpolkit-agent-1.so.0.0.0>, 0x4000) = 0x7fca6dd6f000
+8171  mmap(0x7fca6dd74000, 8192, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpolkit-agent-1.so.0.0.0>, 0x9000) = 0x7fca6dd74000
+8171  mmap(0x7fca6dd77000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpolkit-agent-1.so.0.0.0>, 0xb000) = 0x7fca6dd77000
+8171  mmap(0x7fca6dd78000, 96, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6dd78000
+8171  close(3</usr/lib64/libpolkit-agent-1.so.0.0.0>) = 0
+8171  openat(AT_FDCWD, "/lib64/libpolkit-gobject-1.so.0", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libpolkit-gobject-1.so.0.0.0>
+8171  read(3</usr/lib64/libpolkit-gobject-1.so.0.0.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260\220\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libpolkit-gobject-1.so.0.0.0>, 121600, SEEK_SET) = 121600
+8171  read(3</usr/lib64/libpolkit-gobject-1.so.0.0.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libpolkit-gobject-1.so.0.0.0>, {st_mode=S_IFREG|0755, st_size=135696, ...}) = 0
+8171  lseek(3</usr/lib64/libpolkit-gobject-1.so.0.0.0>, 121600, SEEK_SET) = 121600
+8171  read(3</usr/lib64/libpolkit-gobject-1.so.0.0.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 131440, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libpolkit-gobject-1.so.0.0.0>, 0) = 0x7fca6dd4a000
+8171  mprotect(0x7fca6dd51000, 98304, PROT_NONE) = 0
+8171  mmap(0x7fca6dd51000, 61440, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpolkit-gobject-1.so.0.0.0>, 0x7000) = 0x7fca6dd51000
+8171  mmap(0x7fca6dd60000, 32768, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpolkit-gobject-1.so.0.0.0>, 0x16000) = 0x7fca6dd60000
+8171  mmap(0x7fca6dd69000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpolkit-gobject-1.so.0.0.0>, 0x1e000) = 0x7fca6dd69000
+8171  mmap(0x7fca6dd6a000, 368, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6dd6a000
+8171  close(3</usr/lib64/libpolkit-gobject-1.so.0.0.0>) = 0
+8171  openat(AT_FDCWD, "/lib64/libarchive.so.13", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libarchive.so.13.3.3>
+8171  read(3</usr/lib64/libarchive.so.13.3.3>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20|\1\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libarchive.so.13.3.3>, 750456, SEEK_SET) = 750456
+8171  read(3</usr/lib64/libarchive.so.13.3.3>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libarchive.so.13.3.3>, {st_mode=S_IFREG|0755, st_size=809312, ...}) = 0
+8171  lseek(3</usr/lib64/libarchive.so.13.3.3>, 750456, SEEK_SET) = 750456
+8171  read(3</usr/lib64/libarchive.so.13.3.3>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 772272, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libarchive.so.13.3.3>, 0) = 0x7fca6dc8d000
+8171  mmap(0x7fca6dca0000, 516096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libarchive.so.13.3.3>, 0x13000) = 0x7fca6dca0000
+8171  mmap(0x7fca6dd1e000, 159744, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libarchive.so.13.3.3>, 0x91000) = 0x7fca6dd1e000
+8171  mmap(0x7fca6dd45000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libarchive.so.13.3.3>, 0xb7000) = 0x7fca6dd45000
+8171  close(3</usr/lib64/libarchive.so.13.3.3>) = 0
+8171  openat(AT_FDCWD, "/lib64/libxml2.so.2", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libxml2.so.2.9.8>
+8171  read(3</usr/lib64/libxml2.so.2.9.8>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260\371\2\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libxml2.so.2.9.8>, 1428152, SEEK_SET) = 1428152
+8171  read(3</usr/lib64/libxml2.so.2.9.8>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libxml2.so.2.9.8>, {st_mode=S_IFREG|0755, st_size=1486912, ...}) = 0
+8171  lseek(3</usr/lib64/libxml2.so.2.9.8>, 1428152, SEEK_SET) = 1428152
+8171  read(3</usr/lib64/libxml2.so.2.9.8>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 1479000, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libxml2.so.2.9.8>, 0) = 0x7fca6db23000
+8171  mprotect(0x7fca6db51000, 1245184, PROT_NONE) = 0
+8171  mmap(0x7fca6db51000, 942080, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libxml2.so.2.9.8>, 0x2e000) = 0x7fca6db51000
+8171  mmap(0x7fca6dc37000, 299008, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libxml2.so.2.9.8>, 0x114000) = 0x7fca6dc37000
+8171  mmap(0x7fca6dc81000, 40960, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libxml2.so.2.9.8>, 0x15d000) = 0x7fca6dc81000
+8171  mmap(0x7fca6dc8b000, 4440, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6dc8b000
+8171  close(3</usr/lib64/libxml2.so.2.9.8>) = 0
+8171  openat(AT_FDCWD, "/lib64/libostree-1.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libostree-1.so.1.0.0>
+8171  read(3</usr/lib64/libostree-1.so.1.0.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220\333\1\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libostree-1.so.1.0.0>, 860296, SEEK_SET) = 860296
+8171  read(3</usr/lib64/libostree-1.so.1.0.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libostree-1.so.1.0.0>, {st_mode=S_IFREG|0755, st_size=903176, ...}) = 0
+8171  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fca6db21000
+8171  lseek(3</usr/lib64/libostree-1.so.1.0.0>, 860296, SEEK_SET) = 860296
+8171  read(3</usr/lib64/libostree-1.so.1.0.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 877952, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libostree-1.so.1.0.0>, 0) = 0x7fca6da4a000
+8171  mmap(0x7fca6da60000, 573440, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libostree-1.so.1.0.0>, 0x16000) = 0x7fca6da60000
+8171  mmap(0x7fca6daec000, 200704, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libostree-1.so.1.0.0>, 0xa2000) = 0x7fca6daec000
+8171  mmap(0x7fca6db1d000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libostree-1.so.1.0.0>, 0xd2000) = 0x7fca6db1d000
+8171  close(3</usr/lib64/libostree-1.so.1.0.0>) = 0
+8171  openat(AT_FDCWD, "/lib64/libsoup-2.4.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libsoup-2.4.so.1.8.0>
+8171  read(3</usr/lib64/libsoup-2.4.so.1.8.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220&\2\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libsoup-2.4.so.1.8.0>, 588280, SEEK_SET) = 588280
+8171  read(3</usr/lib64/libsoup-2.4.so.1.8.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libsoup-2.4.so.1.8.0>, {st_mode=S_IFREG|0755, st_size=634400, ...}) = 0
+8171  lseek(3</usr/lib64/libsoup-2.4.so.1.8.0>, 588280, SEEK_SET) = 588280
+8171  read(3</usr/lib64/libsoup-2.4.so.1.8.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 612944, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libsoup-2.4.so.1.8.0>, 0) = 0x7fca6d9b4000
+8171  mmap(0x7fca6d9cf000, 335872, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libsoup-2.4.so.1.8.0>, 0x1b000) = 0x7fca6d9cf000
+8171  mmap(0x7fca6da21000, 143360, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libsoup-2.4.so.1.8.0>, 0x6d000) = 0x7fca6da21000
+8171  mmap(0x7fca6da44000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libsoup-2.4.so.1.8.0>, 0x8f000) = 0x7fca6da44000
+8171  close(3</usr/lib64/libsoup-2.4.so.1.8.0>) = 0
+8171  openat(AT_FDCWD, "/lib64/libjson-glib-1.0.so.0", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libjson-glib-1.0.so.0.400.4>
+8171  read(3</usr/lib64/libjson-glib-1.0.so.0.400.4>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320\237\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libjson-glib-1.0.so.0.400.4>, 158824, SEEK_SET) = 158824
+8171  read(3</usr/lib64/libjson-glib-1.0.so.0.400.4>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libjson-glib-1.0.so.0.400.4>, {st_mode=S_IFREG|0755, st_size=171888, ...}) = 0
+8171  lseek(3</usr/lib64/libjson-glib-1.0.so.0.400.4>, 158824, SEEK_SET) = 158824
+8171  read(3</usr/lib64/libjson-glib-1.0.so.0.400.4>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 168344, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libjson-glib-1.0.so.0.400.4>, 0) = 0x7fca6d98a000
+8171  mprotect(0x7fca6d992000, 131072, PROT_NONE) = 0
+8171  mmap(0x7fca6d992000, 90112, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libjson-glib-1.0.so.0.400.4>, 0x8000) = 0x7fca6d992000
+8171  mmap(0x7fca6d9a8000, 36864, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libjson-glib-1.0.so.0.400.4>, 0x1e000) = 0x7fca6d9a8000
+8171  mmap(0x7fca6d9b2000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libjson-glib-1.0.so.0.400.4>, 0x27000) = 0x7fca6d9b2000
+8171  mmap(0x7fca6d9b3000, 408, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6d9b3000
+8171  close(3</usr/lib64/libjson-glib-1.0.so.0.400.4>) = 0
+8171  openat(AT_FDCWD, "/lib64/libXau.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libXau.so.6.0.0>
+8171  read(3</usr/lib64/libXau.so.6.0.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\22\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libXau.so.6.0.0>, 9160, SEEK_SET) = 9160
+8171  read(3</usr/lib64/libXau.so.6.0.0>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  fstat(3</usr/lib64/libXau.so.6.0.0>, {st_mode=S_IFREG|0755, st_size=18560, ...}) = 0
+8171  lseek(3</usr/lib64/libXau.so.6.0.0>, 9160, SEEK_SET) = 9160
+8171  read(3</usr/lib64/libXau.so.6.0.0>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  mmap(NULL, 16416, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libXau.so.6.0.0>, 0) = 0x7fca6d985000
+8171  mmap(0x7fca6d986000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libXau.so.6.0.0>, 0x1000) = 0x7fca6d986000
+8171  mmap(0x7fca6d987000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libXau.so.6.0.0>, 0x2000) = 0x7fca6d987000
+8171  mmap(0x7fca6d988000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libXau.so.6.0.0>, 0x2000) = 0x7fca6d988000
+8171  mmap(0x7fca6d989000, 32, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6d989000
+8171  close(3</usr/lib64/libXau.so.6.0.0>) = 0
+8171  openat(AT_FDCWD, "/lib64/libseccomp.so.2", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libseccomp.so.2.3.3>
+8171  read(3</usr/lib64/libseccomp.so.2.3.3>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\300\1\2\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libseccomp.so.2.3.3>, 184488, SEEK_SET) = 184488
+8171  read(3</usr/lib64/libseccomp.so.2.3.3>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  fstat(3</usr/lib64/libseccomp.so.2.3.3>, {st_mode=S_IFREG|0755, st_size=285352, ...}) = 0
+8171  lseek(3</usr/lib64/libseccomp.so.2.3.3>, 184488, SEEK_SET) = 184488
+8171  read(3</usr/lib64/libseccomp.so.2.3.3>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  mmap(NULL, 274456, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libseccomp.so.2.3.3>, 0) = 0x7fca6d941000
+8171  mmap(0x7fca6d961000, 40960, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libseccomp.so.2.3.3>, 0x20000) = 0x7fca6d961000
+8171  mmap(0x7fca6d96b000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libseccomp.so.2.3.3>, 0x2a000) = 0x7fca6d96b000
+8171  mmap(0x7fca6d96f000, 90112, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libseccomp.so.2.3.3>, 0x2d000) = 0x7fca6d96f000
+8171  close(3</usr/lib64/libseccomp.so.2.3.3>) = 0
+8171  openat(AT_FDCWD, "/lib64/libgpgme.so.11", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libgpgme.so.11.21.0>
+8171  read(3</usr/lib64/libgpgme.so.11.21.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220\204\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libgpgme.so.11.21.0>, 297976, SEEK_SET) = 297976
+8171  read(3</usr/lib64/libgpgme.so.11.21.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libgpgme.so.11.21.0>, {st_mode=S_IFREG|0755, st_size=332776, ...}) = 0
+8171  lseek(3</usr/lib64/libgpgme.so.11.21.0>, 297976, SEEK_SET) = 297976
+8171  read(3</usr/lib64/libgpgme.so.11.21.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 312776, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libgpgme.so.11.21.0>, 0) = 0x7fca6d8f4000
+8171  mprotect(0x7fca6d8fb000, 274432, PROT_NONE) = 0
+8171  mmap(0x7fca6d8fb000, 200704, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgpgme.so.11.21.0>, 0x7000) = 0x7fca6d8fb000
+8171  mmap(0x7fca6d92c000, 69632, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgpgme.so.11.21.0>, 0x38000) = 0x7fca6d92c000
+8171  mmap(0x7fca6d93e000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgpgme.so.11.21.0>, 0x49000) = 0x7fca6d93e000
+8171  close(3</usr/lib64/libgpgme.so.11.21.0>) = 0
+8171  openat(AT_FDCWD, "/lib64/libsystemd.so.0", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libsystemd.so.0.23.0>
+8171  read(3</usr/lib64/libsystemd.so.0.23.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\34\1\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libsystemd.so.0.23.0>, 657600, SEEK_SET) = 657600
+8171  read(3</usr/lib64/libsystemd.so.0.23.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libsystemd.so.0.23.0>, {st_mode=S_IFREG|0755, st_size=874512, ...}) = 0
+8171  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fca6d8f2000
+8171  lseek(3</usr/lib64/libsystemd.so.0.23.0>, 657600, SEEK_SET) = 657600
+8171  read(3</usr/lib64/libsystemd.so.0.23.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 680560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libsystemd.so.0.23.0>, 0) = 0x7fca6d84b000
+8171  mprotect(0x7fca6d85a000, 602112, PROT_NONE) = 0
+8171  mmap(0x7fca6d85a000, 438272, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libsystemd.so.0.23.0>, 0xf000) = 0x7fca6d85a000
+8171  mmap(0x7fca6d8c5000, 159744, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libsystemd.so.0.23.0>, 0x7a000) = 0x7fca6d8c5000
+8171  mmap(0x7fca6d8ed000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libsystemd.so.0.23.0>, 0xa1000) = 0x7fca6d8ed000
+8171  mmap(0x7fca6d8f1000, 624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6d8f1000
+8171  close(3</usr/lib64/libsystemd.so.0.23.0>) = 0
+8171  openat(AT_FDCWD, "/lib64/libdconf.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libdconf.so.1.0.0>
+8171  read(3</usr/lib64/libdconf.so.1.0.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320W\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libdconf.so.1.0.0>, 61792, SEEK_SET) = 61792
+8171  read(3</usr/lib64/libdconf.so.1.0.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libdconf.so.1.0.0>, {st_mode=S_IFREG|0755, st_size=72584, ...}) = 0
+8171  lseek(3</usr/lib64/libdconf.so.1.0.0>, 61792, SEEK_SET) = 61792
+8171  read(3</usr/lib64/libdconf.so.1.0.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 69864, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libdconf.so.1.0.0>, 0) = 0x7fca6d839000
+8171  mmap(0x7fca6d83d000, 32768, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libdconf.so.1.0.0>, 0x4000) = 0x7fca6d83d000
+8171  mmap(0x7fca6d845000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libdconf.so.1.0.0>, 0xc000) = 0x7fca6d845000
+8171  mmap(0x7fca6d849000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libdconf.so.1.0.0>, 0xf000) = 0x7fca6d849000
+8171  mmap(0x7fca6d84a000, 232, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6d84a000
+8171  close(3</usr/lib64/libdconf.so.1.0.0>) = 0
+8171  openat(AT_FDCWD, "/lib64/libgio-2.0.so.0", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libgio-2.0.so.0.5800.3>
+8171  read(3</usr/lib64/libgio-2.0.so.0.5800.3>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20\321\3\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libgio-2.0.so.0.5800.3>, 1709216, SEEK_SET) = 1709216
+8171  read(3</usr/lib64/libgio-2.0.so.0.5800.3>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libgio-2.0.so.0.5800.3>, {st_mode=S_IFREG|0755, st_size=1816824, ...}) = 0
+8171  lseek(3</usr/lib64/libgio-2.0.so.0.5800.3>, 1709216, SEEK_SET) = 1709216
+8171  read(3</usr/lib64/libgio-2.0.so.0.5800.3>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 1749600, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libgio-2.0.so.0.5800.3>, 0) = 0x7fca6d68d000
+8171  mmap(0x7fca6d6c3000, 983040, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgio-2.0.so.0.5800.3>, 0x36000) = 0x7fca6d6c3000
+8171  mmap(0x7fca6d7b3000, 507904, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgio-2.0.so.0.5800.3>, 0x126000) = 0x7fca6d7b3000
+8171  mmap(0x7fca6d82f000, 32768, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgio-2.0.so.0.5800.3>, 0x1a1000) = 0x7fca6d82f000
+8171  mmap(0x7fca6d837000, 4704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6d837000
+8171  close(3</usr/lib64/libgio-2.0.so.0.5800.3>) = 0
+8171  openat(AT_FDCWD, "/lib64/libgobject-2.0.so.0", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libgobject-2.0.so.0.5800.3>
+8171  read(3</usr/lib64/libgobject-2.0.so.0.5800.3>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260\276\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libgobject-2.0.so.0.5800.3>, 338656, SEEK_SET) = 338656
+8171  read(3</usr/lib64/libgobject-2.0.so.0.5800.3>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libgobject-2.0.so.0.5800.3>, {st_mode=S_IFREG|0755, st_size=355088, ...}) = 0
+8171  lseek(3</usr/lib64/libgobject-2.0.so.0.5800.3>, 338656, SEEK_SET) = 338656
+8171  read(3</usr/lib64/libgobject-2.0.so.0.5800.3>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 351112, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libgobject-2.0.so.0.5800.3>, 0) = 0x7fca6d637000
+8171  mprotect(0x7fca6d642000, 299008, PROT_NONE) = 0
+8171  mmap(0x7fca6d642000, 208896, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgobject-2.0.so.0.5800.3>, 0xb000) = 0x7fca6d642000
+8171  mmap(0x7fca6d675000, 86016, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgobject-2.0.so.0.5800.3>, 0x3e000) = 0x7fca6d675000
+8171  mmap(0x7fca6d68b000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgobject-2.0.so.0.5800.3>, 0x53000) = 0x7fca6d68b000
+8171  close(3</usr/lib64/libgobject-2.0.so.0.5800.3>) = 0
+8171  openat(AT_FDCWD, "/lib64/libglib-2.0.so.0", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libglib-2.0.so.0.5800.3>
+8171  read(3</usr/lib64/libglib-2.0.so.0.5800.3>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0000\313\1\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libglib-2.0.so.0.5800.3>, 1163960, SEEK_SET) = 1163960
+8171  read(3</usr/lib64/libglib-2.0.so.0.5800.3>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libglib-2.0.so.0.5800.3>, {st_mode=S_IFREG|0755, st_size=1208600, ...}) = 0
+8171  lseek(3</usr/lib64/libglib-2.0.so.0.5800.3>, 1163960, SEEK_SET) = 1163960
+8171  read(3</usr/lib64/libglib-2.0.so.0.5800.3>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 1176040, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libglib-2.0.so.0.5800.3>, 0) = 0x7fca6d517000
+8171  mmap(0x7fca6d532000, 524288, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libglib-2.0.so.0.5800.3>, 0x1b000) = 0x7fca6d532000
+8171  mmap(0x7fca6d5b2000, 532480, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libglib-2.0.so.0.5800.3>, 0x9b000) = 0x7fca6d5b2000
+8171  mmap(0x7fca6d634000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libglib-2.0.so.0.5800.3>, 0x11c000) = 0x7fca6d634000
+8171  mmap(0x7fca6d636000, 488, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6d636000
+8171  close(3</usr/lib64/libglib-2.0.so.0.5800.3>) = 0
+8171  openat(AT_FDCWD, "/lib64/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libgcc_s-8-20181215.so.1>
+8171  read(3</usr/lib64/libgcc_s-8-20181215.so.1>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\2205\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libgcc_s-8-20181215.so.1>, 98128, SEEK_SET) = 98128
+8171  read(3</usr/lib64/libgcc_s-8-20181215.so.1>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libgcc_s-8-20181215.so.1>, {st_mode=S_IFREG|0755, st_size=105400, ...}) = 0
+8171  lseek(3</usr/lib64/libgcc_s-8-20181215.so.1>, 98128, SEEK_SET) = 98128
+8171  read(3</usr/lib64/libgcc_s-8-20181215.so.1>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 107568, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libgcc_s-8-20181215.so.1>, 0) = 0x7fca6d4fc000
+8171  mprotect(0x7fca6d4ff000, 90112, PROT_NONE) = 0
+8171  mmap(0x7fca6d4ff000, 73728, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgcc_s-8-20181215.so.1>, 0x3000) = 0x7fca6d4ff000
+8171  mmap(0x7fca6d511000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgcc_s-8-20181215.so.1>, 0x15000) = 0x7fca6d511000
+8171  mmap(0x7fca6d515000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgcc_s-8-20181215.so.1>, 0x18000) = 0x7fca6d515000
+8171  close(3</usr/lib64/libgcc_s-8-20181215.so.1>) = 0
+8171  openat(AT_FDCWD, "/lib64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libpthread-2.28.so>
+8171  read(3</usr/lib64/libpthread-2.28.so>, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\340q\0\0\0\0\0\0"..., 832) = 832
+8171  fstat(3</usr/lib64/libpthread-2.28.so>, {st_mode=S_IFREG|0755, st_size=258624, ...}) = 0
+8171  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fca6d4fa000
+8171  lseek(3</usr/lib64/libpthread-2.28.so>, 808, SEEK_SET) = 808
+8171  read(3</usr/lib64/libpthread-2.28.so>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 136384, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libpthread-2.28.so>, 0) = 0x7fca6d4d8000
+8171  mmap(0x7fca6d4de000, 65536, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpthread-2.28.so>, 0x6000) = 0x7fca6d4de000
+8171  mmap(0x7fca6d4ee000, 24576, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpthread-2.28.so>, 0x16000) = 0x7fca6d4ee000
+8171  mmap(0x7fca6d4f4000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpthread-2.28.so>, 0x1b000) = 0x7fca6d4f4000
+8171  mmap(0x7fca6d4f6000, 13504, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6d4f6000
+8171  close(3</usr/lib64/libpthread-2.28.so>) = 0
+8171  openat(AT_FDCWD, "/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libc-2.28.so>
+8171  read(3</usr/lib64/libc-2.28.so>, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 E\2\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libc-2.28.so>, 792, SEEK_SET) = 792
+8171  read(3</usr/lib64/libc-2.28.so>, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0SJ*b\377\206\240\350\223\357gH\337\363\1\212"..., 68) = 68
+8171  fstat(3</usr/lib64/libc-2.28.so>, {st_mode=S_IFREG|0755, st_size=2786472, ...}) = 0
+8171  lseek(3</usr/lib64/libc-2.28.so>, 792, SEEK_SET) = 792
+8171  read(3</usr/lib64/libc-2.28.so>, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0SJ*b\377\206\240\350\223\357gH\337\363\1\212"..., 68) = 68
+8171  lseek(3</usr/lib64/libc-2.28.so>, 864, SEEK_SET) = 864
+8171  read(3</usr/lib64/libc-2.28.so>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 1857568, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libc-2.28.so>, 0) = 0x7fca6d312000
+8171  mprotect(0x7fca6d334000, 1679360, PROT_NONE) = 0
+8171  mmap(0x7fca6d334000, 1363968, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libc-2.28.so>, 0x22000) = 0x7fca6d334000
+8171  mmap(0x7fca6d481000, 311296, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libc-2.28.so>, 0x16f000) = 0x7fca6d481000
+8171  mmap(0x7fca6d4ce000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libc-2.28.so>, 0x1bb000) = 0x7fca6d4ce000
+8171  mmap(0x7fca6d4d4000, 14368, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6d4d4000
+8171  close(3</usr/lib64/libc-2.28.so>) = 0
+8171  openat(AT_FDCWD, "/lib64/libuuid.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libuuid.so.1.3.0>
+8171  read(3</usr/lib64/libuuid.so.1.3.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 #\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libuuid.so.1.3.0>, 27192, SEEK_SET) = 27192
+8171  read(3</usr/lib64/libuuid.so.1.3.0>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  fstat(3</usr/lib64/libuuid.so.1.3.0>, {st_mode=S_IFREG|0755, st_size=37168, ...}) = 0
+8171  lseek(3</usr/lib64/libuuid.so.1.3.0>, 27192, SEEK_SET) = 27192
+8171  read(3</usr/lib64/libuuid.so.1.3.0>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  mmap(NULL, 32784, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libuuid.so.1.3.0>, 0) = 0x7fca6d309000
+8171  mmap(0x7fca6d30b000, 16384, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libuuid.so.1.3.0>, 0x2000) = 0x7fca6d30b000
+8171  mmap(0x7fca6d30f000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libuuid.so.1.3.0>, 0x6000) = 0x7fca6d30f000
+8171  mmap(0x7fca6d310000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libuuid.so.1.3.0>, 0x6000) = 0x7fca6d310000
+8171  mmap(0x7fca6d311000, 16, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6d311000
+8171  close(3</usr/lib64/libuuid.so.1.3.0>) = 0
+8171  openat(AT_FDCWD, "/lib64/libstemmer.so.0", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libstemmer.so.0.0.0>
+8171  read(3</usr/lib64/libstemmer.so.0.0.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\242\1\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libstemmer.so.0.0.0>, 219064, SEEK_SET) = 219064
+8171  read(3</usr/lib64/libstemmer.so.0.0.0>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  fstat(3</usr/lib64/libstemmer.so.0.0.0>, {st_mode=S_IFREG|0755, st_size=355728, ...}) = 0
+8171  lseek(3</usr/lib64/libstemmer.so.0.0.0>, 219064, SEEK_SET) = 219064
+8171  read(3</usr/lib64/libstemmer.so.0.0.0>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  mmap(NULL, 344232, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libstemmer.so.0.0.0>, 0) = 0x7fca6d2b4000
+8171  mmap(0x7fca6d2ce000, 86016, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libstemmer.so.0.0.0>, 0x1a000) = 0x7fca6d2ce000
+8171  mmap(0x7fca6d2e3000, 28672, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libstemmer.so.0.0.0>, 0x2f000) = 0x7fca6d2e3000
+8171  mmap(0x7fca6d2ea000, 126976, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libstemmer.so.0.0.0>, 0x35000) = 0x7fca6d2ea000
+8171  close(3</usr/lib64/libstemmer.so.0.0.0>) = 0
+8171  openat(AT_FDCWD, "/lib64/libm.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libm-2.28.so>
+8171  read(3</usr/lib64/libm-2.28.so>, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220\324\0\0\0\0\0\0"..., 832) = 832
+8171  fstat(3</usr/lib64/libm-2.28.so>, {st_mode=S_IFREG|0755, st_size=2080424, ...}) = 0
+8171  mmap(NULL, 1585472, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libm-2.28.so>, 0) = 0x7fca6d130000
+8171  mmap(0x7fca6d13d000, 655360, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libm-2.28.so>, 0xd000) = 0x7fca6d13d000
+8171  mmap(0x7fca6d1dd000, 872448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libm-2.28.so>, 0xad000) = 0x7fca6d1dd000
+8171  mmap(0x7fca6d2b2000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libm-2.28.so>, 0x181000) = 0x7fca6d2b2000
+8171  close(3</usr/lib64/libm-2.28.so>) = 0
+8171  openat(AT_FDCWD, "/lib64/libgmodule-2.0.so.0", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libgmodule-2.0.so.0.5800.3>
+8171  read(3</usr/lib64/libgmodule-2.0.so.0.5800.3>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\24\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libgmodule-2.0.so.0.5800.3>, 13376, SEEK_SET) = 13376
+8171  read(3</usr/lib64/libgmodule-2.0.so.0.5800.3>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libgmodule-2.0.so.0.5800.3>, {st_mode=S_IFREG|0755, st_size=19176, ...}) = 0
+8171  lseek(3</usr/lib64/libgmodule-2.0.so.0.5800.3>, 13376, SEEK_SET) = 13376
+8171  read(3</usr/lib64/libgmodule-2.0.so.0.5800.3>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 20568, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libgmodule-2.0.so.0.5800.3>, 0) = 0x7fca6d12a000
+8171  mmap(0x7fca6d12b000, 8192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgmodule-2.0.so.0.5800.3>, 0x1000) = 0x7fca6d12b000
+8171  mmap(0x7fca6d12d000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgmodule-2.0.so.0.5800.3>, 0x3000) = 0x7fca6d12d000
+8171  mmap(0x7fca6d12e000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgmodule-2.0.so.0.5800.3>, 0x3000) = 0x7fca6d12e000
+8171  close(3</usr/lib64/libgmodule-2.0.so.0.5800.3>) = 0
+8171  openat(AT_FDCWD, "/lib64/libpng16.so.16", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libpng16.so.16.34.0>
+8171  read(3</usr/lib64/libpng16.so.16.34.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0000b\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libpng16.so.16.34.0>, 210480, SEEK_SET) = 210480
+8171  read(3</usr/lib64/libpng16.so.16.34.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libpng16.so.16.34.0>, {st_mode=S_IFREG|0755, st_size=222472, ...}) = 0
+8171  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fca6d128000
+8171  lseek(3</usr/lib64/libpng16.so.16.34.0>, 210480, SEEK_SET) = 210480
+8171  read(3</usr/lib64/libpng16.so.16.34.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 217096, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libpng16.so.16.34.0>, 0) = 0x7fca6d0f2000
+8171  mmap(0x7fca6d0f7000, 147456, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpng16.so.16.34.0>, 0x5000) = 0x7fca6d0f7000
+8171  mmap(0x7fca6d11b000, 45056, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpng16.so.16.34.0>, 0x29000) = 0x7fca6d11b000
+8171  mmap(0x7fca6d126000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpng16.so.16.34.0>, 0x33000) = 0x7fca6d126000
+8171  mmap(0x7fca6d127000, 8, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6d127000
+8171  close(3</usr/lib64/libpng16.so.16.34.0>) = 0
+8171  openat(AT_FDCWD, "/lib64/libexpat.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libexpat.so.1.6.8>
+8171  read(3</usr/lib64/libexpat.so.1.6.8>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360C\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libexpat.so.1.6.8>, 230088, SEEK_SET) = 230088
+8171  read(3</usr/lib64/libexpat.so.1.6.8>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libexpat.so.1.6.8>, {st_mode=S_IFREG|0755, st_size=245328, ...}) = 0
+8171  lseek(3</usr/lib64/libexpat.so.1.6.8>, 230088, SEEK_SET) = 230088
+8171  read(3</usr/lib64/libexpat.so.1.6.8>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 245768, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libexpat.so.1.6.8>, 0) = 0x7fca6d0b5000
+8171  mprotect(0x7fca6d0b9000, 221184, PROT_NONE) = 0
+8171  mmap(0x7fca6d0b9000, 135168, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libexpat.so.1.6.8>, 0x4000) = 0x7fca6d0b9000
+8171  mmap(0x7fca6d0da000, 81920, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libexpat.so.1.6.8>, 0x25000) = 0x7fca6d0da000
+8171  mmap(0x7fca6d0ef000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libexpat.so.1.6.8>, 0x39000) = 0x7fca6d0ef000
+8171  mmap(0x7fca6d0f1000, 8, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6d0f1000
+8171  close(3</usr/lib64/libexpat.so.1.6.8>) = 0
+8171  openat(AT_FDCWD, "/lib64/libcrypto.so.1.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libcrypto.so.1.1.1a>
+8171  read(3</usr/lib64/libcrypto.so.1.1.1a>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\240\7\0\0\0\0\0"..., 832) = 832
+8171  fstat(3</usr/lib64/libcrypto.so.1.1.1a>, {st_mode=S_IFREG|0755, st_size=3194296, ...}) = 0
+8171  mmap(NULL, 2989704, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libcrypto.so.1.1.1a>, 0) = 0x7fca6cddb000
+8171  mmap(0x7fca6ce54000, 1708032, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libcrypto.so.1.1.1a>, 0x79000) = 0x7fca6ce54000
+8171  mmap(0x7fca6cff5000, 581632, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libcrypto.so.1.1.1a>, 0x21a000) = 0x7fca6cff5000
+8171  mmap(0x7fca6d083000, 192512, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libcrypto.so.1.1.1a>, 0x2a7000) = 0x7fca6d083000
+8171  mmap(0x7fca6d0b2000, 11912, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6d0b2000
+8171  close(3</usr/lib64/libcrypto.so.1.1.1a>) = 0
+8171  openat(AT_FDCWD, "/lib64/libacl.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libacl.so.1.1.2253>
+8171  read(3</usr/lib64/libacl.so.1.1.2253>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\240#\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libacl.so.1.1.2253>, 33056, SEEK_SET) = 33056
+8171  read(3</usr/lib64/libacl.so.1.1.2253>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  fstat(3</usr/lib64/libacl.so.1.1.2253>, {st_mode=S_IFREG|0755, st_size=58776, ...}) = 0
+8171  lseek(3</usr/lib64/libacl.so.1.1.2253>, 33056, SEEK_SET) = 33056
+8171  read(3</usr/lib64/libacl.so.1.1.2253>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  mmap(NULL, 41088, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libacl.so.1.1.2253>, 0) = 0x7fca6cdd0000
+8171  mmap(0x7fca6cdd2000, 20480, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libacl.so.1.1.2253>, 0x2000) = 0x7fca6cdd2000
+8171  mmap(0x7fca6cdd7000, 8192, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libacl.so.1.1.2253>, 0x7000) = 0x7fca6cdd7000
+8171  mmap(0x7fca6cdd9000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libacl.so.1.1.2253>, 0x8000) = 0x7fca6cdd9000
+8171  close(3</usr/lib64/libacl.so.1.1.2253>) = 0
+8171  openat(AT_FDCWD, "/lib64/liblzma.so.5", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/liblzma.so.5.2.4>
+8171  read(3</usr/lib64/liblzma.so.5.2.4>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0205\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/liblzma.so.5.2.4>, 153752, SEEK_SET) = 153752
+8171  read(3</usr/lib64/liblzma.so.5.2.4>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  fstat(3</usr/lib64/liblzma.so.5.2.4>, {st_mode=S_IFREG|0755, st_size=189816, ...}) = 0
+8171  lseek(3</usr/lib64/liblzma.so.5.2.4>, 153752, SEEK_SET) = 153752
+8171  read(3</usr/lib64/liblzma.so.5.2.4>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  mmap(NULL, 163848, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/liblzma.so.5.2.4>, 0) = 0x7fca6cda7000
+8171  mprotect(0x7fca6cdaa000, 147456, PROT_NONE) = 0
+8171  mmap(0x7fca6cdaa000, 98304, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/liblzma.so.5.2.4>, 0x3000) = 0x7fca6cdaa000
+8171  mmap(0x7fca6cdc2000, 45056, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/liblzma.so.5.2.4>, 0x1b000) = 0x7fca6cdc2000
+8171  mmap(0x7fca6cdce000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/liblzma.so.5.2.4>, 0x26000) = 0x7fca6cdce000
+8171  mmap(0x7fca6cdcf000, 8, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6cdcf000
+8171  close(3</usr/lib64/liblzma.so.5.2.4>) = 0
+8171  openat(AT_FDCWD, "/lib64/libzstd.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libzstd.so.1.3.8>
+8171  read(3</usr/lib64/libzstd.so.1.3.8>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20_\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libzstd.so.1.3.8>, 646776, SEEK_SET) = 646776
+8171  read(3</usr/lib64/libzstd.so.1.3.8>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libzstd.so.1.3.8>, {st_mode=S_IFREG|0755, st_size=664760, ...}) = 0
+8171  lseek(3</usr/lib64/libzstd.so.1.3.8>, 646776, SEEK_SET) = 646776
+8171  read(3</usr/lib64/libzstd.so.1.3.8>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 655416, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libzstd.so.1.3.8>, 0) = 0x7fca6cd06000
+8171  mprotect(0x7fca6cd0b000, 630784, PROT_NONE) = 0
+8171  mmap(0x7fca6cd0b000, 561152, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libzstd.so.1.3.8>, 0x5000) = 0x7fca6cd0b000
+8171  mmap(0x7fca6cd94000, 65536, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libzstd.so.1.3.8>, 0x8e000) = 0x7fca6cd94000
+8171  mmap(0x7fca6cda5000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libzstd.so.1.3.8>, 0x9e000) = 0x7fca6cda5000
+8171  close(3</usr/lib64/libzstd.so.1.3.8>) = 0
+8171  openat(AT_FDCWD, "/lib64/liblz4.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/liblz4.so.1.8.3>
+8171  read(3</usr/lib64/liblz4.so.1.8.3>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P%\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/liblz4.so.1.8.3>, 115032, SEEK_SET) = 115032
+8171  read(3</usr/lib64/liblz4.so.1.8.3>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/liblz4.so.1.8.3>, {st_mode=S_IFREG|0755, st_size=122464, ...}) = 0
+8171  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fca6cd04000
+8171  lseek(3</usr/lib64/liblz4.so.1.8.3>, 115032, SEEK_SET) = 115032
+8171  read(3</usr/lib64/liblz4.so.1.8.3>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 122888, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/liblz4.so.1.8.3>, 0) = 0x7fca6cce5000
+8171  mmap(0x7fca6cce7000, 98304, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/liblz4.so.1.8.3>, 0x2000) = 0x7fca6cce7000
+8171  mmap(0x7fca6ccff000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/liblz4.so.1.8.3>, 0x1a000) = 0x7fca6ccff000
+8171  mmap(0x7fca6cd02000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/liblz4.so.1.8.3>, 0x1c000) = 0x7fca6cd02000
+8171  mmap(0x7fca6cd03000, 8, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6cd03000
+8171  close(3</usr/lib64/liblz4.so.1.8.3>) = 0
+8171  openat(AT_FDCWD, "/lib64/libbz2.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libbz2.so.1.0.6>
+8171  read(3</usr/lib64/libbz2.so.1.0.6>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260\"\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libbz2.so.1.0.6>, 66832, SEEK_SET) = 66832
+8171  read(3</usr/lib64/libbz2.so.1.0.6>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  fstat(3</usr/lib64/libbz2.so.1.0.6>, {st_mode=S_IFREG|0755, st_size=78688, ...}) = 0
+8171  lseek(3</usr/lib64/libbz2.so.1.0.6>, 66832, SEEK_SET) = 66832
+8171  read(3</usr/lib64/libbz2.so.1.0.6>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  mmap(NULL, 76808, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libbz2.so.1.0.6>, 0) = 0x7fca6ccd2000
+8171  mmap(0x7fca6ccd4000, 53248, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libbz2.so.1.0.6>, 0x2000) = 0x7fca6ccd4000
+8171  mmap(0x7fca6cce1000, 8192, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libbz2.so.1.0.6>, 0xf000) = 0x7fca6cce1000
+8171  mmap(0x7fca6cce3000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libbz2.so.1.0.6>, 0x10000) = 0x7fca6cce3000
+8171  close(3</usr/lib64/libbz2.so.1.0.6>) = 0
+8171  openat(AT_FDCWD, "/lib64/libz.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libz.so.1.2.11>
+8171  read(3</usr/lib64/libz.so.1.2.11>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\3605\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libz.so.1.2.11>, 94216, SEEK_SET) = 94216
+8171  read(3</usr/lib64/libz.so.1.2.11>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libz.so.1.2.11>, {st_mode=S_IFREG|0755, st_size=105744, ...}) = 0
+8171  lseek(3</usr/lib64/libz.so.1.2.11>, 94216, SEEK_SET) = 94216
+8171  read(3</usr/lib64/libz.so.1.2.11>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 102408, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libz.so.1.2.11>, 0) = 0x7fca6ccb8000
+8171  mmap(0x7fca6ccbb000, 57344, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libz.so.1.2.11>, 0x3000) = 0x7fca6ccbb000
+8171  mmap(0x7fca6ccc9000, 28672, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libz.so.1.2.11>, 0x11000) = 0x7fca6ccc9000
+8171  mmap(0x7fca6ccd0000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libz.so.1.2.11>, 0x17000) = 0x7fca6ccd0000
+8171  mmap(0x7fca6ccd1000, 8, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6ccd1000
+8171  close(3</usr/lib64/libz.so.1.2.11>) = 0
+8171  openat(AT_FDCWD, "/lib64/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libdl-2.28.so>
+8171  read(3</usr/lib64/libdl-2.28.so>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0p\22\0\0\0\0\0\0"..., 832) = 832
+8171  fstat(3</usr/lib64/libdl-2.28.so>, {st_mode=S_IFREG|0755, st_size=29320, ...}) = 0
+8171  mmap(NULL, 20784, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libdl-2.28.so>, 0) = 0x7fca6ccb2000
+8171  mmap(0x7fca6ccb3000, 8192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libdl-2.28.so>, 0x1000) = 0x7fca6ccb3000
+8171  mmap(0x7fca6ccb5000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libdl-2.28.so>, 0x3000) = 0x7fca6ccb5000
+8171  mmap(0x7fca6ccb6000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libdl-2.28.so>, 0x3000) = 0x7fca6ccb6000
+8171  close(3</usr/lib64/libdl-2.28.so>) = 0
+8171  openat(AT_FDCWD, "/lib64/libgpg-error.so.0", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libgpg-error.so.0.25.0>
+8171  read(3</usr/lib64/libgpg-error.so.0.25.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360L\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libgpg-error.so.0.25.0>, 130776, SEEK_SET) = 130776
+8171  read(3</usr/lib64/libgpg-error.so.0.25.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libgpg-error.so.0.25.0>, {st_mode=S_IFREG|0755, st_size=144520, ...}) = 0
+8171  lseek(3</usr/lib64/libgpg-error.so.0.25.0>, 130776, SEEK_SET) = 130776
+8171  read(3</usr/lib64/libgpg-error.so.0.25.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 139840, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libgpg-error.so.0.25.0>, 0) = 0x7fca6cc8f000
+8171  mprotect(0x7fca6cc93000, 118784, PROT_NONE) = 0
+8171  mmap(0x7fca6cc93000, 77824, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgpg-error.so.0.25.0>, 0x4000) = 0x7fca6cc93000
+8171  mmap(0x7fca6cca6000, 36864, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgpg-error.so.0.25.0>, 0x17000) = 0x7fca6cca6000
+8171  mmap(0x7fca6ccb0000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgpg-error.so.0.25.0>, 0x20000) = 0x7fca6ccb0000
+8171  close(3</usr/lib64/libgpg-error.so.0.25.0>) = 0
+8171  openat(AT_FDCWD, "/lib64/libcurl.so.4", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libcurl.so.4.5.0>
+8171  read(3</usr/lib64/libcurl.so.4.5.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260\r\1\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libcurl.so.4.5.0>, 566680, SEEK_SET) = 566680
+8171  read(3</usr/lib64/libcurl.so.4.5.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libcurl.so.4.5.0>, {st_mode=S_IFREG|0755, st_size=629832, ...}) = 0
+8171  lseek(3</usr/lib64/libcurl.so.4.5.0>, 566680, SEEK_SET) = 566680
+8171  read(3</usr/lib64/libcurl.so.4.5.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 587304, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libcurl.so.4.5.0>, 0) = 0x7fca6cbff000
+8171  mprotect(0x7fca6cc0c000, 520192, PROT_NONE) = 0
+8171  mmap(0x7fca6cc0c000, 405504, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libcurl.so.4.5.0>, 0xd000) = 0x7fca6cc0c000
+8171  mmap(0x7fca6cc6f000, 110592, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libcurl.so.4.5.0>, 0x70000) = 0x7fca6cc6f000
+8171  mmap(0x7fca6cc8b000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libcurl.so.4.5.0>, 0x8b000) = 0x7fca6cc8b000
+8171  close(3</usr/lib64/libcurl.so.4.5.0>) = 0
+8171  openat(AT_FDCWD, "/lib64/libmount.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libmount.so.1.1.0>
+8171  read(3</usr/lib64/libmount.so.1.1.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\200\332\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libmount.so.1.1.0>, 356344, SEEK_SET) = 356344
+8171  read(3</usr/lib64/libmount.so.1.1.0>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  fstat(3</usr/lib64/libmount.so.1.1.0>, {st_mode=S_IFREG|0755, st_size=397152, ...}) = 0
+8171  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fca6cbfd000
+8171  lseek(3</usr/lib64/libmount.so.1.1.0>, 356344, SEEK_SET) = 356344
+8171  read(3</usr/lib64/libmount.so.1.1.0>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  mmap(NULL, 378144, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libmount.so.1.1.0>, 0) = 0x7fca6cba0000
+8171  mmap(0x7fca6cbac000, 237568, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libmount.so.1.1.0>, 0xc000) = 0x7fca6cbac000
+8171  mmap(0x7fca6cbe6000, 73728, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libmount.so.1.1.0>, 0x46000) = 0x7fca6cbe6000
+8171  mmap(0x7fca6cbf8000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libmount.so.1.1.0>, 0x57000) = 0x7fca6cbf8000
+8171  mmap(0x7fca6cbfc000, 1312, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6cbfc000
+8171  close(3</usr/lib64/libmount.so.1.1.0>) = 0
+8171  openat(AT_FDCWD, "/lib64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libselinux.so.1>
+8171  read(3</usr/lib64/libselinux.so.1>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0000\210\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libselinux.so.1>, 162976, SEEK_SET) = 162976
+8171  read(3</usr/lib64/libselinux.so.1>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libselinux.so.1>, {st_mode=S_IFREG|0755, st_size=191696, ...}) = 0
+8171  lseek(3</usr/lib64/libselinux.so.1>, 162976, SEEK_SET) = 162976
+8171  read(3</usr/lib64/libselinux.so.1>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 181744, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libselinux.so.1>, 0) = 0x7fca6cb73000
+8171  mprotect(0x7fca6cb7a000, 139264, PROT_NONE) = 0
+8171  mmap(0x7fca6cb7a000, 106496, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libselinux.so.1>, 0x7000) = 0x7fca6cb7a000
+8171  mmap(0x7fca6cb94000, 28672, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libselinux.so.1>, 0x21000) = 0x7fca6cb94000
+8171  mmap(0x7fca6cb9c000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libselinux.so.1>, 0x28000) = 0x7fca6cb9c000
+8171  mmap(0x7fca6cb9e000, 5616, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6cb9e000
+8171  close(3</usr/lib64/libselinux.so.1>) = 0
+8171  openat(AT_FDCWD, "/lib64/libsqlite3.so.0", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libsqlite3.so.0.8.6>
+8171  read(3</usr/lib64/libsqlite3.so.0.8.6>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360\370\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libsqlite3.so.0.8.6>, 1105200, SEEK_SET) = 1105200
+8171  read(3</usr/lib64/libsqlite3.so.0.8.6>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libsqlite3.so.0.8.6>, {st_mode=S_IFREG|0755, st_size=1131464, ...}) = 0
+8171  lseek(3</usr/lib64/libsqlite3.so.0.8.6>, 1105200, SEEK_SET) = 1105200
+8171  read(3</usr/lib64/libsqlite3.so.0.8.6>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 1133688, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libsqlite3.so.0.8.6>, 0) = 0x7fca6ca5e000
+8171  mmap(0x7fca6ca6c000, 856064, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libsqlite3.so.0.8.6>, 0xe000) = 0x7fca6ca6c000
+8171  mmap(0x7fca6cb3d000, 192512, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libsqlite3.so.0.8.6>, 0xdf000) = 0x7fca6cb3d000
+8171  mmap(0x7fca6cb6c000, 28672, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libsqlite3.so.0.8.6>, 0x10d000) = 0x7fca6cb6c000
+8171  close(3</usr/lib64/libsqlite3.so.0.8.6>) = 0
+8171  openat(AT_FDCWD, "/lib64/libgssapi_krb5.so.2", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libgssapi_krb5.so.2.2>
+8171  read(3</usr/lib64/libgssapi_krb5.so.2.2>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220\352\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libgssapi_krb5.so.2.2>, 317968, SEEK_SET) = 317968
+8171  read(3</usr/lib64/libgssapi_krb5.so.2.2>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libgssapi_krb5.so.2.2>, {st_mode=S_IFREG|0755, st_size=375296, ...}) = 0
+8171  lseek(3</usr/lib64/libgssapi_krb5.so.2.2>, 317968, SEEK_SET) = 317968
+8171  read(3</usr/lib64/libgssapi_krb5.so.2.2>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 334528, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libgssapi_krb5.so.2.2>, 0) = 0x7fca6ca0c000
+8171  mprotect(0x7fca6ca18000, 274432, PROT_NONE) = 0
+8171  mmap(0x7fca6ca18000, 221184, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgssapi_krb5.so.2.2>, 0xc000) = 0x7fca6ca18000
+8171  mmap(0x7fca6ca4e000, 49152, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgssapi_krb5.so.2.2>, 0x42000) = 0x7fca6ca4e000
+8171  mmap(0x7fca6ca5b000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgssapi_krb5.so.2.2>, 0x4e000) = 0x7fca6ca5b000
+8171  close(3</usr/lib64/libgssapi_krb5.so.2.2>) = 0
+8171  openat(AT_FDCWD, "/lib64/libpsl.so.5", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libpsl.so.5.3.1>
+8171  read(3</usr/lib64/libpsl.so.5.3.1>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\"\0\0\0\0\0\0"..., 832) = 832
+8171  fstat(3</usr/lib64/libpsl.so.5.3.1>, {st_mode=S_IFREG|0755, st_size=73544, ...}) = 0
+8171  mmap(NULL, 73736, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libpsl.so.5.3.1>, 0) = 0x7fca6c9f9000
+8171  mmap(0x7fca6c9fb000, 8192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpsl.so.5.3.1>, 0x2000) = 0x7fca6c9fb000
+8171  mmap(0x7fca6c9fd000, 53248, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpsl.so.5.3.1>, 0x4000) = 0x7fca6c9fd000
+8171  mmap(0x7fca6ca0a000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpsl.so.5.3.1>, 0x10000) = 0x7fca6ca0a000
+8171  mmap(0x7fca6ca0b000, 8, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6ca0b000
+8171  close(3</usr/lib64/libpsl.so.5.3.1>) = 0
+8171  openat(AT_FDCWD, "/lib64/libassuan.so.0", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libassuan.so.0.8.2>
+8171  read(3</usr/lib64/libassuan.so.0.8.2>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0PL\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libassuan.so.0.8.2>, 78032, SEEK_SET) = 78032
+8171  read(3</usr/lib64/libassuan.so.0.8.2>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libassuan.so.0.8.2>, {st_mode=S_IFREG|0755, st_size=92312, ...}) = 0
+8171  lseek(3</usr/lib64/libassuan.so.0.8.2>, 78032, SEEK_SET) = 78032
+8171  read(3</usr/lib64/libassuan.so.0.8.2>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 86368, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libassuan.so.0.8.2>, 0) = 0x7fca6c9e3000
+8171  mmap(0x7fca6c9e7000, 45056, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libassuan.so.0.8.2>, 0x4000) = 0x7fca6c9e7000
+8171  mmap(0x7fca6c9f2000, 20480, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libassuan.so.0.8.2>, 0xf000) = 0x7fca6c9f2000
+8171  mmap(0x7fca6c9f7000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libassuan.so.0.8.2>, 0x13000) = 0x7fca6c9f7000
+8171  close(3</usr/lib64/libassuan.so.0.8.2>) = 0
+8171  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fca6c9e1000
+8171  openat(AT_FDCWD, "/lib64/librt.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/librt-2.28.so>
+8171  read(3</usr/lib64/librt-2.28.so>, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20'\0\0\0\0\0\0"..., 832) = 832
+8171  fstat(3</usr/lib64/librt-2.28.so>, {st_mode=S_IFREG|0755, st_size=64816, ...}) = 0
+8171  mmap(NULL, 39872, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/librt-2.28.so>, 0) = 0x7fca6c9d7000
+8171  mmap(0x7fca6c9d9000, 16384, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/librt-2.28.so>, 0x2000) = 0x7fca6c9d9000
+8171  mmap(0x7fca6c9dd000, 8192, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/librt-2.28.so>, 0x6000) = 0x7fca6c9dd000
+8171  mmap(0x7fca6c9df000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/librt-2.28.so>, 0x7000) = 0x7fca6c9df000
+8171  close(3</usr/lib64/librt-2.28.so>) = 0
+8171  openat(AT_FDCWD, "/lib64/libcap.so.2", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libcap.so.2.25>
+8171  read(3</usr/lib64/libcap.so.2.25>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\"\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libcap.so.2.25>, 18920, SEEK_SET) = 18920
+8171  read(3</usr/lib64/libcap.so.2.25>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  fstat(3</usr/lib64/libcap.so.2.25>, {st_mode=S_IFREG|0755, st_size=26192, ...}) = 0
+8171  lseek(3</usr/lib64/libcap.so.2.25>, 18920, SEEK_SET) = 18920
+8171  read(3</usr/lib64/libcap.so.2.25>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  mmap(NULL, 24888, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libcap.so.2.25>, 0) = 0x7fca6c9d0000
+8171  mmap(0x7fca6c9d2000, 8192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libcap.so.2.25>, 0x2000) = 0x7fca6c9d2000
+8171  mmap(0x7fca6c9d4000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libcap.so.2.25>, 0x4000) = 0x7fca6c9d4000
+8171  mmap(0x7fca6c9d5000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libcap.so.2.25>, 0x4000) = 0x7fca6c9d5000
+8171  close(3</usr/lib64/libcap.so.2.25>) = 0
+8171  openat(AT_FDCWD, "/lib64/libgcrypt.so.20", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libgcrypt.so.20.2.4>
+8171  read(3</usr/lib64/libgcrypt.so.20.2.4>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\300\305\0\0\0\0\0\0"..., 832) = 832
+8171  fstat(3</usr/lib64/libgcrypt.so.20.2.4>, {st_mode=S_IFREG|0755, st_size=1207152, ...}) = 0
+8171  mmap(NULL, 1171368, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libgcrypt.so.20.2.4>, 0) = 0x7fca6c8b2000
+8171  mmap(0x7fca6c8be000, 847872, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgcrypt.so.20.2.4>, 0xc000) = 0x7fca6c8be000
+8171  mmap(0x7fca6c98d000, 245760, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgcrypt.so.20.2.4>, 0xdb000) = 0x7fca6c98d000
+8171  mmap(0x7fca6c9c9000, 28672, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libgcrypt.so.20.2.4>, 0x116000) = 0x7fca6c9c9000
+8171  close(3</usr/lib64/libgcrypt.so.20.2.4>) = 0
+8171  openat(AT_FDCWD, "/lib64/libpcre.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libpcre.so.1.2.10>
+8171  read(3</usr/lib64/libpcre.so.1.2.10>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220#\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libpcre.so.1.2.10>, 461328, SEEK_SET) = 461328
+8171  read(3</usr/lib64/libpcre.so.1.2.10>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libpcre.so.1.2.10>, {st_mode=S_IFREG|0755, st_size=472360, ...}) = 0
+8171  lseek(3</usr/lib64/libpcre.so.1.2.10>, 461328, SEEK_SET) = 461328
+8171  read(3</usr/lib64/libpcre.so.1.2.10>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 467208, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libpcre.so.1.2.10>, 0) = 0x7fca6c83f000
+8171  mmap(0x7fca6c841000, 331776, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpcre.so.1.2.10>, 0x2000) = 0x7fca6c841000
+8171  mmap(0x7fca6c892000, 122880, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpcre.so.1.2.10>, 0x53000) = 0x7fca6c892000
+8171  mmap(0x7fca6c8b0000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpcre.so.1.2.10>, 0x70000) = 0x7fca6c8b0000
+8171  close(3</usr/lib64/libpcre.so.1.2.10>) = 0
+8171  openat(AT_FDCWD, "/lib64/libffi.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libffi.so.6.0.2>
+8171  read(3</usr/lib64/libffi.so.6.0.2>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\300\"\0\0\0\0\0\0"..., 832) = 832
+8171  fstat(3</usr/lib64/libffi.so.6.0.2>, {st_mode=S_IFREG|0755, st_size=42736, ...}) = 0
+8171  mmap(NULL, 42184, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libffi.so.6.0.2>, 0) = 0x7fca6c834000
+8171  mprotect(0x7fca6c836000, 28672, PROT_NONE) = 0
+8171  mmap(0x7fca6c836000, 20480, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libffi.so.6.0.2>, 0x2000) = 0x7fca6c836000
+8171  mmap(0x7fca6c83b000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libffi.so.6.0.2>, 0x7000) = 0x7fca6c83b000
+8171  mmap(0x7fca6c83d000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libffi.so.6.0.2>, 0x8000) = 0x7fca6c83d000
+8171  close(3</usr/lib64/libffi.so.6.0.2>) = 0
+8171  openat(AT_FDCWD, "/lib64/libresolv.so.2", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libresolv-2.28.so>
+8171  read(3</usr/lib64/libresolv-2.28.so>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20G\0\0\0\0\0\0"..., 832) = 832
+8171  fstat(3</usr/lib64/libresolv-2.28.so>, {st_mode=S_IFREG|0755, st_size=115624, ...}) = 0
+8171  mmap(NULL, 105088, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libresolv-2.28.so>, 0) = 0x7fca6c81a000
+8171  mprotect(0x7fca6c81e000, 73728, PROT_NONE) = 0
+8171  mmap(0x7fca6c81e000, 53248, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libresolv-2.28.so>, 0x4000) = 0x7fca6c81e000
+8171  mmap(0x7fca6c82b000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libresolv-2.28.so>, 0x11000) = 0x7fca6c82b000
+8171  mmap(0x7fca6c830000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libresolv-2.28.so>, 0x15000) = 0x7fca6c830000
+8171  mmap(0x7fca6c832000, 6784, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6c832000
+8171  close(3</usr/lib64/libresolv-2.28.so>) = 0
+8171  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fca6c818000
+8171  openat(AT_FDCWD, "/lib64/libattr.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libattr.so.1.1.2448>
+8171  read(3</usr/lib64/libattr.so.1.1.2448>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\240\"\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libattr.so.1.1.2448>, 22384, SEEK_SET) = 22384
+8171  read(3</usr/lib64/libattr.so.1.1.2448>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  fstat(3</usr/lib64/libattr.so.1.1.2448>, {st_mode=S_IFREG|0755, st_size=30136, ...}) = 0
+8171  lseek(3</usr/lib64/libattr.so.1.1.2448>, 22384, SEEK_SET) = 22384
+8171  read(3</usr/lib64/libattr.so.1.1.2448>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  mmap(NULL, 28688, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libattr.so.1.1.2448>, 0) = 0x7fca6c810000
+8171  mmap(0x7fca6c812000, 12288, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libattr.so.1.1.2448>, 0x2000) = 0x7fca6c812000
+8171  mmap(0x7fca6c815000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libattr.so.1.1.2448>, 0x5000) = 0x7fca6c815000
+8171  mmap(0x7fca6c816000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libattr.so.1.1.2448>, 0x5000) = 0x7fca6c816000
+8171  mmap(0x7fca6c817000, 16, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6c817000
+8171  close(3</usr/lib64/libattr.so.1.1.2448>) = 0
+8171  openat(AT_FDCWD, "/lib64/libnghttp2.so.14", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libnghttp2.so.14.17.1>
+8171  read(3</usr/lib64/libnghttp2.so.14.17.1>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0000U\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libnghttp2.so.14.17.1>, 151176, SEEK_SET) = 151176
+8171  read(3</usr/lib64/libnghttp2.so.14.17.1>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libnghttp2.so.14.17.1>, {st_mode=S_IFREG|0755, st_size=173760, ...}) = 0
+8171  lseek(3</usr/lib64/libnghttp2.so.14.17.1>, 151176, SEEK_SET) = 151176
+8171  read(3</usr/lib64/libnghttp2.so.14.17.1>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 168048, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libnghttp2.so.14.17.1>, 0) = 0x7fca6c7e6000
+8171  mprotect(0x7fca6c7eb000, 135168, PROT_NONE) = 0
+8171  mmap(0x7fca6c7eb000, 81920, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libnghttp2.so.14.17.1>, 0x5000) = 0x7fca6c7eb000
+8171  mmap(0x7fca6c7ff000, 49152, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libnghttp2.so.14.17.1>, 0x19000) = 0x7fca6c7ff000
+8171  mmap(0x7fca6c80c000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libnghttp2.so.14.17.1>, 0x25000) = 0x7fca6c80c000
+8171  close(3</usr/lib64/libnghttp2.so.14.17.1>) = 0
+8171  openat(AT_FDCWD, "/lib64/libidn2.so.0", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libidn2.so.0.3.5>
+8171  read(3</usr/lib64/libidn2.so.0.3.5>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260%\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libidn2.so.0.3.5>, 120088, SEEK_SET) = 120088
+8171  read(3</usr/lib64/libidn2.so.0.3.5>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libidn2.so.0.3.5>, {st_mode=S_IFREG|0755, st_size=132360, ...}) = 0
+8171  lseek(3</usr/lib64/libidn2.so.0.3.5>, 120088, SEEK_SET) = 120088
+8171  read(3</usr/lib64/libidn2.so.0.3.5>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 126992, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libidn2.so.0.3.5>, 0) = 0x7fca6c7c6000
+8171  mmap(0x7fca6c7c8000, 20480, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libidn2.so.0.3.5>, 0x2000) = 0x7fca6c7c8000
+8171  mmap(0x7fca6c7cd000, 94208, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libidn2.so.0.3.5>, 0x7000) = 0x7fca6c7cd000
+8171  mmap(0x7fca6c7e4000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libidn2.so.0.3.5>, 0x1d000) = 0x7fca6c7e4000
+8171  mmap(0x7fca6c7e5000, 16, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6c7e5000
+8171  close(3</usr/lib64/libidn2.so.0.3.5>) = 0
+8171  openat(AT_FDCWD, "/lib64/libssh.so.4", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libssh.so.4.7.3>
+8171  read(3</usr/lib64/libssh.so.4.7.3>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220\1\1\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libssh.so.4.7.3>, 515496, SEEK_SET) = 515496
+8171  read(3</usr/lib64/libssh.so.4.7.3>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libssh.so.4.7.3>, {st_mode=S_IFREG|0755, st_size=552832, ...}) = 0
+8171  lseek(3</usr/lib64/libssh.so.4.7.3>, 515496, SEEK_SET) = 515496
+8171  read(3</usr/lib64/libssh.so.4.7.3>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 533160, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libssh.so.4.7.3>, 0) = 0x7fca6c743000
+8171  mprotect(0x7fca6c750000, 466944, PROT_NONE) = 0
+8171  mmap(0x7fca6c750000, 253952, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libssh.so.4.7.3>, 0xd000) = 0x7fca6c750000
+8171  mmap(0x7fca6c78e000, 208896, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libssh.so.4.7.3>, 0x4b000) = 0x7fca6c78e000
+8171  mmap(0x7fca6c7c2000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libssh.so.4.7.3>, 0x7e000) = 0x7fca6c7c2000
+8171  close(3</usr/lib64/libssh.so.4.7.3>) = 0
+8171  openat(AT_FDCWD, "/lib64/libssl.so.1.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libssl.so.1.1.1a>
+8171  read(3</usr/lib64/libssl.so.1.1.1a>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0000\10\2\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libssl.so.1.1.1a>, 551024, SEEK_SET) = 551024
+8171  read(3</usr/lib64/libssl.so.1.1.1a>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libssl.so.1.1.1a>, {st_mode=S_IFREG|0755, st_size=623016, ...}) = 0
+8171  lseek(3</usr/lib64/libssl.so.1.1.1a>, 551024, SEEK_SET) = 551024
+8171  read(3</usr/lib64/libssl.so.1.1.1a>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 610360, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libssl.so.1.1.1a>, 0) = 0x7fca6c6ad000
+8171  mprotect(0x7fca6c6ca000, 438272, PROT_NONE) = 0
+8171  mmap(0x7fca6c6ca000, 327680, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libssl.so.1.1.1a>, 0x1d000) = 0x7fca6c6ca000
+8171  mmap(0x7fca6c71a000, 106496, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libssl.so.1.1.1a>, 0x6d000) = 0x7fca6c71a000
+8171  mmap(0x7fca6c735000, 53248, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libssl.so.1.1.1a>, 0x87000) = 0x7fca6c735000
+8171  mmap(0x7fca6c742000, 56, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6c742000
+8171  close(3</usr/lib64/libssl.so.1.1.1a>) = 0
+8171  openat(AT_FDCWD, "/lib64/libkrb5.so.3", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libkrb5.so.3.3>
+8171  read(3</usr/lib64/libkrb5.so.3.3>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0000\222\2\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libkrb5.so.3.3>, 913464, SEEK_SET) = 913464
+8171  read(3</usr/lib64/libkrb5.so.3.3>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libkrb5.so.3.3>, {st_mode=S_IFREG|0755, st_size=1055040, ...}) = 0
+8171  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fca6c6ab000
+8171  lseek(3</usr/lib64/libkrb5.so.3.3>, 913464, SEEK_SET) = 913464
+8171  read(3</usr/lib64/libkrb5.so.3.3>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 984640, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libkrb5.so.3.3>, 0) = 0x7fca6c5ba000
+8171  mmap(0x7fca6c5de000, 462848, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libkrb5.so.3.3>, 0x24000) = 0x7fca6c5de000
+8171  mmap(0x7fca6c64f000, 307200, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libkrb5.so.3.3>, 0x95000) = 0x7fca6c64f000
+8171  mmap(0x7fca6c69a000, 69632, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libkrb5.so.3.3>, 0xdf000) = 0x7fca6c69a000
+8171  close(3</usr/lib64/libkrb5.so.3.3>) = 0
+8171  openat(AT_FDCWD, "/lib64/libk5crypto.so.3", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libk5crypto.so.3.1>
+8171  read(3</usr/lib64/libk5crypto.so.3.1>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320^\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libk5crypto.so.3.1>, 105064, SEEK_SET) = 105064
+8171  read(3</usr/lib64/libk5crypto.so.3.1>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libk5crypto.so.3.1>, {st_mode=S_IFREG|0755, st_size=144440, ...}) = 0
+8171  lseek(3</usr/lib64/libk5crypto.so.3.1>, 105064, SEEK_SET) = 105064
+8171  read(3</usr/lib64/libk5crypto.so.3.1>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 118832, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libk5crypto.so.3.1>, 0) = 0x7fca6c59c000
+8171  mprotect(0x7fca6c5a1000, 90112, PROT_NONE) = 0
+8171  mmap(0x7fca6c5a1000, 65536, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libk5crypto.so.3.1>, 0x5000) = 0x7fca6c5a1000
+8171  mmap(0x7fca6c5b1000, 20480, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libk5crypto.so.3.1>, 0x15000) = 0x7fca6c5b1000
+8171  mmap(0x7fca6c5b7000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libk5crypto.so.3.1>, 0x1a000) = 0x7fca6c5b7000
+8171  close(3</usr/lib64/libk5crypto.so.3.1>) = 0
+8171  openat(AT_FDCWD, "/lib64/libcom_err.so.2", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libcom_err.so.2.1>
+8171  read(3</usr/lib64/libcom_err.so.2.1>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0000%\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libcom_err.so.2.1>, 17696, SEEK_SET) = 17696
+8171  read(3</usr/lib64/libcom_err.so.2.1>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libcom_err.so.2.1>, {st_mode=S_IFREG|0755, st_size=25216, ...}) = 0
+8171  lseek(3</usr/lib64/libcom_err.so.2.1>, 17696, SEEK_SET) = 17696
+8171  read(3</usr/lib64/libcom_err.so.2.1>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 24744, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libcom_err.so.2.1>, 0) = 0x7fca6c595000
+8171  mmap(0x7fca6c597000, 8192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libcom_err.so.2.1>, 0x2000) = 0x7fca6c597000
+8171  mmap(0x7fca6c599000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libcom_err.so.2.1>, 0x4000) = 0x7fca6c599000
+8171  mmap(0x7fca6c59a000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libcom_err.so.2.1>, 0x4000) = 0x7fca6c59a000
+8171  close(3</usr/lib64/libcom_err.so.2.1>) = 0
+8171  openat(AT_FDCWD, "/lib64/libldap-2.4.so.2", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libldap-2.4.so.2.10.9>
+8171  read(3</usr/lib64/libldap-2.4.so.2.10.9>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320\v\1\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libldap-2.4.so.2.10.9>, 312024, SEEK_SET) = 312024
+8171  read(3</usr/lib64/libldap-2.4.so.2.10.9>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libldap-2.4.so.2.10.9>, {st_mode=S_IFREG|0755, st_size=344672, ...}) = 0
+8171  lseek(3</usr/lib64/libldap-2.4.so.2.10.9>, 312024, SEEK_SET) = 312024
+8171  read(3</usr/lib64/libldap-2.4.so.2.10.9>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 324976, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libldap-2.4.so.2.10.9>, 0) = 0x7fca6c545000
+8171  mmap(0x7fca6c552000, 204800, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libldap-2.4.so.2.10.9>, 0xd000) = 0x7fca6c552000
+8171  mmap(0x7fca6c584000, 57344, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libldap-2.4.so.2.10.9>, 0x3f000) = 0x7fca6c584000
+8171  mmap(0x7fca6c592000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libldap-2.4.so.2.10.9>, 0x4c000) = 0x7fca6c592000
+8171  close(3</usr/lib64/libldap-2.4.so.2.10.9>) = 0
+8171  openat(AT_FDCWD, "/lib64/liblber-2.4.so.2", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/liblber-2.4.so.2.10.9>
+8171  read(3</usr/lib64/liblber-2.4.so.2.10.9>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360<\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/liblber-2.4.so.2.10.9>, 60640, SEEK_SET) = 60640
+8171  read(3</usr/lib64/liblber-2.4.so.2.10.9>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/liblber-2.4.so.2.10.9>, {st_mode=S_IFREG|0755, st_size=71992, ...}) = 0
+8171  lseek(3</usr/lib64/liblber-2.4.so.2.10.9>, 60640, SEEK_SET) = 60640
+8171  read(3</usr/lib64/liblber-2.4.so.2.10.9>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 70120, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/liblber-2.4.so.2.10.9>, 0) = 0x7fca6c533000
+8171  mprotect(0x7fca6c536000, 53248, PROT_NONE) = 0
+8171  mmap(0x7fca6c536000, 36864, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/liblber-2.4.so.2.10.9>, 0x3000) = 0x7fca6c536000
+8171  mmap(0x7fca6c53f000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/liblber-2.4.so.2.10.9>, 0xc000) = 0x7fca6c53f000
+8171  mmap(0x7fca6c543000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/liblber-2.4.so.2.10.9>, 0xf000) = 0x7fca6c543000
+8171  close(3</usr/lib64/liblber-2.4.so.2.10.9>) = 0
+8171  openat(AT_FDCWD, "/lib64/libbrotlidec.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libbrotlidec.so.1.0.5>
+8171  read(3</usr/lib64/libbrotlidec.so.1.0.5>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\340\20\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libbrotlidec.so.1.0.5>, 48688, SEEK_SET) = 48688
+8171  read(3</usr/lib64/libbrotlidec.so.1.0.5>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  fstat(3</usr/lib64/libbrotlidec.so.1.0.5>, {st_mode=S_IFREG|0755, st_size=58224, ...}) = 0
+8171  lseek(3</usr/lib64/libbrotlidec.so.1.0.5>, 48688, SEEK_SET) = 48688
+8171  read(3</usr/lib64/libbrotlidec.so.1.0.5>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  mmap(NULL, 57352, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libbrotlidec.so.1.0.5>, 0) = 0x7fca6c524000
+8171  mprotect(0x7fca6c525000, 49152, PROT_NONE) = 0
+8171  mmap(0x7fca6c525000, 32768, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libbrotlidec.so.1.0.5>, 0x1000) = 0x7fca6c525000
+8171  mmap(0x7fca6c52d000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libbrotlidec.so.1.0.5>, 0x9000) = 0x7fca6c52d000
+8171  mmap(0x7fca6c531000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libbrotlidec.so.1.0.5>, 0xc000) = 0x7fca6c531000
+8171  mmap(0x7fca6c532000, 8, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6c532000
+8171  close(3</usr/lib64/libbrotlidec.so.1.0.5>) = 0
+8171  openat(AT_FDCWD, "/lib64/libblkid.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libblkid.so.1.1.0>
+8171  read(3</usr/lib64/libblkid.so.1.1.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0`\257\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libblkid.so.1.1.0>, 307520, SEEK_SET) = 307520
+8171  read(3</usr/lib64/libblkid.so.1.1.0>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  fstat(3</usr/lib64/libblkid.so.1.1.0>, {st_mode=S_IFREG|0755, st_size=380440, ...}) = 0
+8171  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fca6c522000
+8171  lseek(3</usr/lib64/libblkid.so.1.1.0>, 307520, SEEK_SET) = 307520
+8171  read(3</usr/lib64/libblkid.so.1.1.0>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  mmap(NULL, 337664, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libblkid.so.1.1.0>, 0) = 0x7fca6c4cf000
+8171  mmap(0x7fca6c4d9000, 204800, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libblkid.so.1.1.0>, 0xa000) = 0x7fca6c4d9000
+8171  mmap(0x7fca6c50b000, 65536, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libblkid.so.1.1.0>, 0x3c000) = 0x7fca6c50b000
+8171  mmap(0x7fca6c51b000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libblkid.so.1.1.0>, 0x4b000) = 0x7fca6c51b000
+8171  mmap(0x7fca6c521000, 1792, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6c521000
+8171  close(3</usr/lib64/libblkid.so.1.1.0>) = 0
+8171  openat(AT_FDCWD, "/lib64/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libpcre2-8.so.0.7.1>
+8171  read(3</usr/lib64/libpcre2-8.so.0.7.1>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220$\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libpcre2-8.so.0.7.1>, 535472, SEEK_SET) = 535472
+8171  read(3</usr/lib64/libpcre2-8.so.0.7.1>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libpcre2-8.so.0.7.1>, {st_mode=S_IFREG|0755, st_size=552176, ...}) = 0
+8171  lseek(3</usr/lib64/libpcre2-8.so.0.7.1>, 535472, SEEK_SET) = 535472
+8171  read(3</usr/lib64/libpcre2-8.so.0.7.1>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 545320, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libpcre2-8.so.0.7.1>, 0) = 0x7fca6c449000
+8171  mprotect(0x7fca6c44b000, 532480, PROT_NONE) = 0
+8171  mmap(0x7fca6c44b000, 376832, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpcre2-8.so.0.7.1>, 0x2000) = 0x7fca6c44b000
+8171  mmap(0x7fca6c4a7000, 151552, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpcre2-8.so.0.7.1>, 0x5e000) = 0x7fca6c4a7000
+8171  mmap(0x7fca6c4cd000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libpcre2-8.so.0.7.1>, 0x83000) = 0x7fca6c4cd000
+8171  close(3</usr/lib64/libpcre2-8.so.0.7.1>) = 0
+8171  openat(AT_FDCWD, "/lib64/libkrb5support.so.0", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libkrb5support.so.0.1>
+8171  read(3</usr/lib64/libkrb5support.so.0.1>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220O\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libkrb5support.so.0.1>, 63072, SEEK_SET) = 63072
+8171  read(3</usr/lib64/libkrb5support.so.0.1>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libkrb5support.so.0.1>, {st_mode=S_IFREG|0755, st_size=75208, ...}) = 0
+8171  lseek(3</usr/lib64/libkrb5support.so.0.1>, 63072, SEEK_SET) = 63072
+8171  read(3</usr/lib64/libkrb5support.so.0.1>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 70344, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libkrb5support.so.0.1>, 0) = 0x7fca6c437000
+8171  mmap(0x7fca6c43b000, 36864, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libkrb5support.so.0.1>, 0x4000) = 0x7fca6c43b000
+8171  mmap(0x7fca6c444000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libkrb5support.so.0.1>, 0xd000) = 0x7fca6c444000
+8171  mmap(0x7fca6c447000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libkrb5support.so.0.1>, 0xf000) = 0x7fca6c447000
+8171  close(3</usr/lib64/libkrb5support.so.0.1>) = 0
+8171  openat(AT_FDCWD, "/lib64/libkeyutils.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libkeyutils.so.1.6>
+8171  read(3</usr/lib64/libkeyutils.so.1.6>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20\"\0\0\0\0\0\0"..., 832) = 832
+8171  fstat(3</usr/lib64/libkeyutils.so.1.6>, {st_mode=S_IFREG|0755, st_size=20056, ...}) = 0
+8171  mmap(NULL, 20488, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libkeyutils.so.1.6>, 0) = 0x7fca6c431000
+8171  mmap(0x7fca6c433000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libkeyutils.so.1.6>, 0x2000) = 0x7fca6c433000
+8171  mmap(0x7fca6c434000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libkeyutils.so.1.6>, 0x3000) = 0x7fca6c434000
+8171  mmap(0x7fca6c435000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libkeyutils.so.1.6>, 0x3000) = 0x7fca6c435000
+8171  mmap(0x7fca6c436000, 8, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6c436000
+8171  close(3</usr/lib64/libkeyutils.so.1.6>) = 0
+8171  openat(AT_FDCWD, "/lib64/libunistring.so.2", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libunistring.so.2.1.0>
+8171  read(3</usr/lib64/libunistring.so.2.1.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\00002\1\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libunistring.so.2.1.0>, 1566528, SEEK_SET) = 1566528
+8171  read(3</usr/lib64/libunistring.so.2.1.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libunistring.so.2.1.0>, {st_mode=S_IFREG|0755, st_size=1765960, ...}) = 0
+8171  lseek(3</usr/lib64/libunistring.so.2.1.0>, 1566528, SEEK_SET) = 1566528
+8171  read(3</usr/lib64/libunistring.so.2.1.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 1587432, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libunistring.so.2.1.0>, 0) = 0x7fca6c2ad000
+8171  mmap(0x7fca6c2be000, 225280, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libunistring.so.2.1.0>, 0x11000) = 0x7fca6c2be000
+8171  mmap(0x7fca6c2f5000, 1273856, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libunistring.so.2.1.0>, 0x48000) = 0x7fca6c2f5000
+8171  mmap(0x7fca6c42c000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libunistring.so.2.1.0>, 0x17e000) = 0x7fca6c42c000
+8171  close(3</usr/lib64/libunistring.so.2.1.0>) = 0
+8171  openat(AT_FDCWD, "/lib64/libsasl2.so.3", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libsasl2.so.3.0.0>
+8171  read(3</usr/lib64/libsasl2.so.3.0.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320X\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libsasl2.so.3.0.0>, 116264, SEEK_SET) = 116264
+8171  read(3</usr/lib64/libsasl2.so.3.0.0>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  fstat(3</usr/lib64/libsasl2.so.3.0.0>, {st_mode=S_IFREG|0755, st_size=128928, ...}) = 0
+8171  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fca6c2ab000
+8171  lseek(3</usr/lib64/libsasl2.so.3.0.0>, 116264, SEEK_SET) = 116264
+8171  read(3</usr/lib64/libsasl2.so.3.0.0>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  mmap(NULL, 123848, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libsasl2.so.3.0.0>, 0) = 0x7fca6c28c000
+8171  mmap(0x7fca6c291000, 73728, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libsasl2.so.3.0.0>, 0x5000) = 0x7fca6c291000
+8171  mmap(0x7fca6c2a3000, 24576, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libsasl2.so.3.0.0>, 0x17000) = 0x7fca6c2a3000
+8171  mmap(0x7fca6c2a9000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libsasl2.so.3.0.0>, 0x1c000) = 0x7fca6c2a9000
+8171  close(3</usr/lib64/libsasl2.so.3.0.0>) = 0
+8171  openat(AT_FDCWD, "/lib64/libbrotlicommon.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libbrotlicommon.so.1.0.5>
+8171  read(3</usr/lib64/libbrotlicommon.so.1.0.5>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0@\20\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libbrotlicommon.so.1.0.5>, 131920, SEEK_SET) = 131920
+8171  read(3</usr/lib64/libbrotlicommon.so.1.0.5>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  fstat(3</usr/lib64/libbrotlicommon.so.1.0.5>, {st_mode=S_IFREG|0755, st_size=139296, ...}) = 0
+8171  lseek(3</usr/lib64/libbrotlicommon.so.1.0.5>, 131920, SEEK_SET) = 131920
+8171  read(3</usr/lib64/libbrotlicommon.so.1.0.5>, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\0\0\0\300\4\0\0\0\0\0\0\0\0\0\0\0"..., 48) = 48
+8171  mmap(NULL, 139528, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libbrotlicommon.so.1.0.5>, 0) = 0x7fca6c269000
+8171  mmap(0x7fca6c26a000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libbrotlicommon.so.1.0.5>, 0x1000) = 0x7fca6c26a000
+8171  mmap(0x7fca6c26b000, 126976, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libbrotlicommon.so.1.0.5>, 0x2000) = 0x7fca6c26b000
+8171  mmap(0x7fca6c28a000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libbrotlicommon.so.1.0.5>, 0x20000) = 0x7fca6c28a000
+8171  close(3</usr/lib64/libbrotlicommon.so.1.0.5>) = 0
+8171  openat(AT_FDCWD, "/lib64/libcrypt.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/libcrypt.so.1.1.0>
+8171  read(3</usr/lib64/libcrypt.so.1.1.0>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P \0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/libcrypt.so.1.1.0>, 199136, SEEK_SET) = 199136
+8171  read(3</usr/lib64/libcrypt.so.1.1.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/libcrypt.so.1.1.0>, {st_mode=S_IFREG|0755, st_size=213208, ...}) = 0
+8171  lseek(3</usr/lib64/libcrypt.so.1.1.0>, 199136, SEEK_SET) = 199136
+8171  read(3</usr/lib64/libcrypt.so.1.1.0>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 238248, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/libcrypt.so.1.1.0>, 0) = 0x7fca6c22e000
+8171  mmap(0x7fca6c230000, 86016, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libcrypt.so.1.1.0>, 0x2000) = 0x7fca6c230000
+8171  mmap(0x7fca6c245000, 106496, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libcrypt.so.1.1.0>, 0x17000) = 0x7fca6c245000
+8171  mmap(0x7fca6c25f000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/libcrypt.so.1.1.0>, 0x30000) = 0x7fca6c25f000
+8171  mmap(0x7fca6c260000, 33448, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca6c260000
+8171  close(3</usr/lib64/libcrypt.so.1.1.0>) = 0
+8171  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fca6c22c000
+8171  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fca6c22a000
+8171  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fca6c228000
+8171  mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fca6c225000
+8171  arch_prctl(ARCH_SET_FS, 0x7fca6c225940) = 0
+8171  mprotect(0x7fca6d4ce000, 16384, PROT_READ) = 0
+8171  mprotect(0x7fca6c25f000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6d2b2000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6c28a000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6ccb6000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6c830000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6d4f4000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6c4cd000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6cb9c000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6ccd0000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6d083000, 176128, PROT_READ) = 0
+8171  mprotect(0x7fca6c435000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6c447000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6c5b7000, 8192, PROT_READ) = 0
+8171  mprotect(0x7fca6c59a000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6c69a000, 61440, PROT_READ) = 0
+8171  mprotect(0x7fca6ca5b000, 8192, PROT_READ) = 0
+8171  mprotect(0x7fca6c2a9000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6c42c000, 16384, PROT_READ) = 0
+8171  mprotect(0x7fca6d310000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6c51b000, 20480, PROT_READ) = 0
+8171  mprotect(0x7fca6c531000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6c543000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6c735000, 36864, PROT_READ) = 0
+8171  mprotect(0x7fca6c592000, 8192, PROT_READ) = 0
+8171  mprotect(0x7fca6c9df000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6c7c2000, 8192, PROT_READ) = 0
+8171  mprotect(0x7fca6c7e4000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6c80c000, 12288, PROT_READ) = 0
+8171  mprotect(0x7fca6c816000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6c83d000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6c8b0000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6ccb0000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6c9c9000, 8192, PROT_READ) = 0
+8171  mprotect(0x7fca6c9d5000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6c9f7000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6ca0a000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6cb6c000, 16384, PROT_READ) = 0
+8171  mprotect(0x7fca6cbf8000, 12288, PROT_READ) = 0
+8171  mprotect(0x7fca6cc8b000, 12288, PROT_READ) = 0
+8171  mprotect(0x7fca6cce3000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6cd02000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6cda5000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6cdce000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6cdd9000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6d0ef000, 8192, PROT_READ) = 0
+8171  mprotect(0x7fca6d126000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6d634000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6d12e000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6d2ea000, 118784, PROT_READ) = 0
+8171  mprotect(0x7fca6d515000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6d68b000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6d82f000, 28672, PROT_READ) = 0
+8171  mprotect(0x7fca6d849000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6d8ed000, 12288, PROT_READ) = 0
+8171  mprotect(0x7fca6d93e000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6d96f000, 86016, PROT_READ) = 0
+8171  mprotect(0x7fca6d988000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6d9b2000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6dc81000, 36864, PROT_READ) = 0
+8171  mprotect(0x7fca6da44000, 20480, PROT_READ) = 0
+8171  mprotect(0x7fca6dd45000, 16384, PROT_READ) = 0
+8171  mprotect(0x7fca6db1d000, 12288, PROT_READ) = 0
+8171  mprotect(0x7fca6dd69000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6dd77000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6dda3000, 4096, PROT_READ) = 0
+8171  mprotect(0x7fca6de15000, 8192, PROT_READ) = 0
+8171  mprotect(0x5632f58c5000, 32768, PROT_READ) = 0
+8171  mprotect(0x7fca6de7b000, 4096, PROT_READ) = 0
+8171  munmap(0x7fca6de1b000, 220737)    = 0
+8171  set_tid_address(0x7fca6c225c10)   = 8171
+8171  set_robust_list(0x7fca6c225c20, 24) = 0
+8171  rt_sigaction(SIGRTMIN, {sa_handler=0x7fca6d4dec50, sa_mask=[], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7fca6d4eb030}, NULL, 8) = 0
+8171  rt_sigaction(SIGRT_1, {sa_handler=0x7fca6d4dece0, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART|SA_SIGINFO, sa_restorer=0x7fca6d4eb030}, NULL, 8) = 0
+8171  rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+8171  prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+8171  statfs("/sys/fs/selinux", {f_type=SELINUX_MAGIC, f_bsize=4096, f_blocks=0, f_bfree=0, f_bavail=0, f_files=0, f_ffree=0, f_fsid={val=[0, 0]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+8171  statfs("/sys/fs/selinux", {f_type=SELINUX_MAGIC, f_bsize=4096, f_blocks=0, f_bfree=0, f_bavail=0, f_files=0, f_ffree=0, f_fsid={val=[0, 0]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+8171  brk(NULL)                         = 0x5632f59c2000
+8171  brk(0x5632f59e3000)               = 0x5632f59e3000
+8171  access("/etc/selinux/config", F_OK) = 0
+8171  access("/etc/system-fips", F_OK)  = -1 ENOENT (No such file or directory)
+8171  futex(0x7fca6d0b3758, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d0b374c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d0b3840, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d0b3734, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d0b372c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  access("/etc/system-fips", F_OK)  = -1 ENOENT (No such file or directory)
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  rt_sigaction(SIGTERM, {sa_handler=0x5632f57cd380, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fca6d4eb030}, NULL, 8) = 0
+8171  rt_sigaction(SIGHUP, {sa_handler=0x5632f57cd380, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fca6d4eb030}, NULL, 8) = 0
+8171  rt_sigaction(SIGINT, {sa_handler=0x5632f57cd380, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fca6d4eb030}, NULL, 8) = 0
+8171  openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3</usr/lib/locale/locale-archive>
+8171  fstat(3</usr/lib/locale/locale-archive>, {st_mode=S_IFREG|0644, st_size=217749968, ...}) = 0
+8171  mmap(NULL, 217749968, PROT_READ, MAP_PRIVATE, 3</usr/lib/locale/locale-archive>, 0) = 0x7fca5f27b000
+8171  close(3</usr/lib/locale/locale-archive>) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  openat(AT_FDCWD, "/usr/lib64/gio/modules", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3</usr/lib64/gio/modules>
+8171  fstat(3</usr/lib64/gio/modules>, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+8171  stat("/usr/lib64/gio/modules/giomodule.cache", {st_mode=S_IFREG|0644, st_size=317, ...}) = 0
+8171  openat(AT_FDCWD, "/usr/lib64/gio/modules/giomodule.cache", O_RDONLY) = 4</usr/lib64/gio/modules/giomodule.cache>
+8171  fstat(4</usr/lib64/gio/modules/giomodule.cache>, {st_mode=S_IFREG|0644, st_size=317, ...}) = 0
+8171  read(4</usr/lib64/gio/modules/giomodule.cache>, "libdconfsettings.so: gsettings-b"..., 317) = 317
+8171  close(4</usr/lib64/gio/modules/giomodule.cache>) = 0
+8171  getdents64(3</usr/lib64/gio/modules>, /* 10 entries */, 32768) = 392
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  brk(NULL)                         = 0x5632f59e3000
+8171  brk(0x5632f5a04000)               = 0x5632f5a04000
+8171  stat("/usr/lib64/gio/modules/libgsettingsgconfbackend.so", {st_mode=S_IFREG|0755, st_size=32848, ...}) = 0
+8171  stat("/usr/lib64/gio/modules/libgiognomeproxy.so", {st_mode=S_IFREG|0755, st_size=23496, ...}) = 0
+8171  stat("/usr/lib64/gio/modules/libgvfsdbus.so", {st_mode=S_IFREG|0755, st_size=238464, ...}) = 0
+8171  stat("/usr/lib64/gio/modules/libdconfsettings.so", {st_mode=S_IFREG|0755, st_size=68488, ...}) = 0
+8171  stat("/usr/lib64/gio/modules/libgioremote-volume-monitor.so", {st_mode=S_IFREG|0755, st_size=136192, ...}) = 0
+8171  stat("/usr/lib64/gio/modules/libgiognutls.so", {st_mode=S_IFREG|0755, st_size=116480, ...}) = 0
+8171  stat("/usr/lib64/gio/modules/libgiolibproxy.so", {st_mode=S_IFREG|0755, st_size=19400, ...}) = 0
+8171  getdents64(3</usr/lib64/gio/modules>, /* 0 entries */, 32768) = 0
+8171  close(3</usr/lib64/gio/modules>)  = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  stat("/usr/lib64/gio/modules/libgvfsdbus.so", {st_mode=S_IFREG|0755, st_size=238464, ...}) = 0
+8171  futex(0x7fca6ccb70e8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  openat(AT_FDCWD, "/usr/lib64/gio/modules/libgvfsdbus.so", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/gio/modules/libgvfsdbus.so>
+8171  read(3</usr/lib64/gio/modules/libgvfsdbus.so>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260\357\0\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/gio/modules/libgvfsdbus.so>, 219480, SEEK_SET) = 219480
+8171  read(3</usr/lib64/gio/modules/libgvfsdbus.so>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/gio/modules/libgvfsdbus.so>, {st_mode=S_IFREG|0755, st_size=238464, ...}) = 0
+8171  lseek(3</usr/lib64/gio/modules/libgvfsdbus.so>, 219480, SEEK_SET) = 219480
+8171  read(3</usr/lib64/gio/modules/libgvfsdbus.so>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 234272, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/gio/modules/libgvfsdbus.so>, 0) = 0x7fca5f241000
+8171  mprotect(0x7fca5f24c000, 180224, PROT_NONE) = 0
+8171  mmap(0x7fca5f24c000, 131072, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/gio/modules/libgvfsdbus.so>, 0xb000) = 0x7fca5f24c000
+8171  mmap(0x7fca5f26c000, 45056, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/gio/modules/libgvfsdbus.so>, 0x2b000) = 0x7fca5f26c000
+8171  mmap(0x7fca5f278000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/gio/modules/libgvfsdbus.so>, 0x36000) = 0x7fca5f278000
+8171  close(3</usr/lib64/gio/modules/libgvfsdbus.so>) = 0
+8171  openat(AT_FDCWD, "/usr/lib64/gvfs/tls/haswell/x86_64/libgvfscommon.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+8171  stat("/usr/lib64/gvfs/tls/haswell/x86_64", 0x7ffcba51f240) = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/lib64/gvfs/tls/haswell/libgvfscommon.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+8171  stat("/usr/lib64/gvfs/tls/haswell", 0x7ffcba51f240) = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/lib64/gvfs/tls/x86_64/libgvfscommon.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+8171  stat("/usr/lib64/gvfs/tls/x86_64", 0x7ffcba51f240) = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/lib64/gvfs/tls/libgvfscommon.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+8171  stat("/usr/lib64/gvfs/tls", 0x7ffcba51f240) = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/lib64/gvfs/haswell/x86_64/libgvfscommon.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+8171  stat("/usr/lib64/gvfs/haswell/x86_64", 0x7ffcba51f240) = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/lib64/gvfs/haswell/libgvfscommon.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+8171  stat("/usr/lib64/gvfs/haswell", 0x7ffcba51f240) = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/lib64/gvfs/x86_64/libgvfscommon.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+8171  stat("/usr/lib64/gvfs/x86_64", 0x7ffcba51f240) = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/lib64/gvfs/libgvfscommon.so", O_RDONLY|O_CLOEXEC) = 3</usr/lib64/gvfs/libgvfscommon.so>
+8171  read(3</usr/lib64/gvfs/libgvfscommon.so>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360^\1\0\0\0\0\0"..., 832) = 832
+8171  lseek(3</usr/lib64/gvfs/libgvfscommon.so>, 238768, SEEK_SET) = 238768
+8171  read(3</usr/lib64/gvfs/libgvfscommon.so>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  fstat(3</usr/lib64/gvfs/libgvfscommon.so>, {st_mode=S_IFREG|0755, st_size=271920, ...}) = 0
+8171  lseek(3</usr/lib64/gvfs/libgvfscommon.so>, 238768, SEEK_SET) = 238768
+8171  read(3</usr/lib64/gvfs/libgvfscommon.so>, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32) = 32
+8171  mmap(NULL, 271024, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3</usr/lib64/gvfs/libgvfscommon.so>, 0) = 0x7fca5f1fe000
+8171  mprotect(0x7fca5f211000, 167936, PROT_NONE) = 0
+8171  mmap(0x7fca5f211000, 110592, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/gvfs/libgvfscommon.so>, 0x13000) = 0x7fca5f211000
+8171  mmap(0x7fca5f22c000, 53248, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/gvfs/libgvfscommon.so>, 0x2e000) = 0x7fca5f22c000
+8171  mmap(0x7fca5f23a000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib64/gvfs/libgvfscommon.so>, 0x3b000) = 0x7fca5f23a000
+8171  mmap(0x7fca5f240000, 688, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fca5f240000
+8171  close(3</usr/lib64/gvfs/libgvfscommon.so>) = 0
+8171  mprotect(0x7fca5f23a000, 24576, PROT_READ) = 0
+8171  mprotect(0x7fca5f278000, 8192, PROT_READ) = 0
+8171  openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 3</usr/share/locale/locale.alias>
+8171  fstat(3</usr/share/locale/locale.alias>, {st_mode=S_IFREG|0644, st_size=2997, ...}) = 0
+8171  read(3</usr/share/locale/locale.alias>, "# Locale name alias data base.\n#"..., 4096) = 2997
+8171  read(3</usr/share/locale/locale.alias>, "", 4096) = 0
+8171  close(3</usr/share/locale/locale.alias>) = 0
+8171  openat(AT_FDCWD, "/usr/share/locale/en_US.UTF-8/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/share/locale/en_US.utf8/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/share/locale/en_US/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/share/locale/en.UTF-8/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/share/locale/en.utf8/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/share/locale/en/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  ioctl(1</dev/pts/2<char 136:2>>, TIOCGWINSZ, {ws_row=27, ws_col=122, ws_xpixel=0, ws_ypixel=0}) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  openat(AT_FDCWD, "/dev/tty", O_RDWR) = 3</dev/tty<char 5:0>>
+8171  getuid()                          = 1000
+8171  getpid()                          = 8171
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  openat(AT_FDCWD, "/proc/8171/stat", O_RDONLY) = 4</proc/8171/stat>
+8171  fstat(4</proc/8171/stat>, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+8171  fcntl(4</proc/8171/stat>, F_GETFL) = 0x8000 (flags O_RDONLY|O_LARGEFILE)
+8171  fstat(4</proc/8171/stat>, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+8171  read(4</proc/8171/stat>, "8171 (flatpak) R 8168 8168 5658 "..., 4096) = 315
+8171  read(4</proc/8171/stat>, "", 3072) = 0
+8171  close(4</proc/8171/stat>)         = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], [], 8) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK) = 4<anon_inode:[eventfd]>
+8171  write(4<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8171  mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fca5e9fd000
+8171  mprotect(0x7fca5e9fe000, 8388608, PROT_READ|PROT_WRITE) = 0
+8171  clone(child_stack=0x7fca5f1fcdb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7fca5f1fd9d0, tls=0x7fca5f1fd700, child_tidptr=0x7fca5f1fd9d0) = 8172
+8171  rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8172  set_robust_list(0x7fca5f1fd9e0, 24 <unfinished ...>
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8172  <... set_robust_list resumed> )   = 0
+8171  openat(AT_FDCWD, "/usr/share/locale/en_US.UTF-8/LC_MESSAGES/flatpak.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/share/locale/en_US.utf8/LC_MESSAGES/flatpak.mo", O_RDONLY <unfinished ...>
+8172  mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0 <unfinished ...>
+8171  <... openat resumed> )            = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/share/locale/en_US/LC_MESSAGES/flatpak.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/share/locale/en.UTF-8/LC_MESSAGES/flatpak.mo", O_RDONLY <unfinished ...>
+8172  <... mmap resumed> )              = 0x7fca569fd000
+8171  <... openat resumed> )            = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/share/locale/en.utf8/LC_MESSAGES/flatpak.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/share/locale/en/LC_MESSAGES/flatpak.mo", O_RDONLY <unfinished ...>
+8172  munmap(0x7fca569fd000, 23080960 <unfinished ...>
+8171  <... openat resumed> )            = -1 ENOENT (No such file or directory)
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  openat(AT_FDCWD, "/usr/share/locale/en_US.UTF-8/LC_MESSAGES/glib20.mo", O_RDONLY <unfinished ...>
+8172  <... munmap resumed> )            = 0
+8171  <... openat resumed> )            = -1 ENOENT (No such file or directory)
+8172  munmap(0x7fca5c000000, 44027904 <unfinished ...>
+8171  openat(AT_FDCWD, "/usr/share/locale/en_US.utf8/LC_MESSAGES/glib20.mo", O_RDONLY <unfinished ...>
+8172  <... munmap resumed> )            = 0
+8171  <... openat resumed> )            = -1 ENOENT (No such file or directory)
+8172  mprotect(0x7fca58000000, 135168, PROT_READ|PROT_WRITE <unfinished ...>
+8171  openat(AT_FDCWD, "/usr/share/locale/en_US/LC_MESSAGES/glib20.mo", O_RDONLY <unfinished ...>
+8172  <... mprotect resumed> )          = 0
+8171  <... openat resumed> )            = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/share/locale/en.UTF-8/LC_MESSAGES/glib20.mo", O_RDONLY <unfinished ...>
+8172  prctl(PR_SET_NAME, "gmain" <unfinished ...>
+8171  <... openat resumed> )            = -1 ENOENT (No such file or directory)
+8172  <... prctl resumed> )             = 0
+8171  openat(AT_FDCWD, "/usr/share/locale/en.utf8/LC_MESSAGES/glib20.mo", O_RDONLY <unfinished ...>
+8172  poll([{fd=4<anon_inode:[eventfd]>, events=POLLIN}], 1, -1 <unfinished ...>
+8171  <... openat resumed> )            = -1 ENOENT (No such file or directory)
+8172  <... poll resumed> )              = 1 ([{fd=4, revents=POLLIN}])
+8171  openat(AT_FDCWD, "/usr/share/locale/en/LC_MESSAGES/glib20.mo", O_RDONLY <unfinished ...>
+8172  read(4<anon_inode:[eventfd]>,  <unfinished ...>
+8171  <... openat resumed> )            = -1 ENOENT (No such file or directory)
+8172  <... read resumed> "\1\0\0\0\0\0\0\0", 16) = 8
+8172  poll([{fd=4<anon_inode:[eventfd]>, events=POLLIN}], 1, -1 <unfinished ...>
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fca6d34a5c0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK) = 5<anon_inode:[eventfd]>
+8171  write(5<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC, 0) = 6<UNIX:[154689]>
+8171  fcntl(6<UNIX:[154689]>, F_GETFL)  = 0x2 (flags O_RDWR)
+8171  fcntl(6<UNIX:[154689]>, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  connect(6<UNIX:[154689]>, {sa_family=AF_UNIX, sun_path="/var/run/dbus/system_bus_socket"}, 110) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  getpid()                          = 8171
+8171  geteuid()                         = 1000
+8171  getegid()                         = 1000
+8171  getpid()                          = 8171
+8171  geteuid()                         = 1000
+8171  getegid()                         = 1000
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  sendmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\0", iov_len=1}], msg_iovlen=1, msg_control=[{cmsg_len=28, cmsg_level=SOL_SOCKET, cmsg_type=SCM_CREDENTIALS, cmsg_data={pid=8171, uid=1000, gid=1000}}], msg_controllen=32, msg_flags=0}, MSG_NOSIGNAL) = 1
+8171  sendto(6<UNIX:[154689->152394]>, "AUTH\r\n", 6, MSG_NOSIGNAL, NULL, 0) = 6
+8171  recvfrom(6<UNIX:[154689->152394]>, 0x5632f59fb150, 4096, 0, NULL, NULL) = -1 EAGAIN (Resource temporarily unavailable)
+8171  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, -1) = 1 ([{fd=6, revents=POLLIN}])
+8171  recvfrom(6<UNIX:[154689->152394]>, "REJECTED EXTERNAL\r\n", 4096, 0, NULL, NULL) = 19
+8171  sendto(6<UNIX:[154689->152394]>, "AUTH EXTERNAL 31303030\r\n", 24, MSG_NOSIGNAL, NULL, 0) = 24
+8171  recvfrom(6<UNIX:[154689->152394]>, 0x5632f59fb150, 4096, 0, NULL, NULL) = -1 EAGAIN (Resource temporarily unavailable)
+8171  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, -1) = 1 ([{fd=6, revents=POLLIN}])
+8171  recvfrom(6<UNIX:[154689->152394]>, "OK 9b2638399588591e5f9a19145c70b"..., 4096, 0, NULL, NULL) = 37
+8171  sendto(6<UNIX:[154689->152394]>, "NEGOTIATE_UNIX_FD\r\n", 19, MSG_NOSIGNAL, NULL, 0) = 19
+8171  recvfrom(6<UNIX:[154689->152394]>, 0x5632f59fb150, 4096, 0, NULL, NULL) = -1 EAGAIN (Resource temporarily unavailable)
+8171  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, -1) = 1 ([{fd=6, revents=POLLIN}])
+8171  recvfrom(6<UNIX:[154689->152394]>, "AGREE_UNIX_FD\r\n", 4096, 0, NULL, NULL) = 15
+8171  sendto(6<UNIX:[154689->152394]>, "BEGIN\r\n", 7, MSG_NOSIGNAL, NULL, 0) = 7
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK) = 7<anon_inode:[eventfd]>
+8171  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8171  mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fca5e1fc000
+8171  mprotect(0x7fca5e1fd000, 8388608, PROT_READ|PROT_WRITE) = 0
+8171  clone(child_stack=0x7fca5e9fbdb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7fca5e9fc9d0, tls=0x7fca5e9fc700, child_tidptr=0x7fca5e9fc9d0) = 8173
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8173  set_robust_list(0x7fca5e9fc9e0, 24 <unfinished ...>
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647 <unfinished ...>
+8173  <... set_robust_list resumed> )   = 0
+8171  <... futex resumed> )             = 0
+8173  prctl(PR_SET_NAME, "gdbus")       = 0
+8171  eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK <unfinished ...>
+8173  mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0 <unfinished ...>
+8171  <... eventfd2 resumed> )          = 8<anon_inode:[eventfd]>
+8173  <... mmap resumed> )              = 0x7fca50000000
+8171  write(8<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+8173  munmap(0x7fca54000000, 67108864 <unfinished ...>
+8171  <... write resumed> )             = 8
+8173  <... munmap resumed> )            = 0
+8173  mprotect(0x7fca50000000, 135168, PROT_READ|PROT_WRITE) = 0
+8171  poll([{fd=8<anon_inode:[eventfd]>, events=POLLIN}], 1, 25000 <unfinished ...>
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0 <unfinished ...>
+8171  <... poll resumed> )              = 1 ([{fd=8, revents=POLLIN}])
+8173  <... poll resumed> )              = 1 ([{fd=7, revents=POLLIN}])
+8171  read(8<anon_inode:[eventfd]>,  <unfinished ...>
+8173  read(7<anon_inode:[eventfd]>,  <unfinished ...>
+8171  <... read resumed> "\1\0\0\0\0\0\0\0", 16) = 8
+8173  <... read resumed> "\1\0\0\0\0\0\0\0", 16) = 8
+8171  poll([{fd=8<anon_inode:[eventfd]>, events=POLLIN}], 1, 25000 <unfinished ...>
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0) = 0 (Timeout)
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  sendmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\1\0\1\0\0\0\0\1\0\0\0m\0\0\0\1\1o\0\25\0\0\0/org/fre"..., iov_len=128}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, MSG_NOSIGNAL) = 128
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, 0) = 1 ([{fd=7, revents=POLLIN}])
+8173  read(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 16) = 8
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, -1) = 1 ([{fd=6, revents=POLLIN}])
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\2\1\1\v\0\0\0\1\0\0\0=\0\0\0", iov_len=16}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 16
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0) = 1 ([{fd=6, revents=POLLIN}])
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\6\1s\0\6\0\0\0:1.407\0\0\5\1u\0\1\0\0\0\10\1g\0\1s\0\0"..., iov_len=75}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 75
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0) = 1 ([{fd=7, revents=POLLIN}])
+8173  read(7<anon_inode:[eventfd]>, "\3\0\0\0\0\0\0\0", 16) = 8
+8173  write(8<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+8171  <... poll resumed> )              = 1 ([{fd=8, revents=POLLIN}])
+8173  <... write resumed> )             = 8
+8171  futex(0x5632f59fbeb0, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8173  futex(0x5632f59fbeb0, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+8171  <... futex resumed> )             = -1 EAGAIN (Resource temporarily unavailable)
+8173  <... futex resumed> )             = 0
+8171  read(8<anon_inode:[eventfd]>,  <unfinished ...>
+8173  futex(0x5632f59fbeb0, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8171  <... read resumed> "\1\0\0\0\0\0\0\0", 16) = 8
+8171  futex(0x5632f59fbeb0, FUTEX_WAKE_PRIVATE, 1) = 1
+8173  <... futex resumed> )             = 0
+8171  write(8<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+8173  futex(0x5632f59fbeb0, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8171  <... write resumed> )             = 8
+8171  futex(0x5632f59fbec0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x5632f59fbeb0, FUTEX_WAKE_PRIVATE, 1) = 1
+8173  <... futex resumed> )             = 0
+8173  futex(0x5632f59fbeb0, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647 <unfinished ...>
+8173  <... futex resumed> )             = 0
+8171  <... futex resumed> )             = 0
+8173  close(8<anon_inode:[eventfd]> <unfinished ...>
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647 <unfinished ...>
+8173  <... close resumed> )             = 0
+8171  <... futex resumed> )             = 0
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0 <unfinished ...>
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647 <unfinished ...>
+8173  <... poll resumed> )              = 1 ([{fd=6, revents=POLLIN}])
+8171  <... futex resumed> )             = 0
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\4\1\1\v\0\0\0\2\0\0\0\215\0\0\0", iov_len=16}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 16
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0 <unfinished ...>
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647 <unfinished ...>
+8173  <... poll resumed> )              = 0 (Timeout)
+8171  <... futex resumed> )             = 0
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0) = 1 ([{fd=6, revents=POLLIN}])
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\1\1o\0\25\0\0\0/org/freedesktop/DBus\0\0\0"..., iov_len=155}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 155
+8171  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+8173  futex(0x5632f59fb4e0, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8171  <... write resumed> )             = 8
+8171  futex(0x5632f59fb4e0, FUTEX_WAKE_PRIVATE, 1) = 1
+8173  <... futex resumed> )             = 0
+8173  futex(0x5632f59fb4e0, FUTEX_WAKE_PRIVATE, 1) = 0
+8171  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+8173  futex(0x5632f59fb4e0, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8171  <... write resumed> )             = 8
+8171  futex(0x5632f59fb4e0, FUTEX_WAKE_PRIVATE, 1) = 1
+8173  <... futex resumed> )             = 0
+8173  futex(0x5632f59fb4e0, FUTEX_WAKE_PRIVATE, 1) = 0
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0 <unfinished ...>
+8171  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+8173  <... poll resumed> )              = 1 ([{fd=7, revents=POLLIN}])
+8171  <... write resumed> )             = 8
+8173  futex(0x5632f59fb4e0, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8171  futex(0x5632f59fb4e0, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+8173  <... futex resumed> )             = -1 EAGAIN (Resource temporarily unavailable)
+8171  <... futex resumed> )             = 0
+8173  read(7<anon_inode:[eventfd]>,  <unfinished ...>
+8171  futex(0x5632f59fb4e0, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8173  <... read resumed> "\3\0\0\0\0\0\0\0", 16) = 8
+8173  futex(0x5632f59fb4e0, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+8171  <... futex resumed> )             = 0
+8173  <... futex resumed> )             = 1
+8171  futex(0x5632f59fb4e0, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+8173  futex(0x5632f59fb270, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8171  <... futex resumed> )             = 0
+8171  futex(0x5632f59fb270, FUTEX_WAKE_PRIVATE, 1) = 1
+8173  <... futex resumed> )             = 0
+8171  eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK <unfinished ...>
+8173  futex(0x5632f59fb270, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+8171  <... eventfd2 resumed> )          = 8<anon_inode:[eventfd]>
+8173  <... futex resumed> )             = 0
+8171  write(8<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+8173  sendmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\1\0\1\326\0\0\0\2\0\0\0}\0\0\0\10\1g\0\1s\0\0\1\1o\0\25\0\0\0"..., iov_len=358}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, MSG_NOSIGNAL <unfinished ...>
+8171  <... write resumed> )             = 8
+8173  <... sendmsg resumed> )           = 358
+8171  futex(0x7fca6d68c218, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+8173  futex(0x7fca6d68c218, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8171  <... futex resumed> )             = 0
+8173  <... futex resumed> )             = -1 EAGAIN (Resource temporarily unavailable)
+8173  futex(0x7fca6d68c218, FUTEX_WAKE_PRIVATE, 1) = 0
+8171  poll([{fd=8<anon_inode:[eventfd]>, events=POLLIN}], 1, 25000) = 1 ([{fd=8, revents=POLLIN}])
+8171  read(8<anon_inode:[eventfd]>,  <unfinished ...>
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0 <unfinished ...>
+8171  <... read resumed> "\1\0\0\0\0\0\0\0", 16) = 8
+8173  <... poll resumed> )              = 1 ([{fd=6, revents=POLLIN}])
+8171  poll([{fd=8<anon_inode:[eventfd]>, events=POLLIN}], 1, 25000 <unfinished ...>
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\2\1\1\0\0\0\0\3\0\0\0005\0\0\0", iov_len=16}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 16
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0) = 0 (Timeout)
+8173  sendmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\1\0\1\224\0\0\0\3\0\0\0}\0\0\0\10\1g\0\1s\0\0\1\1o\0\25\0\0\0"..., iov_len=292}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, MSG_NOSIGNAL) = 292
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0) = 1 ([{fd=6, revents=POLLIN}])
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\6\1s\0\6\0\0\0:1.407\0\0\5\1u\0\2\0\0\0\7\1s\0\24\0\0\0"..., iov_len=56}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 56
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0) = 0 (Timeout)
+8173  sendmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\1\0\1\252\0\0\0\4\0\0\0}\0\0\0\10\1g\0\1s\0\0\1\1o\0\25\0\0\0"..., iov_len=314}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, MSG_NOSIGNAL) = 314
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0) = 1 ([{fd=6, revents=POLLIN}])
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\2\1\1\0\0\0\0\4\0\0\0005\0\0\0", iov_len=16}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 16
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0) = 0 (Timeout)
+8173  sendmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\1\0\1$\0\0\0\5\0\0\0\205\0\0\0\10\1g\0\2su\0\1\1o\0\25\0\0\0"..., iov_len=188}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, MSG_NOSIGNAL) = 188
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0) = 1 ([{fd=6, revents=POLLIN}])
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\6\1s\0\6\0\0\0:1.407\0\0\5\1u\0\3\0\0\0\7\1s\0\24\0\0\0"..., iov_len=56}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 56
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0) = 0 (Timeout)
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0) = 1 ([{fd=6, revents=POLLIN}])
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\2\1\1\0\0\0\0\5\0\0\0005\0\0\0", iov_len=16}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 16
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0) = 0 (Timeout)
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0) = 1 ([{fd=6, revents=POLLIN}])
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\6\1s\0\6\0\0\0:1.407\0\0\5\1u\0\4\0\0\0\7\1s\0\24\0\0\0"..., iov_len=56}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 56
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0) = 0 (Timeout)
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0) = 1 ([{fd=6, revents=POLLIN}])
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\2\1\1\4\0\0\0\6\0\0\0=\0\0\0", iov_len=16}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 16
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0) = 0 (Timeout)
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0) = 1 ([{fd=6, revents=POLLIN}])
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\6\1s\0\6\0\0\0:1.407\0\0\5\1u\0\5\0\0\0\10\1g\0\1u\0\0"..., iov_len=68}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 68
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0) = 0 (Timeout)
+8173  write(8<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8171  <... poll resumed> )              = 1 ([{fd=8, revents=POLLIN}])
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0 <unfinished ...>
+8171  read(8<anon_inode:[eventfd]>,  <unfinished ...>
+8173  <... poll resumed> )              = 0 (Timeout)
+8171  <... read resumed> "\1\0\0\0\0\0\0\0", 16) = 8
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8171  brk(NULL <unfinished ...>
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, -1 <unfinished ...>
+8171  <... brk resumed> )               = 0x5632f5a04000
+8173  <... poll resumed> )              = 1 ([{fd=7, revents=POLLIN}])
+8171  brk(0x5632f5a25000 <unfinished ...>
+8173  read(7<anon_inode:[eventfd]>,  <unfinished ...>
+8171  <... brk resumed> )               = 0x5632f5a25000
+8173  <... read resumed> "\1\0\0\0\0\0\0\0", 16) = 8
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, -1 <unfinished ...>
+8171  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  <... poll resumed> )              = 1 ([{fd=7, revents=POLLIN}])
+8171  poll([{fd=8<anon_inode:[eventfd]>, events=POLLIN}], 1, 25000 <unfinished ...>
+8173  read(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 16) = 8
+8173  sendmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\1\0\1\37\0\0\0\6\0\0\0}\0\0\0\10\1g\0\1s\0\0\1\1o\0\25\0\0\0"..., iov_len=175}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, MSG_NOSIGNAL) = 175
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, 0) = 0 (Timeout)
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, -1) = 1 ([{fd=6, revents=POLLIN}])
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\2\1\1\n\0\0\0\7\0\0\0=\0\0\0", iov_len=16}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 16
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0) = 1 ([{fd=6, revents=POLLIN}])
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\6\1s\0\6\0\0\0:1.407\0\0\5\1u\0\6\0\0\0\10\1g\0\1s\0\0"..., iov_len=74}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 74
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0) = 1 ([{fd=7, revents=POLLIN}])
+8173  read(7<anon_inode:[eventfd]>, "\3\0\0\0\0\0\0\0", 16) = 8
+8173  write(8<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8171  <... poll resumed> )              = 1 ([{fd=8, revents=POLLIN}])
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0 <unfinished ...>
+8171  read(8<anon_inode:[eventfd]>,  <unfinished ...>
+8173  <... poll resumed> )              = 0 (Timeout)
+8171  <... read resumed> "\1\0\0\0\0\0\0\0", 16) = 8
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8171  futex(0x5632f59fb4e0, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8173  futex(0x5632f59fb4e0, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+8171  <... futex resumed> )             = -1 EAGAIN (Resource temporarily unavailable)
+8173  <... futex resumed> )             = 0
+8171  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+8173  futex(0x5632f59fb4e0, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8171  <... write resumed> )             = 8
+8171  futex(0x5632f59fb4e0, FUTEX_WAKE_PRIVATE, 1) = 1
+8173  <... futex resumed> )             = 0
+8171  poll([{fd=8<anon_inode:[eventfd]>, events=POLLIN}], 1, 25000 <unfinished ...>
+8173  futex(0x5632f59fb4e0, FUTEX_WAKE_PRIVATE, 1) = 0
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, 0) = 1 ([{fd=7, revents=POLLIN}])
+8173  read(7<anon_inode:[eventfd]>, "\2\0\0\0\0\0\0\0", 16) = 8
+8173  sendmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\1\0\1)\0\0\0\7\0\0\0~\0\0\0\10\1g\0\1s\0\0\1\1o\0%\0\0\0"..., iov_len=185}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, MSG_NOSIGNAL) = 185
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, 0) = 0 (Timeout)
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, -1) = 1 ([{fd=6, revents=POLLIN}])
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\2\1\1l\0\0\0007\3\0\0006\0\0\0", iov_len=16}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 16
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0) = 1 ([{fd=6, revents=POLLIN}])
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\10\1g\0\5a{sv}\0\0\0\0\0\0\5\1u\0\7\0\0\0\6\1s\0\6\0\0\0"..., iov_len=164}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 164
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0) = 1 ([{fd=7, revents=POLLIN}])
+8173  read(7<anon_inode:[eventfd]>, "\3\0\0\0\0\0\0\0", 16) = 8
+8173  write(8<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8171  <... poll resumed> )              = 1 ([{fd=8, revents=POLLIN}])
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0 <unfinished ...>
+8171  read(8<anon_inode:[eventfd]>,  <unfinished ...>
+8173  <... poll resumed> )              = 0 (Timeout)
+8171  <... read resumed> "\1\0\0\0\0\0\0\0", 16) = 8
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+8171  write(8<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+8173  <... write resumed> )             = 8
+8171  <... write resumed> )             = 8
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, -1 <unfinished ...>
+8171  futex(0x5632f5a03350, FUTEX_WAKE_PRIVATE, 2147483647 <unfinished ...>
+8173  <... poll resumed> )              = 1 ([{fd=7, revents=POLLIN}])
+8171  <... futex resumed> )             = 0
+8173  read(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 16) = 8
+8171  close(8<anon_inode:[eventfd]> <unfinished ...>
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, -1 <unfinished ...>
+8171  <... close resumed> )             = 0
+8171  mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fca5d9fb000
+8171  mprotect(0x7fca5d9fc000, 8388608, PROT_READ|PROT_WRITE) = 0
+8171  clone(child_stack=0x7fca5e1fadb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7fca5e1fb9d0, tls=0x7fca5e1fb700, child_tidptr=0x7fca5e1fb9d0) = 8174
+8174  set_robust_list(0x7fca5e1fb9e0, 24 <unfinished ...>
+8171  sched_yield( <unfinished ...>
+8174  <... set_robust_list resumed> )   = 0
+8171  <... sched_yield resumed> )       = 0
+8174  mmap(0x7fca54000000, 67108864, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0 <unfinished ...>
+8171  sched_yield( <unfinished ...>
+8174  <... mmap resumed> )              = 0x7fca54000000
+8171  <... sched_yield resumed> )       = 0
+8174  mprotect(0x7fca54000000, 135168, PROT_READ|PROT_WRITE <unfinished ...>
+8171  sched_yield( <unfinished ...>
+8174  <... mprotect resumed> )          = 0
+8171  <... sched_yield resumed> )       = 0
+8171  sched_yield()                     = 0
+8174  eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK <unfinished ...>
+8171  sched_yield( <unfinished ...>
+8174  <... eventfd2 resumed> )          = 8<anon_inode:[eventfd]>
+8171  <... sched_yield resumed> )       = 0
+8174  write(8<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+8171  sched_yield( <unfinished ...>
+8174  <... write resumed> )             = 8
+8171  <... sched_yield resumed> )       = 0
+8171  sched_yield( <unfinished ...>
+8174  poll([{fd=8<anon_inode:[eventfd]>, events=POLLIN}], 1, -1 <unfinished ...>
+8171  <... sched_yield resumed> )       = 0
+8174  <... poll resumed> )              = 1 ([{fd=8, revents=POLLIN}])
+8171  eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK <unfinished ...>
+8174  read(8<anon_inode:[eventfd]>,  <unfinished ...>
+8171  <... eventfd2 resumed> )          = 9<anon_inode:[eventfd]>
+8174  <... read resumed> "\1\0\0\0\0\0\0\0", 16) = 8
+8171  write(9<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+8174  poll([{fd=8<anon_inode:[eventfd]>, events=POLLIN}], 1, -1 <unfinished ...>
+8171  <... write resumed> )             = 8
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  <... poll resumed> )              = 1 ([{fd=7, revents=POLLIN}])
+8171  poll([{fd=9<anon_inode:[eventfd]>, events=POLLIN}], 1, 25000 <unfinished ...>
+8173  read(7<anon_inode:[eventfd]>,  <unfinished ...>
+8171  <... poll resumed> )              = 1 ([{fd=9, revents=POLLIN}])
+8173  <... read resumed> "\1\0\0\0\0\0\0\0", 16) = 8
+8171  read(9<anon_inode:[eventfd]>,  <unfinished ...>
+8173  sendmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\1\0\1\264\0\0\0\10\0\0\0\266\0\0\0\10\1g\0\17(sa{sv})ssa"..., iov_len=380}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, MSG_NOSIGNAL <unfinished ...>
+8171  <... read resumed> "\1\0\0\0\0\0\0\0", 16) = 8
+8173  <... sendmsg resumed> )           = 380
+8171  poll([{fd=9<anon_inode:[eventfd]>, events=POLLIN}], 1, 25000 <unfinished ...>
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, 0) = 0 (Timeout)
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, -1) = 1 ([{fd=6, revents=POLLIN}])
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\4\1\1\0\0\0\0<\3\0\0~\0\0\0", iov_len=16}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 16
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0) = 1 ([{fd=6, revents=POLLIN}])
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\1\1o\0%\0\0\0/org/freedesktop/PolicyK"..., iov_len=128}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 128
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0) = 1 ([{fd=7, revents=POLLIN}])
+8173  read(7<anon_inode:[eventfd]>, "\3\0\0\0\0\0\0\0", 16) = 8
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0) = 1 ([{fd=6, revents=POLLIN}])
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\2\1\1\0\0\0\0=\3\0\0.\0\0\0", iov_len=16}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 16
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0) = 0 (Timeout)
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0) = 1 ([{fd=6, revents=POLLIN}])
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\10\1g\0\0\0\0\0\5\1u\0\10\0\0\0\6\1s\0\6\0\0\0:1.407\0\0"..., iov_len=48}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 48
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0) = 0 (Timeout)
+8173  write(9<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+8171  <... poll resumed> )              = 1 ([{fd=9, revents=POLLIN}])
+8173  <... write resumed> )             = 8
+8171  futex(0x5632f5a05570, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8173  futex(0x5632f5a05570, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+8171  <... futex resumed> )             = -1 EAGAIN (Resource temporarily unavailable)
+8173  <... futex resumed> )             = 0
+8171  read(9<anon_inode:[eventfd]>,  <unfinished ...>
+8173  futex(0x5632f5a05570, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8171  <... read resumed> "\1\0\0\0\0\0\0\0", 16) = 8
+8171  futex(0x5632f5a05570, FUTEX_WAKE_PRIVATE, 1) = 1
+8173  <... futex resumed> )             = 0
+8171  write(9<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+8173  futex(0x5632f5a05570, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8171  <... write resumed> )             = 8
+8171  futex(0x5632f5a05580, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x5632f5a05570, FUTEX_WAKE_PRIVATE, 1) = 1
+8173  <... futex resumed> )             = 0
+8171  futex(0x5632f5a05570, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8173  futex(0x5632f5a05570, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+8171  <... futex resumed> )             = -1 EAGAIN (Resource temporarily unavailable)
+8173  <... futex resumed> )             = 0
+8171  futex(0x5632f5a05570, FUTEX_WAKE_PRIVATE, 1) = 0
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0 <unfinished ...>
+8171  close(9<anon_inode:[eventfd]> <unfinished ...>
+8173  <... poll resumed> )              = 0 (Timeout)
+8171  <... close resumed> )             = 0
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, -1 <unfinished ...>
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647 <unfinished ...>
+8173  <... poll resumed> )              = 1 ([{fd=7, revents=POLLIN}])
+8171  <... futex resumed> )             = 0
+8173  read(7<anon_inode:[eventfd]>,  <unfinished ...>
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647 <unfinished ...>
+8173  <... read resumed> "\1\0\0\0\0\0\0\0", 16) = 8
+8171  <... futex resumed> )             = 0
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, -1 <unfinished ...>
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  lstat("/home/aldaron/.local/share/flatpak", {st_mode=S_IFDIR|0700, st_size=4096, ...}) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  rt_sigaction(SIGPIPE, NULL, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fca6d34a5c0}, 8) = 0
+8171  sysinfo({uptime=5885, loads=[89888, 66400, 64416], totalram=12376420352, freeram=4839936000, sharedram=279617536, bufferram=537223168, totalswap=6442446848, freeswap=6442446848, procs=791, totalhigh=0, freehigh=0, mem_unit=1}) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  lstat("/home/aldaron/.local/share/flatpak/repo", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+8171  openat(AT_FDCWD, "/proc/sys/kernel/random/boot_id", O_RDONLY) = 9</proc/sys/kernel/random/boot_id>
+8171  fstat(9</proc/sys/kernel/random/boot_id>, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+8171  fcntl(9</proc/sys/kernel/random/boot_id>, F_GETFL) = 0x8000 (flags O_RDONLY|O_LARGEFILE)
+8171  fstat(9</proc/sys/kernel/random/boot_id>, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+8171  read(9</proc/sys/kernel/random/boot_id>, "2a86eb33-05e2-423f-a6e1-546d4f3d"..., 4096) = 37
+8171  read(9</proc/sys/kernel/random/boot_id>, "", 3072) = 0
+8171  close(9</proc/sys/kernel/random/boot_id>) = 0
+8171  openat(AT_FDCWD, "/home/aldaron/.local/share/flatpak/repo", O_RDONLY|O_NOCTTY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 9</home/aldaron/.local/share/flatpak/repo>
+8171  fstat(9</home/aldaron/.local/share/flatpak/repo>, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+8171  openat(9</home/aldaron/.local/share/flatpak/repo>, "objects", O_RDONLY|O_NOCTTY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 10</home/aldaron/.local/share/flatpak/repo/objects>
+8171  faccessat(10</home/aldaron/.local/share/flatpak/repo/objects>, ".", W_OK) = 0
+8171  fstat(10</home/aldaron/.local/share/flatpak/repo/objects>, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+8171  mkdirat(9</home/aldaron/.local/share/flatpak/repo>, "tmp", 0755) = -1 EEXIST (File exists)
+8171  openat(9</home/aldaron/.local/share/flatpak/repo>, "tmp", O_RDONLY|O_NOCTTY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 11</home/aldaron/.local/share/flatpak/repo/tmp>
+8171  newfstatat(11</home/aldaron/.local/share/flatpak/repo/tmp>, "cache", {st_mode=S_IFDIR|0775, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+8171  openat(11</home/aldaron/.local/share/flatpak/repo/tmp>, "cache", O_RDONLY|O_NOCTTY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 12</home/aldaron/.local/share/flatpak/repo/tmp/cache>
+8171  newfstatat(AT_FDCWD, "/ostree/repo", 0x7ffcba5200b0, 0) = -1 ENOENT (No such file or directory)
+8171  openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY) = 13</usr/share/locale/locale.alias>
+8171  fstat(13</usr/share/locale/locale.alias>, {st_mode=S_IFREG|0644, st_size=2997, ...}) = 0
+8171  read(13</usr/share/locale/locale.alias>, "# Locale name alias data base.\n#"..., 4096) = 2997
+8171  read(13</usr/share/locale/locale.alias>, "", 4096) = 0
+8171  close(13</usr/share/locale/locale.alias>) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  openat(9</home/aldaron/.local/share/flatpak/repo>, "config", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 13</home/aldaron/.local/share/flatpak/repo/config>
+8171  fstat(13</home/aldaron/.local/share/flatpak/repo/config>, {st_mode=S_IFREG|0644, st_size=68, ...}) = 0
+8171  read(13</home/aldaron/.local/share/flatpak/repo/config>, "[core]\nrepo_version=1\nmode=bare-"..., 68) = 68
+8171  read(13</home/aldaron/.local/share/flatpak/repo/config>, "", 68) = 0
+8171  close(13</home/aldaron/.local/share/flatpak/repo/config>) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  lstat("/home/aldaron/.local/share/flatpak", {st_mode=S_IFDIR|0700, st_size=4096, ...}) = 0
+8171  lstat("/home/aldaron/.local/share/flatpak/repo", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+8171  openat(AT_FDCWD, "/proc/sys/kernel/random/boot_id", O_RDONLY) = 13</proc/sys/kernel/random/boot_id>
+8171  fstat(13</proc/sys/kernel/random/boot_id>, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+8171  fcntl(13</proc/sys/kernel/random/boot_id>, F_GETFL) = 0x8000 (flags O_RDONLY|O_LARGEFILE)
+8171  fstat(13</proc/sys/kernel/random/boot_id>, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+8171  read(13</proc/sys/kernel/random/boot_id>, "2a86eb33-05e2-423f-a6e1-546d4f3d"..., 4096) = 37
+8171  read(13</proc/sys/kernel/random/boot_id>, "", 3072) = 0
+8171  close(13</proc/sys/kernel/random/boot_id>) = 0
+8171  openat(AT_FDCWD, "/home/aldaron/.local/share/flatpak/repo", O_RDONLY|O_NOCTTY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 13</home/aldaron/.local/share/flatpak/repo>
+8171  fstat(13</home/aldaron/.local/share/flatpak/repo>, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+8171  openat(13</home/aldaron/.local/share/flatpak/repo>, "objects", O_RDONLY|O_NOCTTY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 14</home/aldaron/.local/share/flatpak/repo/objects>
+8171  faccessat(14</home/aldaron/.local/share/flatpak/repo/objects>, ".", W_OK) = 0
+8171  fstat(14</home/aldaron/.local/share/flatpak/repo/objects>, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+8171  mkdirat(13</home/aldaron/.local/share/flatpak/repo>, "tmp", 0755) = -1 EEXIST (File exists)
+8171  openat(13</home/aldaron/.local/share/flatpak/repo>, "tmp", O_RDONLY|O_NOCTTY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 15</home/aldaron/.local/share/flatpak/repo/tmp>
+8171  newfstatat(15</home/aldaron/.local/share/flatpak/repo/tmp>, "cache", {st_mode=S_IFDIR|0775, st_size=4096, ...}, AT_SYMLINK_NOFOLLOW) = 0
+8171  openat(15</home/aldaron/.local/share/flatpak/repo/tmp>, "cache", O_RDONLY|O_NOCTTY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 16</home/aldaron/.local/share/flatpak/repo/tmp/cache>
+8171  newfstatat(AT_FDCWD, "/ostree/repo", 0x7ffcba51ff80, 0) = -1 ENOENT (No such file or directory)
+8171  openat(13</home/aldaron/.local/share/flatpak/repo>, "config", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 17</home/aldaron/.local/share/flatpak/repo/config>
+8171  fstat(17</home/aldaron/.local/share/flatpak/repo/config>, {st_mode=S_IFREG|0644, st_size=68, ...}) = 0
+8171  read(17</home/aldaron/.local/share/flatpak/repo/config>, "[core]\nrepo_version=1\nmode=bare-"..., 68) = 68
+8171  read(17</home/aldaron/.local/share/flatpak/repo/config>, "", 68) = 0
+8171  close(17</home/aldaron/.local/share/flatpak/repo/config>) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  stat("/etc/flatpak/installations.d", 0x7ffcba520010) = -1 ENOENT (No such file or directory)
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  openat(AT_FDCWD, "/usr/lib64/charset.alias", O_RDONLY) = -1 ENOENT (No such file or directory)
+8171  fstat(1</dev/pts/2<char 136:2>>, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x2), ...}) = 0
+8171  write(1</dev/pts/2<char 136:2>>, "Looking for updates\342\200\246\n", 23) = 23
+8171  lstat("/home/aldaron/.local/share/flatpak/app", 0x7ffcba51ffc0) = -1 ENOENT (No such file or directory)
+8171  lstat("/home/aldaron/.local/share/flatpak/runtime", 0x7ffcba51ffc0) = -1 ENOENT (No such file or directory)
+8171  futex(0x7fca6d635fb8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  close(13</home/aldaron/.local/share/flatpak/repo>) = 0
+8171  close(15</home/aldaron/.local/share/flatpak/repo/tmp>) = 0
+8171  close(16</home/aldaron/.local/share/flatpak/repo/tmp/cache>) = 0
+8171  close(14</home/aldaron/.local/share/flatpak/repo/objects>) = 0
+8171  close(9</home/aldaron/.local/share/flatpak/repo>) = 0
+8171  close(11</home/aldaron/.local/share/flatpak/repo/tmp>) = 0
+8171  close(12</home/aldaron/.local/share/flatpak/repo/tmp/cache>) = 0
+8171  close(10</home/aldaron/.local/share/flatpak/repo/objects>) = 0
+8171  write(8<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8174  <... poll resumed> )              = 1 ([{fd=8, revents=POLLIN}])
+8171  futex(0x7fca54000b30, FUTEX_WAKE_PRIVATE, 2147483647 <unfinished ...>
+8174  futex(0x7fca54000b20, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8171  <... futex resumed> )             = 0
+8171  futex(0x7fca54000b20, FUTEX_WAKE_PRIVATE, 1) = 1
+8174  <... futex resumed> )             = 0
+8171  futex(0x7fca5e1fb9d0, FUTEX_WAIT, 8174, NULL <unfinished ...>
+8174  read(8<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 16) = 8
+8174  futex(0x7fca54000b20, FUTEX_WAKE_PRIVATE, 1) = 0
+8174  madvise(0x7fca5d9fb000, 8368128, MADV_DONTNEED) = 0
+8174  exit(0)                           = ?
+8171  <... futex resumed> )             = 0
+8174  +++ exited with 0 +++
+8171  eventfd2(0, EFD_CLOEXEC|EFD_NONBLOCK) = 9<anon_inode:[eventfd]>
+8171  write(9<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8171  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  <... poll resumed> )              = 1 ([{fd=7, revents=POLLIN}])
+8171  poll([{fd=9<anon_inode:[eventfd]>, events=POLLIN}], 1, 25000 <unfinished ...>
+8173  read(7<anon_inode:[eventfd]>,  <unfinished ...>
+8171  <... poll resumed> )              = 1 ([{fd=9, revents=POLLIN}])
+8173  <... read resumed> "\1\0\0\0\0\0\0\0", 16) = 8
+8171  read(9<anon_inode:[eventfd]>,  <unfinished ...>
+8173  sendmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\1\0\1\214\0\0\0\t\0\0\0\246\0\0\0\10\1g\0\t(sa{sv})s\0\0"..., iov_len=324}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, MSG_NOSIGNAL <unfinished ...>
+8171  <... read resumed> "\1\0\0\0\0\0\0\0", 16) = 8
+8173  <... sendmsg resumed> )           = 324
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, 0) = 0 (Timeout)
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, -1 <unfinished ...>
+8171  poll([{fd=9<anon_inode:[eventfd]>, events=POLLIN}], 1, 25000 <unfinished ...>
+8173  <... poll resumed> )              = 1 ([{fd=6, revents=POLLIN}])
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\4\1\1\0\0\0\0F\3\0\0~\0\0\0", iov_len=16}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 16
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0) = 1 ([{fd=6, revents=POLLIN}])
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\1\1o\0%\0\0\0/org/freedesktop/PolicyK"..., iov_len=128}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 128
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0) = 1 ([{fd=7, revents=POLLIN}])
+8173  read(7<anon_inode:[eventfd]>, "\3\0\0\0\0\0\0\0", 16) = 8
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0) = 1 ([{fd=6, revents=POLLIN}])
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\2\1\1\0\0\0\0G\3\0\0.\0\0\0", iov_len=16}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 16
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0) = 0 (Timeout)
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0) = 1 ([{fd=6, revents=POLLIN}])
+8173  recvmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="\10\1g\0\0\0\0\0\5\1u\0\t\0\0\0\6\1s\0\6\0\0\0:1.407\0\0"..., iov_len=48}], msg_iovlen=1, msg_controllen=0, msg_flags=MSG_CMSG_CLOEXEC}, MSG_CMSG_CLOEXEC) = 48
+8173  poll([{fd=7<anon_inode:[eventfd]>, events=POLLIN}], 1, 0) = 0 (Timeout)
+8173  write(9<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+8171  <... poll resumed> )              = 1 ([{fd=9, revents=POLLIN}])
+8173  <... write resumed> )             = 8
+8171  futex(0x5632f59efb80, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8173  futex(0x5632f59efb80, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+8171  <... futex resumed> )             = -1 EAGAIN (Resource temporarily unavailable)
+8173  <... futex resumed> )             = 0
+8171  read(9<anon_inode:[eventfd]>,  <unfinished ...>
+8173  futex(0x5632f59efb80, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8171  <... read resumed> "\1\0\0\0\0\0\0\0", 16) = 8
+8171  futex(0x5632f59efb80, FUTEX_WAKE_PRIVATE, 1) = 1
+8173  <... futex resumed> )             = 0
+8173  futex(0x5632f59efb80, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+8171  write(9<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+8173  <... futex resumed> )             = 0
+8171  <... write resumed> )             = 8
+8173  futex(0x5632f59efb80, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8171  futex(0x5632f59efb90, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+8171  futex(0x5632f59efb80, FUTEX_WAKE_PRIVATE, 1) = 1
+8173  <... futex resumed> )             = 0
+8173  futex(0x5632f59efb80, FUTEX_WAKE_PRIVATE, 1) = 0
+8171  close(3</dev/tty<char 5:0>> <unfinished ...>
+8173  close(9<anon_inode:[eventfd]> <unfinished ...>
+8171  <... close resumed> )             = 0
+8171  futex(0x5632f59f20d8, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8173  <... close resumed> )             = 0
+8173  futex(0x5632f59f20d8, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+8171  <... futex resumed> )             = 0
+8173  <... futex resumed> )             = 1
+8171  close(8<anon_inode:[eventfd]> <unfinished ...>
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}], 1, 0 <unfinished ...>
+8171  <... close resumed> )             = 0
+8173  <... poll resumed> )              = 0 (Timeout)
+8171  futex(0x5632f59f20d8, FUTEX_WAKE_PRIVATE, 1) = 0
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, -1 <unfinished ...>
+8171  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+8173  <... poll resumed> )              = 1 ([{fd=7, revents=POLLIN}])
+8171  <... write resumed> )             = 8
+8173  futex(0x5632f59fb4e0, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8171  futex(0x5632f59fb4e0, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+8173  <... futex resumed> )             = -1 EAGAIN (Resource temporarily unavailable)
+8171  <... futex resumed> )             = 0
+8173  read(7<anon_inode:[eventfd]>,  <unfinished ...>
+8171  futex(0x5632f59fb4e0, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8173  <... read resumed> "\2\0\0\0\0\0\0\0", 16) = 8
+8173  futex(0x5632f59fb4e0, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+8171  <... futex resumed> )             = 0
+8173  <... futex resumed> )             = 1
+8173  futex(0x5632f59fb270, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8171  futex(0x5632f59fb4e0, FUTEX_WAKE_PRIVATE, 1) = 0
+8171  futex(0x5632f59fb270, FUTEX_WAKE_PRIVATE, 1) = 0
+8171  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  <... futex resumed> )             = -1 EAGAIN (Resource temporarily unavailable)
+8171  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8 <unfinished ...>
+8173  futex(0x5632f59fb270, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+8171  <... write resumed> )             = 8
+8171  futex(0x5632f59fb270, FUTEX_WAKE_PRIVATE, 1) = 1
+8173  <... futex resumed> )             = 0
+8173  futex(0x5632f59fb270, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+8171  ioctl(1</dev/pts/2<char 136:2>>, TCGETS <unfinished ...>
+8173  <... futex resumed> )             = 0
+8173  sendmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\1\0\1\252\0\0\0\n\0\0\0}\0\0\0\10\1g\0\1s\0\0\1\1o\0\25\0\0\0"..., iov_len=314}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, MSG_NOSIGNAL) = 314
+8171  <... ioctl resumed> , {B38400 opost isig icanon echo ...}) = 0
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, 0 <unfinished ...>
+8171  write(2</dev/pts/2<char 136:2>>, "\33[31m\33[1merror: \33[22m\33[0morg.gno"..., 70 <unfinished ...>
+8173  <... poll resumed> )              = 1 ([{fd=7, revents=POLLIN}])
+8171  <... write resumed> )             = 70
+8173  read(7<anon_inode:[eventfd]>, "\2\0\0\0\0\0\0\0", 16) = 8
+8173  sendmsg(6<UNIX:[154689->152394]>, {msg_name=NULL, msg_namelen=0, msg_iov=[{iov_base="l\1\0\1\326\0\0\0\v\0\0\0}\0\0\0\10\1g\0\1s\0\0\1\1o\0\25\0\0\0"..., iov_len=358}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, MSG_NOSIGNAL) = 358
+8173  poll([{fd=6<UNIX:[154689->152394]>, events=POLLIN}, {fd=7<anon_inode:[eventfd]>, events=POLLIN}], 2, 0) = 1 ([{fd=6, revents=POLLIN}])
+8173  write(7<anon_inode:[eventfd]>, "\1\0\0\0\0\0\0\0", 8) = 8
+8173  recvmsg(6<UNIX:[154689->152394]>,  <unfinished ...>
+8171  exit_group(1)                     = ?
+8172  +++ exited with 1 +++
+8173  +++ exited with 1 +++
+8171  +++ exited with 1 +++
