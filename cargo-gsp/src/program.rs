@@ -110,12 +110,12 @@ pub fn wait_on(
     }
 }
 
-pub fn execute(name: &str, prg: &str, args: Vec<&str>, _fail: &str, _error: &str) {
+pub fn execute(name: &str, prg: &str, args: Vec<&str>, _error: &str) {
     let program = spawn(prg, args);
     let progress = cli::Progress::new(name, "Starting....");
     let pipe = Pipe::new();
 
-    wait_on(program, Some(progress), pipe, &format!("{} failed!", name));
+    wait_on(program, None, pipe, &format!("{} failed!", name));
 }
 
 pub fn execute_log(prg: &str, args: Vec<&str>) {

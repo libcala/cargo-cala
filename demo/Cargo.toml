@@ -2,7 +2,7 @@
 name = "gsp_demo"
 version = "0.1.0"
 authors = ["Jeron Aldaron Lau <jeronaldaron@plopgrizzly.com>"]
-homepage = "https://aldarons-tech.github.io/gsp_demo.html"
+homepage = "https://free.plopgrizzly.com/gsp_demo.html"
 description = "_Demo:Packager-_Software-Graphical"
 keywords = [ "gsp", "demo" ]
 categories = [ "demo" ]

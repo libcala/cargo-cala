@@ -199,7 +199,6 @@ pub fn execute(cargo_toml: parse::CargoToml, _translations: resources::Lang) {
             "Gradle",
             "gradle",
             vec!["wrapper", "--build-file", &build_gradle],
-            "Gradle was not found (Install it!)",
             "gradlew failed",
         );
     }
@@ -314,7 +313,6 @@ pub fn execute(cargo_toml: parse::CargoToml, _translations: resources::Lang) {
             &build_gradle,
             "--stacktrace",
         ],
-        "Gradle was not found (install IT!)",
         "java compile failed!",
     );
 
@@ -354,7 +352,6 @@ pub fn execute(cargo_toml: parse::CargoToml, _translations: resources::Lang) {
                 "-storepass",
                 password.as_str(),
             ],
-            "keytool not installed!",
             "keytool failed!",
         );
     }
@@ -385,7 +382,6 @@ pub fn execute(cargo_toml: parse::CargoToml, _translations: resources::Lang) {
             &unsigned,
             &cargo_toml.subdomain,
         ],
-        "jarsigner not installed!",
         "couldn't sign apk!",
     );
 
@@ -394,7 +390,6 @@ pub fn execute(cargo_toml: parse::CargoToml, _translations: resources::Lang) {
         "Zipalign",
         zipalign,
         vec!["-f", "-v", "4", &unsigned, &apk_out],
-        "zipalign for 25.0.2 is not installed",
         "zipalign failed",
     );
 

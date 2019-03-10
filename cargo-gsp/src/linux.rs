@@ -106,7 +106,7 @@ pub fn execute(cargo_toml: parse::CargoToml, translations: resources::Lang) {
             "\
              [Application]\n\
              name={}\n\
-             runtime=org.gnome.Platform/x86_64/3.24\n\
+             runtime=org.gnome.Platform/x86_64/3.30\n\
              command={}\n\
              \n\
              [Context]\n\
@@ -169,7 +169,6 @@ pub fn execute(cargo_toml: parse::CargoToml, translations: resources::Lang) {
             "flatpak build-export",
             "flatpak",
             vec!["build-export", &flatpak_repo, &flatpak_app],
-            "flatpak not found!",
             "flatpak build-export failed!",
         );
 
@@ -184,15 +183,13 @@ pub fn execute(cargo_toml: parse::CargoToml, translations: resources::Lang) {
                 repo_name,
                 &flatpak_repo,
             ],
-            "flatpak not found(2)!",
             "flatpak remote-add failed!",
         );
 
         program::execute(
             "flatpak install",
             "flatpak",
-            vec!["--user", "install", repo_name, &app_domain],
-            "flatpak not found(3)!",
+            vec!["--user", "install", repo_name, &app_domain, "-y"],
             "flatpak install failed!",
         );
 
@@ -200,7 +197,6 @@ pub fn execute(cargo_toml: parse::CargoToml, translations: resources::Lang) {
             "flatpak update",
             "flatpak",
             vec!["--user", "update", &app_domain],
-            "flatpak not found(4)!",
             "flatpak update failed!",
         );
 
