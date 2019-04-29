@@ -29,7 +29,31 @@ You'll need a terminal.
 
 ## Android: APK
 
-TODO
+### Use Cargo-Dist to Build APKs
+Here is the script that is used, if you want to set it up manually:
+
+```sh
+mkdir ~/.cargo-dist/
+cd ~/.cargo-dist/
+rustup target add arm-linux-androideabi
+wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
+unzip sdk-tools-linux-4333796.zip
+wget https://dl.google.com/android/repository/android-ndk-r19c-linux-x86_64.zip
+unzip android-ndk-r19c-linux-x86_64.zip
+rm android-ndk-r19c-linux-x86_64.zip
+rm sdk-tools-linux-4333796.zip
+mkdir android_sdk/
+cd android_sdk/
+mv ../tools .
+mv android-ndk-r19c/ android_ndk/
+./tools/bin/sdkmanager "platform-tools" "platforms;android-18" "build-tools;26.0.1"
+```
+
+Environment variables:
+
+```sh
+NDK_HOME=$HOME/.cargo-dist/android_ndk ANDROID_HOME=$HOME/.cargo-dist/android_sdk
+```
 
 ## Windows: Installer.exe
 
