@@ -15,41 +15,45 @@ fn apk() {
     run("cargo",
         vec![
             "rustc",
+            "--target",
+            "thumbv7neon-linux-androideabi", // "armv7-linux-androideabi" // "arm-linux-androideabi"
+            "--release",
             "--",
             "-C",
             &format!("linker={}/.cargo-dive/arm-linux-androideabi/bin/clang", home),
-            "--target",
-            "thumbv7neon-linux-androideabi" // "armv7-linux-androideabi" // "arm-linux-androideabi"
         ]);
     // 64-bit ARM
     run("cargo",
         vec![
             "rustc",
+            "--target",
+            "aarch64-linux-android",
+            "--release",
             "--",
             "-C",
             &format!("linker={}/.cargo-dive/aarch64-linux-android/bin/clang", home),
-            "--target",
-            "aarch64-linux-android"
         ]);
     // 32-bit AMD
     run("cargo",
         vec![
             "rustc",
+            "--target",
+            "i686-linux-android",
+            "--release",
             "--",
             "-C",
             &format!("linker={}/.cargo-dive/x86-linux-android/bin/clang", home),
-            "--target",
-            "i686-linux-android"
         ]);
     // 64-bit AMD
     run("cargo",
         vec![
             "rustc",
+            "--target",
+            "x86_64-linux-android",
+            "--release",
             "--",
             "-C",
             &format!("linker={}/.cargo-dive/x86_64-linux-android/bin/clang", home),
-            "--target",
-            "x86_64-linux-android"
         ]);
 }
 
