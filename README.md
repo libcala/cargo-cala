@@ -2,12 +2,6 @@
 
 A cargo plugin that makes cargo generate release packages instead of binaries.
 
-## Links
-* [Website](http://at.plopgrizzly.tech/gsp/)
-* [Cargo](https://crates.io/crates/cargo-gsp/)
-* [Documentation](http://at.plopgrizzly.tech/docs/gsp/)
-* [Tutorial](http://at.plopgrizzly.tech/demos/gsp)
-
 ## Linux: FlatPak
 
 You'll need a terminal.
@@ -33,19 +27,23 @@ You'll need a terminal.
 Here is the script that is used, if you want to set it up manually:
 
 ```sh
+rustup target add arm-linux-androideabi aarch64-linux-android armv7-linux-androideabi i686-linux-android thumbv7neon-linux-androideabi x86_64-linux-android
 mkdir ~/.cargo-dist/
 cd ~/.cargo-dist/
-rustup target add arm-linux-androideabi
 wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 unzip sdk-tools-linux-4333796.zip
 wget https://dl.google.com/android/repository/android-ndk-r19c-linux-x86_64.zip
 unzip android-ndk-r19c-linux-x86_64.zip
 rm android-ndk-r19c-linux-x86_64.zip
 rm sdk-tools-linux-4333796.zip
+mv android-ndk-r19c/ android_ndk/
+./android_ndk/build/tools/make-standalone-toolchain.sh --toolchain=arm-linux-androideabi --install-dir=arm-linux-androideabi
+./android_ndk/build/tools/make-standalone-toolchain.sh --toolchain=aarch64-linux-android --install-dir=aarch64-linux-android
+./android_ndk/build/tools/make-standalone-toolchain.sh --toolchain=x86-linux-android --install-dir=x86-linux-android
+./android_ndk/build/tools/make-standalone-toolchain.sh --toolchain=x86_64-linux-android --install-dir=x86_64-linux-android
 mkdir android_sdk/
 cd android_sdk/
 mv ../tools .
-mv android-ndk-r19c/ android_ndk/
 ./tools/bin/sdkmanager "platform-tools" "platforms;android-18" "build-tools;26.0.1"
 ```
 
