@@ -12,7 +12,6 @@ fn apk() {
     use std::env::var;
 
     // Find SDK & NDK directories if they exist, otherwise create them.
-    println!("Searching for SDK…");
     let home = var("HOME").unwrap();
     let dive = format!("{}/.cargo-dive", home);
     std::fs::create_dir_all(&dive).unwrap();
@@ -52,7 +51,6 @@ fn apk() {
         }
     };
 
-    println!("Searching for NDK…");
     let asat = format!("{}/.cargo-dive/android-ndk", home);
     let andk = match var("ANDROID_NDK_HOME")
         .or(var("NDK_HOME"))
@@ -102,7 +100,6 @@ fn apk() {
     std::fs::create_dir_all("target/dive/android/res").unwrap();
 
     // Make sure the 4 targeted toolchains are installed.
-    println!("Installing Rust toolchains…");
     run(
         "rustup",
         &[
@@ -118,15 +115,17 @@ fn apk() {
     );
 
     // Make sure the android platform tools are installed.
-    println!("Installing Android platform tools…");
-    run(
-        &format!("{}/tools/bin/sdkmanager", asdk),
-        &[
-            "platform-tools",
-            "platforms;android-18",
-            "build-tools;26.0.1",
-        ],
-    );
+    if std::path::Path::new(&format!("{}/build-tools/", &asdk)).exists() == false {
+        println!("Installing Android platform tools…");
+        run(
+            &format!("{}/tools/bin/sdkmanager", asdk),
+            &[
+                "platform-tools",
+                "platforms;android-18",
+                "build-tools;26.0.1",
+            ],
+        );
+    }
 
     // Make sure Android toolchains are installed.
     if std::path::Path::new(&format!("{}/arm-linux-androideabi", &asat)).exists() == false {
