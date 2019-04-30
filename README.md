@@ -50,7 +50,7 @@ mv ../tools .
 Environment variables:
 
 ```sh
-NDK_HOME=$HOME/.cargo-dist/android_ndk ANDROID_HOME=$HOME/.cargo-dist/android_sdk
+NDK_HOME=$HOME/.cargo-dive/android_ndk ANDROID_HOME=$HOME/.cargo-dive/android_sdk
 ```
 
 ## Windows: Installer.exe
