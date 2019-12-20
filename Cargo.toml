@@ -5,3 +5,5 @@ authors = ["Jeron Aldaron Lau <jeronlau@plopgrizzly.com>"]
 edition = "2018"
 
 [dependencies]
+actix-web = "1.0"
+actix-files = "0.1.3"
