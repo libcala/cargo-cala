@@ -3,6 +3,11 @@ name = "cargo-cala"
 version = "0.0.1"
 authors = ["Jeron Aldaron Lau <jeronlau@plopgrizzly.com>"]
 edition = "2018"
+license = "MIT / BSL-1.0"
+documentation = "https://libcala.github.io/tutorials"
+repository = "https://github.com/libcala/cargo-cala"
+readme = "README.md"
+description = "Cargo plugin for testing & building release packages that depend on cala and/or wasm."
 
 [dependencies]
 actix-web = "1.0"

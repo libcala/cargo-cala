@@ -1,6 +1,6 @@
 <img src="http://at.plopgrizzly.tech/gsp/banner.png" alt="Graphical Software Packager (cargo-gsp)" width="100%">
 
-A cargo plugin that makes cargo generate release packages instead of binaries.
+Cargo plugin for testing & building release packages that depend on cala and/or wasm.
 
 ## Linux: FlatPak
 
