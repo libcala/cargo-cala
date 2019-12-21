@@ -7,6 +7,7 @@ use actix_web::{HttpServer, App as ActixApp, HttpRequest, web};
 use actix_files as fs;
 
 use std::io::Write;
+use std::io::Read;
 
 use inotify::{
     WatchMask,
@@ -60,7 +61,27 @@ fn build_loop() {
 
         let mut file = std::fs::File::create("target/cargo-cala/web/out/index.html").unwrap();
 
-        write!(file, include!("res/html.rs"), "Name").unwrap();
+        let in_data = if let Ok(mut in_file) = std::fs::File::open("res/name.txt") {
+            let mut in_data = String::new();
+            in_file.read_to_string(&mut in_data).unwrap();
+            in_data
+        } else {
+            "Cala Project".to_string()
+        };
+
+        write!(file, include!("res/html.rs"), in_data).unwrap();
+
+        let mut file = std::fs::File::create("target/cargo-cala/web/out/icon.svg").unwrap();
+
+        let in_data = if let Ok(mut in_file) = std::fs::File::open("res/icon.svg") {
+            let mut in_data = vec![];
+            in_file.read_to_end(&mut in_data).unwrap();
+            in_data
+        } else {
+            include_bytes!("res/icon.svg").to_vec()
+        };
+
+        file.write_all(&in_data).unwrap();
 
         inotify
             .read_events_blocking(&mut buffer)
