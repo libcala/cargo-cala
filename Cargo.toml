@@ -11,6 +11,6 @@ description = "Cargo plugin for testing & building release packages that depend 
 
 [dependencies]
 actix-web = "1.0"
-actix-files = "0.1"
+actix-files = "0.2"
 walrus = "0.14"
 inotify = "0.7"
