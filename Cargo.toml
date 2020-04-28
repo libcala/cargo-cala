@@ -10,7 +10,7 @@ readme = "README.md"
 description = "Cargo plugin for testing & building release packages that depend on cala and/or wasm."
 
 [dependencies]
-actix-web = "1.0"
 actix-files = "0.2"
+actix-web = "2.0"
 walrus = "0.14"
 inotify = "0.7"
