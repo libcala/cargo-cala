@@ -7,10 +7,10 @@ license = "MIT / BSL-1.0"
 documentation = "https://libcala.github.io/tutorials"
 repository = "https://github.com/libcala/cargo-cala"
 readme = "README.md"
-description = "Cargo plugin for testing & building release packages that depend on cala and/or wasm."
+description = "A cargo plugin that makes cargo generate release packages instead of binaries."
 
 [dependencies]
-actix-files = "0.2"
-actix-web = "2.0"
 inotify = "0.8"
 walrus = "0.16"
+pasts = "0.3"
+cala_web = { path = "../cala_web" }

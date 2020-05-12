@@ -1,5 +1,6 @@
 mod apk;
 mod web;
+mod run;
 
 /// Start a program.
 fn run(prg: &str, args: &[&str]) -> std::process::ExitStatus {
@@ -10,12 +11,19 @@ fn run(prg: &str, args: &[&str]) -> std::process::ExitStatus {
 }
 
 fn help() {
-    println!("USAGE:");
-    println!("      cargo cala web      # Deploy distribution for web");
-    println!("      cargo cala apk      # Deploy distribution package for Android (APK)");
-    println!("      cargo cala pak      # Deploy distribution package For Linux (FlatPak) [TODO]");
-    println!("      cargo cala dmg      # Deploy distribution package For Mac (.dmg) [TODO]");
-    println!("      cargo cala msi      # Deploy distribution installer For Windows (.msi) [TODO]");
+    println!("USAGE: cargo cala [OPTION]");
+    println!();
+    println!("[OPTION]:");
+    println!("      run      Debug application on this computer");
+    println!("      android  Debug application on connected Android device");
+    println!("      wasm     Debug application in web browser");
+    println!();
+    println!("      flatpak  Build FlatPak release package");
+    println!("      aab      Build Android release package (*.abb - Android App Bundle)");
+    println!("      website  Build static website");
+    println!();
+    // println!("      dmg      Deploy distribution package For Mac (.dmg) [TODO]");
+    // println!("      msi      Deploy distribution installer For Windows (.msi) [TODO]");
 }
 
 fn main() {
@@ -35,11 +43,13 @@ fn main() {
         }
     } else {
         match args[2].as_str() {
-            "apk" => apk::apk(),
-            "web" => web::web(),
-            "pak" => unimplemented!(),
-            "app" => unimplemented!(),
-            "msi" => unimplemented!(),
+            "run" => run::run(),
+            "android" => apk::apk(),
+            "wasm" => web::web(),
+            
+            "flatpak" => unimplemented!(),
+            "aab" => unimplemented!(),
+            "website" => unimplemented!(),
             a => {
                 eprintln!("Unknown Distribution Format: {}", a);
                 help()

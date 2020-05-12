@@ -1,10 +1,7 @@
 use super::run;
-use actix_web;
-use actix_files;
-use walrus;
 
-use actix_web::{HttpServer, App as ActixApp, HttpRequest, web};
-use actix_files as fs;
+use pasts::prelude::*;
+use cala_web::WebServer;
 
 use std::io::Write;
 use std::io::Read;
@@ -104,19 +101,5 @@ pub(super) fn web() {
     let ip_port = "0.0.0.0:8080";
     println!("Running on {}…", ip_port);
 
-    let server = HttpServer::new(move ||
-        ActixApp::new()
-            .service(web::resource("/").route(
-                web::get().to(|_req: HttpRequest| {
-                    fs::NamedFile::open("./target/cargo-cala/web/out/index.html")
-                }
-            )))
-            .service(web::resource("/{page}").route(
-                web::get().to(|_req: HttpRequest, path: web::Path<(String,)>| {
-                    fs::NamedFile::open(format!("./target/cargo-cala/web/out/{}", path.0))
-                }
-            )))
-    );
-
-    server.bind(ip_port).unwrap().run().unwrap();
+    pasts::ThreadInterrupt::block_on(WebServer::with_resources("target/cargo-cala/web/out/"));
 }
