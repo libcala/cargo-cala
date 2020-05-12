@@ -47,9 +47,9 @@ fn main() {
             "android" => apk::apk(),
             "wasm" => web::web(),
             
-            "flatpak" => unimplemented!(),
-            "aab" => unimplemented!(),
-            "website" => unimplemented!(),
+            "flatpak" => todo!(),
+            "aab" => todo!(),
+            "website" => todo!(),
             a => {
                 eprintln!("Unknown Distribution Format: {}", a);
                 help()

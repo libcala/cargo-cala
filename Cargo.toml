@@ -10,7 +10,9 @@ readme = "README.md"
 description = "A cargo plugin that makes cargo generate release packages instead of binaries."
 
 [dependencies]
+cargo = "0.44"
 inotify = "0.8"
 walrus = "0.16"
 pasts = "0.3"
 cala_web = { path = "../cala_web" }
+num_cpus = "1.0"
