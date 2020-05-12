@@ -76,7 +76,7 @@ flatpak build-export target/cargo-cala/flatpak/repo/ target/cargo-cala/flatpak/a
 ### Installing Locally
 ```
 flatpak --user remote-add --no-gpg-verify --if-not-exists {APP_DOMAIN} target/cargo-cala/flatpak/repo/
-flatpak --user install --reinstall --noninteractive plopgrizzly.plop-grizzly cala.plopgrizzly.plop-grizzly -y
+flatpak --user install --reinstall --noninteractive {APP_DOMAIN} {APP_DOMAIN} -y
 ```
 
 ### Running Locally
