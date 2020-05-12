@@ -35,7 +35,14 @@ pub(super) fn apk() {
                 );
                 run("touch", &[&format!("{}/sdk-linux.zip", sdk)]);
                 // Extract the SDK.
-                run("unzip", &[&format!("{}/sdk-linux.zip", sdk), "-d", &format!("{}/", sdk)]);
+                run(
+                    "unzip",
+                    &[
+                        &format!("{}/sdk-linux.zip", sdk),
+                        "-d",
+                        &format!("{}/", sdk),
+                    ],
+                );
                 // Delete the ZIP file.
                 run("rm", &[&format!("{}/sdk-linux.zip", sdk)]);
             } else {
@@ -171,10 +178,7 @@ pub(super) fn apk() {
             "--release",
             "--",
             "-C",
-            &format!(
-                "linker={}/arm-linux-androideabi/bin/clang",
-                &asat,
-            ),
+            &format!("linker={}/arm-linux-androideabi/bin/clang", &asat,),
         ],
     );
     // 64-bit ARM
@@ -187,10 +191,7 @@ pub(super) fn apk() {
             "--release",
             "--",
             "-C",
-            &format!(
-                "linker={}/aarch64-linux-android/bin/clang",
-                &asat,
-            ),
+            &format!("linker={}/aarch64-linux-android/bin/clang", &asat,),
         ],
     );
     // 32-bit AMD

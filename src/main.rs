@@ -1,6 +1,6 @@
 mod apk;
-mod web;
 mod run;
+mod web;
 
 /// Start a program.
 fn run(prg: &str, args: &[&str]) -> std::process::ExitStatus {
@@ -46,7 +46,7 @@ fn main() {
             "run" => run::run(),
             "android" => apk::apk(),
             "wasm" => web::web(),
-            
+
             "flatpak" => todo!(),
             "aab" => todo!(),
             "website" => todo!(),

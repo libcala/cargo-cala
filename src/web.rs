@@ -1,20 +1,22 @@
 use super::run;
 
-use pasts::prelude::*;
 use cala_web::WebServer;
+use pasts::prelude::*;
 
-use std::io::Write;
 use std::io::Read;
+use std::io::Write;
 
-use inotify::{
-    WatchMask,
-    Inotify,
-};
+use inotify::{Inotify, WatchMask};
 
 fn build_loop() {
     let mut inotify = Inotify::init().expect("Failed to initialize inotify");
 
-    inotify.add_watch("src", WatchMask::MODIFY | WatchMask::CREATE | WatchMask::DELETE).expect("Failed to add inotify watch");
+    inotify
+        .add_watch(
+            "src",
+            WatchMask::MODIFY | WatchMask::CREATE | WatchMask::DELETE,
+        )
+        .expect("Failed to add inotify watch");
 
     let mut buffer = [0u8; 4096];
     loop {
@@ -26,12 +28,18 @@ fn build_loop() {
                 "wasm32-unknown-unknown",
                 "--release",
                 "--",
-                "-C", "link-arg=-o",
-                "-C", "link-arg=target/cargo-cala/web/out/app.wasm",
-                "-C", "lto=fat",
-                "-C", "opt-level=s",
-                "-C", "debuginfo=0",
-                "-C", "panic=abort",
+                "-C",
+                "link-arg=-o",
+                "-C",
+                "link-arg=target/cargo-cala/web/out/app.wasm",
+                "-C",
+                "lto=fat",
+                "-C",
+                "opt-level=s",
+                "-C",
+                "debuginfo=0",
+                "-C",
+                "panic=abort",
             ],
         );
 
@@ -52,9 +60,13 @@ fn build_loop() {
         walrus::passes::gc::run(&mut module);
 
         module.name = None;
-        module.producers.add_processed_by(env!("CARGO_PKG_NAME"), env!("CARGO_PKG_VERSION"));
+        module
+            .producers
+            .add_processed_by(env!("CARGO_PKG_NAME"), env!("CARGO_PKG_VERSION"));
 
-        module.emit_wasm_file("target/cargo-cala/web/out/app.wasm").unwrap();
+        module
+            .emit_wasm_file("target/cargo-cala/web/out/app.wasm")
+            .unwrap();
 
         let mut file = std::fs::File::create("target/cargo-cala/web/out/index.html").unwrap();
 
