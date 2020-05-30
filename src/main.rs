@@ -13,8 +13,8 @@ fn apk() {
 
     // Find SDK & NDK directories if they exist, otherwise create them.
     let home = var("HOME").unwrap();
-    let dive = format!("{}/.cargo-dive", home);
-    std::fs::create_dir_all(&dive).unwrap();
+    let cala = format!("{}/.cargo-cala", home);
+    std::fs::create_dir_all(&cala).unwrap();
     let asdk = match var("ANDROID_SDK_ROOT")
         .or(var("ANDROID_HOME"))
         .or(var("ANDROID_SDK"))
@@ -24,7 +24,7 @@ fn apk() {
             s
         }
         Err(_) => {
-            let sdk = format!("{}/android-sdk", &dive);
+            let sdk = format!("{}/android-sdk", &cala);
             if std::path::Path::new(&sdk).exists() == false {
                 println!("No Android SDK found!");
                 // Create SDK folder.
@@ -35,7 +35,7 @@ fn apk() {
                     &[
                         "-P",
                         &sdk,
-                        "https://github.com/JeronAldaron/cargo-dive/releases/download/android/sdk-linux.zip",
+                        "https://github.com/JeronAldaron/cargo-cala/releases/download/android/sdk-linux.zip",
 //                        "https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip",
                     ],
                 );
@@ -45,13 +45,13 @@ fn apk() {
                 // Delete the ZIP file.
                 run("rm", &[&format!("{}/sdk-linux.zip", sdk)]);
             } else {
-                println!("Found Android SDK (dive)!");
+                println!("Found Android SDK (cala)!");
             }
             sdk
         }
     };
 
-    let asat = format!("{}/.cargo-dive/android-ndk", home);
+    let asat = format!("{}/.cargo-cala/android-ndk", home);
     let andk = match var("ANDROID_NDK_HOME")
         .or(var("NDK_HOME"))
         .or(var("ANROID_NDK"))
@@ -72,7 +72,7 @@ fn apk() {
                     &[
                         "-P",
                         &ndk,
-                        "https://github.com/JeronAldaron/cargo-dive/releases/download/android/ndk-linux.zip",
+                        "https://github.com/JeronAldaron/cargo-cala/releases/download/android/ndk-linux.zip",
                     ],
                 );
                 // Extract the NDK.
@@ -88,7 +88,7 @@ fn apk() {
                 // Delete the ZIP file.
                 run("rm", &[&format!("{}/ndk-linux.zip", ndk)]);
             } else {
-                println!("Found Android NDK (dive)!");
+                println!("Found Android NDK (cala)!");
             }
             format!("{}/ndk", ndk)
         }
@@ -96,8 +96,11 @@ fn apk() {
 
     // Set up target directory…
     println!("Setting up target directory…");
-    std::fs::create_dir_all("target/dive/android/lib").unwrap();
-    std::fs::create_dir_all("target/dive/android/res").unwrap();
+    std::fs::create_dir_all("target/cala/android/lib/arm64-v8a").unwrap();
+    std::fs::create_dir_all("target/cala/android/lib/armeabi-v7a").unwrap();
+    std::fs::create_dir_all("target/cala/android/lib/x86").unwrap();
+    std::fs::create_dir_all("target/cala/android/lib/x86_64").unwrap();
+    std::fs::create_dir_all("target/cala/android/res/values").unwrap();
 
     // Make sure the 4 targeted toolchains are installed.
     run(
@@ -230,10 +233,12 @@ fn apk() {
 
 fn help() {
     println!("USAGE:");
-    println!("      cargo dive apk      # Deploy distribution package for Android (APK)");
-    println!("      cargo dive pak      # Deploy distribution package For Linux (FlatPak) [TODO]");
-    println!("      cargo dive app      # Deploy distribution package For Mac (.app) [TODO]");
-    println!("      cargo dive msi      # Deploy distribution installer For Windows (.msi) [TODO]");
+    println!("      cargo cala bin      # Deploy app binary for your distribution.");
+    println!("      cargo cala prg      # Deploy distribution package for Dive (.prg)");
+    println!("      cargo cala apk      # Deploy distribution package for Android (.apk)");
+    println!("      cargo cala pak      # Deploy distribution package For Linux (FlatPak) [TODO]");
+    println!("      cargo cala app      # Deploy distribution package For Mac (.app) [TODO]");
+    println!("      cargo cala msi      # Deploy distribution installer For Windows (.msi) [TODO]");
 }
 
 fn main() {
@@ -241,18 +246,22 @@ fn main() {
 
     if args.len() != 3 {
         if args.len() == 2 {
-            if args[1] != "dive" {
-                eprintln!("Please use `cargo dive` instead of `cargo-dive`");
+            if args[1] != "cala" {
+                eprintln!("Please use `cargo cala` instead of `cargo-cala`");
             } else {
                 help(); // TODO: build for native.
             }
         } else {
             // 1
-            eprintln!("Please use `cargo dive` instead of `cargo-dive`");
+            eprintln!("Please use `cargo cala` instead of `cargo-cala`");
             help();
         }
     } else {
         match args[2].as_str() {
+            "bin" => {
+                
+            }
+            "prg" => unimplemented!(),
             "apk" => apk(),
             "pak" => unimplemented!(),
             "app" => unimplemented!(),
