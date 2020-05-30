@@ -1,24 +1,14 @@
-mod apk;
-mod run;
-mod web;
+use super::run;
 
-/// Start a program.
-fn run(prg: &str, args: &[&str]) -> std::process::ExitStatus {
-    std::process::Command::new(prg)
-        .args(args)
-        .status()
-        .expect(&format!("Couldn't Start {}", prg))
-}
-
-fn apk() {
+pub(super) fn apk() {
     println!("Building for Android…");
 
     use std::env::var;
 
     // Find SDK & NDK directories if they exist, otherwise create them.
     let home = var("HOME").unwrap();
-    let cala = format!("{}/.cargo-cala", home);
-    std::fs::create_dir_all(&cala).unwrap();
+    let dive = format!("{}/.cargo-dive", home);
+    std::fs::create_dir_all(&dive).unwrap();
     let asdk = match var("ANDROID_SDK_ROOT")
         .or(var("ANDROID_HOME"))
         .or(var("ANDROID_SDK"))
@@ -28,7 +18,7 @@ fn apk() {
             s
         }
         Err(_) => {
-            let sdk = format!("{}/android-sdk", &cala);
+            let sdk = format!("{}/android-sdk", &dive);
             if std::path::Path::new(&sdk).exists() == false {
                 println!("No Android SDK found!");
                 // Create SDK folder.
@@ -39,23 +29,30 @@ fn apk() {
                     &[
                         "-P",
                         &sdk,
-                        "https://github.com/JeronAldaron/cargo-cala/releases/download/android/sdk-linux.zip",
+                        "https://github.com/JeronAldaron/cargo-dive/releases/download/android/sdk-linux.zip",
 //                        "https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip",
                     ],
                 );
                 run("touch", &[&format!("{}/sdk-linux.zip", sdk)]);
                 // Extract the SDK.
-                run("unzip", &[&format!("{}/sdk-linux.zip", sdk), "-d", &format!("{}/", sdk)]);
+                run(
+                    "unzip",
+                    &[
+                        &format!("{}/sdk-linux.zip", sdk),
+                        "-d",
+                        &format!("{}/", sdk),
+                    ],
+                );
                 // Delete the ZIP file.
                 run("rm", &[&format!("{}/sdk-linux.zip", sdk)]);
             } else {
-                println!("Found Android SDK (cala)!");
+                println!("Found Android SDK (dive)!");
             }
             sdk
         }
     };
 
-    let asat = format!("{}/.cargo-cala/android-ndk", home);
+    let asat = format!("{}/.cargo-dive/android-ndk", home);
     let andk = match var("ANDROID_NDK_HOME")
         .or(var("NDK_HOME"))
         .or(var("ANROID_NDK"))
@@ -76,7 +73,7 @@ fn apk() {
                     &[
                         "-P",
                         &ndk,
-                        "https://github.com/JeronAldaron/cargo-cala/releases/download/android/ndk-linux.zip",
+                        "https://github.com/JeronAldaron/cargo-dive/releases/download/android/ndk-linux.zip",
                     ],
                 );
                 // Extract the NDK.
@@ -92,7 +89,7 @@ fn apk() {
                 // Delete the ZIP file.
                 run("rm", &[&format!("{}/ndk-linux.zip", ndk)]);
             } else {
-                println!("Found Android NDK (cala)!");
+                println!("Found Android NDK (dive)!");
             }
             format!("{}/ndk", ndk)
         }
@@ -100,11 +97,8 @@ fn apk() {
 
     // Set up target directory…
     println!("Setting up target directory…");
-    std::fs::create_dir_all("target/cala/android/lib/arm64-v8a").unwrap();
-    std::fs::create_dir_all("target/cala/android/lib/armeabi-v7a").unwrap();
-    std::fs::create_dir_all("target/cala/android/lib/x86").unwrap();
-    std::fs::create_dir_all("target/cala/android/lib/x86_64").unwrap();
-    std::fs::create_dir_all("target/cala/android/res/values").unwrap();
+    std::fs::create_dir_all("target/dive/android/lib").unwrap();
+    std::fs::create_dir_all("target/dive/android/res").unwrap();
 
     // Make sure the 4 targeted toolchains are installed.
     run(
@@ -184,10 +178,7 @@ fn apk() {
             "--release",
             "--",
             "-C",
-            &format!(
-                "linker={}/arm-linux-androideabi/bin/clang",
-                &asat,
-            ),
+            &format!("linker={}/arm-linux-androideabi/bin/clang", &asat,),
         ],
     );
     // 64-bit ARM
@@ -200,10 +191,7 @@ fn apk() {
             "--release",
             "--",
             "-C",
-            &format!(
-                "linker={}/aarch64-linux-android/bin/clang",
-                &asat,
-            ),
+            &format!("linker={}/aarch64-linux-android/bin/clang", &asat,),
         ],
     );
     // 32-bit AMD
@@ -233,52 +221,4 @@ fn apk() {
         ],
     );
     // Copy into android's lib folder.
-}
-
-fn help() {
-    println!("USAGE: cargo cala [OPTION]");
-    println!();
-    println!("[OPTION]:");
-    println!("      run      Debug application on this computer");
-    println!("      android  Debug application on connected Android device");
-    println!("      wasm     Debug application in web browser");
-    println!();
-    println!("      flatpak  Build FlatPak release package");
-    println!("      aab      Build Android release package (*.abb - Android App Bundle)");
-    println!("      website  Build static website");
-    println!();
-    // println!("      dmg      Deploy distribution package For Mac (.dmg) [TODO]");
-    // println!("      msi      Deploy distribution installer For Windows (.msi) [TODO]");
-}
-
-fn main() {
-    let args: Vec<_> = std::env::args().collect();
-
-    if args.len() != 3 {
-        if args.len() == 2 {
-            if args[1] != "cala" {
-                eprintln!("Please use `cargo cala` instead of `cargo-cala`");
-            } else {
-                help(); // TODO: build for native.
-            }
-        } else {
-            // 1
-            eprintln!("Please use `cargo cala` instead of `cargo-cala`");
-            help();
-        }
-    } else {
-        match args[2].as_str() {
-            "run" => run::run(),
-            "android" => apk(), // apk::apk(),
-            "wasm" => web::web(),
-
-            "flatpak" => todo!(),
-            "aab" => todo!(),
-            "website" => todo!(),
-            a => {
-                eprintln!("Unknown Distribution Format: {}", a);
-                help()
-            }
-        }
-    }
 }
