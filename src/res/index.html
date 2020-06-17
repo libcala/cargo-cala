@@ -77,9 +77,9 @@
         if (!('WebAssembly' in window)) {{
             // Fallback asm.js
             // FIXME
-            console.info("Using asm.js (fallback)...");
+            console.log("Using asm.js (fallback)...");
         }} else if (!('instantiateStreaming' in window.WebAssembly)) {{
-            console.info("Using non-streaming WASM (fallback)...");
+            console.log("Using non-streaming WASM (fallback)...");
             // Fallback to non-streaming
             fetch('{name}.wasm')
                 .then(response =>
@@ -91,7 +91,7 @@
                     _cala_inst.exports.wasm_main();
                 }});
         }} else {{
-            console.info("Using streaming WASM (most efficient)...");
+            console.log("Using streaming WASM (most efficient)...");
             // Most efficient solution (available & preferred on most browsers
             // except Safari)
             WebAssembly.instantiateStreaming(fetch('{name}.wasm'), imports)
