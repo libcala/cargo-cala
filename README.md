@@ -22,6 +22,8 @@ You'll need a terminal.
 	flatpak install gnome org.gnome.Platform//3.24
 
 ## Android: APK
+For compiling to APK, you'll need inkscape (hopefully in the future, we'll have pure Rust conversion
+from SVG to PNG).
 
 ### Use Cargo-Dist to Build APKs
 Here is the script that is used, if you want to set it up manually:

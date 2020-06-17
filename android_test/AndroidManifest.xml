@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="ga.dive.example"
+          package="cala.example"
           android:versionCode="1"
           android:versionName="1.0">
 
   <application
       android:allowBackup="false"
-      android:icon="@mipmap/ic_launcher"
+      android:icon="@mipmap/icon"
       android:label="@string/app_name"
       android:hasCode="false">
 
@@ -14,7 +14,7 @@
               android:label="@string/app_name"
               android:configChanges="orientation|keyboardHidden">
       <meta-data android:name="android.app.lib_name"
-                 android:value="native-activity" />
+                 android:value="rs" />
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
