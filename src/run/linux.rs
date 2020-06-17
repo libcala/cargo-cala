@@ -82,7 +82,6 @@ pub(super) fn run() {
     cargo::ops::compile_with_exec(
         &Workspace::new(Path::new(&path), &config).unwrap(),
         &CompileOptions {
-            config: &config,
             build_config: BuildConfig {
                 requested_kind: CompileKind::Host, /*Host target*/
                 jobs: ncpus,
@@ -93,6 +92,7 @@ pub(super) fn run() {
                 build_plan: false,
                 primary_unit_rustc: None,
                 rustfix_diagnostic_server: RefCell::new(None),
+                unit_graph: false,
             },
             features: Vec::new(),
             all_features: false,

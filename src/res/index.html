@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" name="viewport" />
+    <title>{}</title>
+    <link rel="icon" href="logo.svg">
+</head>
+<body>
+    <script>
+        // Set up globals
+        var _cala_inst = null;
+        var _cala_stack = new Array();
+        var _cala_heap = new Array();
+        var _cala_garbage = new Array();
+        function _cala_js_malloc(o) {{
+            if(_cala_garbage.length != 0) {{
+                let idx = _cala_garbage.pop();
+                _cala_heap[idx] = o;
+                return idx;
+            }} else {{
+                let idx = _cala_heap.length;
+                _cala_heap.push(o);
+                return idx;
+            }}
+        }}
+        function _cala_js_string(p,l) {{
+            var buf = new Uint16Array(_cala_inst.exports.memory.buffer,p,l);
+            var str = "";
+            for(var i = 0; i < l; i++) {{
+                str += String.fromCharCode(buf[i]);
+            }}
+            return _cala_js_malloc(str);
+        }}
+        function _cala_js_function(i) {{ return Function(_cala_heap[i])(); }}
+        function _cala_js_call(f, a, b) {{ return _cala_stack[f](_cala_heap[a], _cala_heap[b]); }}
+        function _cala_js_free(i) {{ return _cala_garbage.push(i); }}
+        function _cala_js_read8(j, p, l) {{
+            var buf = new Uint8Array(_cala_inst.exports.memory.buffer,p,l);
+            for(var i = 0; i < l; i++) {{
+                buf[i] = j[i];
+            }}
+            return j.length;
+        }}
+        function _cala_js_read16(j, p, l) {{
+            var buf = new Uint16Array(_cala_inst.exports.memory.buffer,p,l);
+            for(var i = 0; i < l; i++) {{
+                buf[i] = j[i];
+            }}
+            return j.length;
+        }}
+        function _cala_js_read32(j, p, l) {{
+            var buf = new Uint32Array(_cala_inst.exports.memory.buffer,p,l);
+            for(var i = 0; i < l; i++) {{
+                buf[i] = j[i];
+            }}
+            return j.length;
+        }}
+
+        // Load the web assembly module:
+        const imports = {{ env: {{
+            /*cala_navigator_userAgent_Len:()=>l(navigator.userAgent),
+            cala_navigator_userAgent_Ptr:(ptr)=>m(ptr),
+            cala_console_warn:(ptr,len)=>console.warn(f(ptr,len)),
+            cala_console_info:(ptr,len)=>console.info(f(ptr,len)),
+            cala_console_debug:(ptr,len)=>console.debug(f(ptr,len)),
+            cala_alert:(ptr,len)=>alert(f(ptr,len)),*/
+            _cala_js_string: _cala_js_string,
+            _cala_js_function: _cala_js_function,
+            _cala_js_call: _cala_js_call,
+            _cala_js_free: _cala_js_free,
+            _cala_js_read8: _cala_js_read8,
+            _cala_js_read16: _cala_js_read16,
+            _cala_js_read32: _cala_js_read32,
+        }} }};
+        if (!('WebAssembly' in window)) {{
+            // Fallback asm.js
+            // FIXME
+            console.info("Using asm.js (fallback)...");
+        }} else if (!('instantiateStreaming' in window.WebAssembly)) {{
+            console.info("Using non-streaming WASM (fallback)...");
+            // Fallback to non-streaming
+            fetch('{name}.wasm')
+                .then(response =>
+                    response.arrayBuffer()
+                ).then(bytes =>
+                    WebAssembly.instantiate(bytes, imports)
+                ).then(obj => {{
+                    _cala_inst = obj.instance;
+                    _cala_inst.exports.wasm_main();
+                }});
+        }} else {{
+            console.info("Using streaming WASM (most efficient)...");
+            // Most efficient solution (available & preferred on most browsers
+            // except Safari)
+            WebAssembly.instantiateStreaming(fetch('{name}.wasm'), imports)
+                .then(obj => {{
+                    _cala_inst = obj.instance;
+                    _cala_inst.exports.wasm_main();
+                }});
+        }}
+    </script>
+</body>
+</html>
