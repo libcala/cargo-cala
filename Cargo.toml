@@ -7,10 +7,10 @@ license = "APACHE-2.0 OR MIT"
 documentation = "https://libcala.github.io/tutorials"
 repository = "https://github.com/libcala/cargo-cala"
 readme = "README.md"
-description = "A cargo plugin that makes cargo generate release packages instead of binaries."
+description = "Cargo plugin: Hot-Reload app debug and release to FlatPak/APK/Website/etc."
 
 [dependencies]
-inotify = "0.8"
+notify = "4.0"
 walrus = "0.17"
 tide = "0.11"
 async-std = "1.0"

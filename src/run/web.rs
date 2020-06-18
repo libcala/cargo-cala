@@ -1,6 +1,6 @@
-use std::{io::{Read, Write}, path::Path, process::{Command, Stdio}, str::FromStr};
+use std::{io::{Read, Write}, path::Path, process::{Command, Stdio}, str::FromStr, sync::mpsc::channel, time::Duration};
 use tide::{Response, Error as TideError, StatusCode, http::Mime};
-use inotify::{Inotify, WatchMask, EventMask};
+use notify::{Watcher, RecursiveMode, watcher, DebouncedEvent};
 use devout::out;
 
 // Tags for prints.
@@ -19,14 +19,14 @@ fn build_loop(url: &str) {
     let app_bin = app.join(&format!("{}.wasm", crate_name));
 
     out!(TAG, "Initialize File Watching…");
-    let mut inotify = Inotify::init().expect("Failed to initialize inotify");
-    inotify
-        .add_watch(
-            "src",
-            WatchMask::MODIFY | WatchMask::CREATE | WatchMask::DELETE,
-        )
-        .expect("Failed to add inotify watch");
-    let mut buffer = [0u8; 4096];
+    let (tx, rx) = channel();
+    let mut watcher = watcher(tx, Duration::from_millis(250)).unwrap();
+    let curdir = std::env::current_dir().unwrap();
+    watcher.watch(&curdir, RecursiveMode::Recursive).unwrap();
+    let recompile = |string: &str| {
+        let path = string.trim_start_matches(curdir.to_str().unwrap());
+        !(path.starts_with("/target") || path == "/README.md")
+    };
 
     out!(TAG, "Generating Cargo.toml…");
     std::fs::create_dir_all(path).expect("Failed to make wasm32 directory");
@@ -114,30 +114,21 @@ fn build_loop(url: &str) {
         }
 
         out!(TAG, "Ready and updated at http://{}!", url);
-        'waiting: loop {
-            let events= inotify
-                .read_events_blocking(&mut buffer)
-                .expect("Failed to read inotify events");
-            'events: for event in events {
-                if event.mask.contains(EventMask::CREATE) {
-                    if event.mask.contains(EventMask::ISDIR) {
-                        println!("Directory created: {:?}", event.name);
-                    } else {
-                        println!("File created: {:?}", event.name);
-                    }
-                } else if event.mask.contains(EventMask::DELETE) {
-                    if event.mask.contains(EventMask::ISDIR) {
-                        println!("Directory deleted: {:?}", event.name);
-                    } else {
-                        println!("File deleted: {:?}", event.name);
-                    }
-                } else if event.mask.contains(EventMask::MODIFY) {
-                    if event.mask.contains(EventMask::ISDIR) {
-                        println!("Directory modified: {:?}", event.name);
-                    } else {
-                        println!("File modified: {:?}", event.name);
-                    }
-                }
+        loop {
+            use DebouncedEvent::*;
+            match rx.recv().expect("Watch error, restart to continue") {
+                NoticeWrite(_path) => {},
+                NoticeRemove(_path) => {},
+                Create(path) => if recompile(path.to_str().unwrap()) { break },
+                Write(path) => if recompile(path.to_str().unwrap()) { break },
+                Chmod(_path) => {},
+                Remove(path) => if recompile(path.to_str().unwrap()) { break },
+                Rename(path_a, path_b) => {
+                    if recompile(path_a.to_str().unwrap()) { break }
+                    if recompile(path_b.to_str().unwrap()) { break }
+                },
+                Rescan => {},
+                Error(_, _) => {},
             }
         }
         out!(TAG, "Got an event!");
