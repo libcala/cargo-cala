@@ -1,211 +1,191 @@
 // FIXME: Move stuff out of this module to be shared.
 
-use cargo::core::compiler::BuildConfig;
-use cargo::core::compiler::CompileKind;
-use cargo::core::compiler::CompileMode;
-use cargo::core::compiler::MessageFormat;
-use cargo::core::manifest::EitherManifest;
-use cargo::core::manifest::Target;
-use cargo::core::package_id::PackageId;
-use cargo::core::shell::Verbosity;
-use cargo::core::InternedString;
-use cargo::core::Workspace;
-use cargo::ops::CompileFilter;
-use cargo::ops::CompileOptions;
-use cargo::ops::Packages;
-use cargo::util::config::Config;
-use cargo::util::errors::CargoResult;
-use cargo::util::process_builder::ProcessBuilder;
-use std::cell::RefCell;
-use std::path::Path;
-use std::process::Command;
+use std::{path::Path, process::{Command, Stdio}};
+use devout::out;
 
-struct Executor;
+// Tags for prints.
+const TAG: &str = "cargo-cala/linux";
+// Linux FlatPak target directory.
+const PATH: &str = "./target/.cala/linux/";
 
-impl cargo::core::compiler::Executor for Executor {
-    fn exec(
-        &self,
-        cmd: ProcessBuilder,
-        _id: PackageId,
-        _target: &Target,
-        _mode: CompileMode,
-        on_stdout_line: &mut dyn FnMut(&str) -> CargoResult<()>,
-        on_stderr_line: &mut dyn FnMut(&str) -> CargoResult<()>,
-    ) -> CargoResult<()> {
-        cmd.exec_with_streaming(on_stdout_line, on_stderr_line, false)
-            .map(drop)
-    }
+struct Arch {
+    /// The cala name for the arch
+    cala: &'static str,
+    /// The Rust target name
+    rust: &'static str,
+    /// The FlatPak target name
+    flatpak: &'static str,
+}
+
+static ARM_32: Arch = Arch { cala: "arm_32", rust: "thumbv7neon-unknown-linux-gnueabihf", flatpak: "arm" };
+static ARM_64: Arch = Arch { cala: "arm_64", rust: "aarch64-unknown-linux-gnu", flatpak: "aarch64" };
+static X86_32: Arch = Arch { cala: "x86_32", rust: "i586-unknown-linux-gnu", flatpak: "i386" };
+static X86_64: Arch = Arch { cala: "x86_64", rust: "x86_64-unknown-linux-gnu", flatpak: "x86_64" };
+
+// Install the freedesktop Platform.
+fn install_freedesktop(arch: &Arch) {
+    Command::new("flatpak")
+        .arg("remote-add")
+        .arg("--if-not-exists")
+        .arg("flathub")
+        .arg("https://flathub.org/repo/flathub.flatpakrepo")
+        .stdout(Stdio::inherit())
+        .stdin(Stdio::null())
+        .output()
+        .expect("Failed to connect to FlatHub");
+        
+    Command::new("flatpak")
+        .arg("install")
+        .arg("-y")
+        .arg("flathub")
+        .arg(&format!("org.freedesktop.Platform/{}/18.08", arch.flatpak))
+        .stdout(Stdio::inherit())
+        .stdin(Stdio::null())
+        .output()
+        .expect("Failed to install org.freedesktop.Platform");
+}
+
+// Build a FlatPak for an architecture
+fn build_for_arch(root: &Path, cargo_toml_path: &Path, arch: &Arch, crate_name: &str, packagename: &str) {
+    // Install dependant runtime
+    install_freedesktop(arch);
+    // Create folders
+    let repo = root.join("repo");
+    let root = root.join(arch.cala);
+    let app = root.join("app");
+    let bin = app.join("files/bin");
+    let icon = app.join("export/share/icons/hicolor/scalable/apps");
+    let export = app.join("export/share/applications");
+    std::fs::create_dir_all(&bin).expect("Failed to make bin directory");
+    std::fs::create_dir_all(&icon).expect("Failed to make icon directory");
+    std::fs::create_dir_all(&export).expect("Failed to make export directory");
+    std::fs::create_dir_all(&repo).expect("Failed to make repo directory");
+    // Other paths
+    let cargo_out = Path::new("./target").join(arch.rust).join("release").join(crate_name);
+    let app_bin = bin.join(crate_name);
+    let metadata = bin.join("app/metadata");
+    let desktop = export.join(&format!("{}.desktop", packagename));
+
+    out!(TAG, "Building cargo package \"{}\"…", crate_name);
+    Command::new("cargo")
+        .arg("build")
+        .arg("--target")
+        .arg(arch.rust)
+        .arg("--release")
+        .arg("--bin")
+        .arg(crate_name)
+        .arg("--manifest-path")
+        .arg(cargo_toml_path)
+        .stdout(Stdio::inherit())
+        .stdin(Stdio::null())
+        .output()
+        .expect("Failed to build with Cargo");
+
+    out!(TAG, "Copying binary into FlatPak…");
+    std::fs::copy(cargo_out, app_bin).expect("Failed to copy app binary");
+
+    out!(TAG, "Generating flatpak metadata…");
+    std::fs::write(
+        metadata,
+        format!("\
+            [Application]\n\
+            name={packagename}/{arch}//\n\
+            runtime=org.freedesktop.Platform/{arch}/18.08\n\
+            command={crate_name}\n\
+            \n\
+            [Context]\n\
+            shared=ipc;network;\n\
+            sockets=x11;wayland;pulseaudio;\n\
+            devices=dri;\n\
+            filesystems=host;\n\
+            ",
+            crate_name = crate_name,
+            packagename = packagename,
+            arch = arch.flatpak,
+        ),
+    ).expect("Failed to write metadata");
+
+    out!(TAG, "Generating .desktop launcher and translations…");
+    let mut desktop_data: String = format!(
+        "\
+            [Desktop Entry]\n\
+            Type=Application\n\
+            Name={crate_name}\n\
+            Exec={crate_name}\n\
+            Icon={packagename}\n\
+            Terminal=false\n\
+        ",
+        crate_name = crate_name,
+        packagename = packagename,
+    );
+    // FIXME: Translations
+    desktop_data.push_str("");
+    /*if let Some(description_en) = app_description_en {
+        desktop.push_str(&format!(
+            "Name={app_name_en}\n\
+             Comment[en]={app_description_en}\n",
+            app_description_en = description_en
+        ));
+    }*/
+    std::fs::write(desktop, desktop_data).unwrap();
+    
+    out!(TAG, "Building FlatPak…");
+    Command::new("flatpak")
+        .arg("build-export")
+        .arg(repo)
+        .arg("target/cargo_cala/run/app/")
+        .stdout(Stdio::inherit())
+        .stdin(Stdio::null())
+        .output()
+        .expect("Failed to run flatpak");
 }
 
 pub(super) fn run() {
-    let ncpus = num_cpus::get() as u32;
-    let executor: Box<dyn cargo::core::compiler::Executor> = Box::new(Executor);
+    out!(TAG, "Beginning FlatPak Build…");
+    let cala = super::Cala::new().expect("Couldn't parse `cala.muon`!");
+    let packagename = super::url_to_packagename(&cala.webpage);
+    let crate_name = packagename.get(..packagename.find('.').expect("bad packagename")).unwrap();
 
-    let mut path = std::env::current_dir().unwrap();
-    path.push("Cargo.toml");
+    // Create Cargo.toml
+    out!(TAG, "Generating Cargo.toml…");
+    let path = Path::new(PATH);
+    std::fs::create_dir_all(path).expect("Failed to make flatpak directory");
+    let cargo_toml_bin = format!("[[bin]]\n\
+    name = \"{crate_name}\"\n\
+    path = \"src/{crate_name}.rs\"\n\
+    ", crate_name = crate_name);
+    let cargo_toml_path = super::generate_cargo_toml(&cala, crate_name, &path, &cargo_toml_bin);
 
-    let config = Config::default().unwrap();
-    config.shell().set_verbosity(Verbosity::Normal);
+    // Build flatpak for 4 architectures
+    build_for_arch(&path, &cargo_toml_path, &ARM_32, crate_name, &packagename);
+    build_for_arch(&path, &cargo_toml_path, &ARM_64, crate_name, &packagename);
+    build_for_arch(&path, &cargo_toml_path, &X86_32, crate_name, &packagename);
+    build_for_arch(&path, &cargo_toml_path, &X86_64, crate_name, &packagename);
 
-    // Load package information
-    let manifest = match cargo::util::toml::read_manifest(
-        &path,
-        cargo::core::SourceId::for_path(&std::env::current_dir().unwrap()).unwrap(),
-        &config,
-    )
-    .unwrap()
-    .0
-    {
-        EitherManifest::Real(manifest) => manifest,
-        EitherManifest::Virtual(_) => panic!("Virtual manifest not supported!"),
-    };
-    let metadata = manifest.metadata();
-
-    let app_name = manifest.name().as_str();
-    let app_description = &metadata.description;
-    let app_name_en = app_name; // FIXME
-    let app_description_en = app_description; // FIXME
-                                              //    let app_company = custom_metadata();
-    let app_company = "company"; // FIXME
-    let app_domain = format!("cala.{}.{}", app_company, app_name);
-
-    // Create directory structure
-    std::fs::create_dir_all("./target/cargo_cala/run/app/files/bin/").unwrap();
-    std::fs::create_dir_all(
-        "./target/cargo_cala/run/app/export/share/icons/hicolor/scalable/apps/",
-    )
-    .unwrap();
-    std::fs::create_dir_all("./target/cargo_cala/run/app/export/share/applications/").unwrap();
-    std::fs::create_dir_all("./target/cargo_cala/run/repo/").unwrap();
-
-    // Invoke cargo
-    cargo::ops::compile_with_exec(
-        &Workspace::new(Path::new(&path), &config).unwrap(),
-        &CompileOptions {
-            build_config: BuildConfig {
-                requested_kind: CompileKind::Host, /*Host target*/
-                jobs: ncpus,
-                requested_profile: InternedString::new(""), // FIXME?
-                mode: CompileMode::Build,
-                message_format: MessageFormat::Human,
-                force_rebuild: false,
-                build_plan: false,
-                primary_unit_rustc: None,
-                rustfix_diagnostic_server: RefCell::new(None),
-                unit_graph: false,
-            },
-            features: Vec::new(),
-            all_features: false,
-            no_default_features: false,
-            spec: Packages::Default,
-            filter: CompileFilter::Default {
-                required_features_filterable: false,
-            },
-            target_rustdoc_args: None,
-            target_rustc_args: None,
-            local_rustdoc_args: None,
-            rustdoc_document_private_items: false,
-            export_dir: Some("./target/cargo_cala/run/app/files/bin/".into()),
-        },
-        &executor.into(),
-    )
-    .unwrap();
-
-    println!("[cargo-cala] Building flatpak…");
-
-    // Create Flatpak Files
-    std::fs::write(
-        format!("./target/cargo_cala/run/app/metadata"),
-        format!(
-            "[Application]
-name={app_domain}
-runtime=org.gnome.Platform/x86_64/3.32
-command={app_name}
-
-[Context]
-shared=ipc;network;
-sockets=x11;wayland;pulseaudio;
-devices=dri;
-filesystems=host;",
-            app_name = app_name,
-            app_domain = app_domain,
-        ),
-    )
-    .unwrap();
-
-    let mut desktop: String = format!(
-        "[Desktop Entry]
-Type=Application
-Name={app_name}
-Exec={app_name}
-Icon={app_domain}
-Terminal=false
-
-Name[en]={app_name_en}",
-        app_name = app_name,
-        app_name_en = app_name_en,
-        app_domain = app_domain,
-    );
-    if let Some(description_en) = app_description_en {
-        desktop.push_str(&format!(
-            "\nComment={app_description_en}
-Comment[en]={app_description_en}",
-            app_description_en = description_en
-        ));
-    }
-
-    std::fs::write(
-        format!(
-            "./target/cargo_cala/run/app/export/share/applications/{app_domain}.desktop",
-            app_domain = app_domain
-        ),
-        desktop,
-    )
-    .unwrap();
-
-    // Invoke flatpak build
-    Command::new("flatpak")
-        .arg("build-export")
-        .arg("target/cargo_cala/run/repo/")
-        .arg("target/cargo_cala/run/app/")
-        .spawn()
-        .expect("Failed to run flatpak")
-        .wait()
-        .expect("Failed to terminate flatpak");
-
-    // Install locally using project-specific repo
-    println!("[cargo-cala] Installing…");
+    out!(TAG, "Adding FlatPak repository…");
     Command::new("flatpak")
         .arg("--user")
         .arg("remote-add")
         .arg("--no-gpg-verify")
         .arg("--if-not-exists")
-        .arg(&app_domain)
+        .arg(&packagename)
         .arg("target/cargo_cala/run/repo/")
-        .spawn()
-        .expect("Failed to run flatpak")
-        .wait()
-        .expect("Failed to terminate flatpak");
+        .stdout(Stdio::inherit())
+        .stdin(Stdio::null())
+        .output()
+        .expect("Failed to run flatpak");
+        
+    out!(TAG, "Installing FlatPak…");
     Command::new("flatpak")
         .arg("--user")
         .arg("install")
         .arg("--reinstall")
         .arg("--noninteractive")
-        .arg(&app_domain)
-        .arg(&app_domain)
+        .arg(&packagename)
+        .arg(&packagename)
         .arg("-y")
-        .spawn()
-        .expect("Failed to run flatpak")
-        .wait()
-        .expect("Failed to terminate flatpak");
-
-    // Run program
-    println!("[cargo-cala] Running…");
-    Command::new("flatpak")
-        .arg("run")
-        .arg(&app_domain)
-        .spawn()
-        .expect("Failed to run flatpak")
-        .wait()
-        .expect("Failed to terminate flatpak");
+        .stdout(Stdio::inherit())
+        .stdin(Stdio::null())
+        .output()
+        .expect("Failed to run flatpak");
 }

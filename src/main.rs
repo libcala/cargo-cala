@@ -1,6 +1,8 @@
+#[macro_use]
+extern crate serde_derive;
+
 mod apk;
 mod run;
-mod web;
 
 /// Start a program.
 fn run(prg: &str, args: &[&str]) -> std::process::ExitStatus {
@@ -270,7 +272,7 @@ fn main() {
         match args[2].as_str() {
             "run" => run::run(),
             "android" => apk(), // apk::apk(),
-            "wasm" => web::web(),
+            "wasm" => run::web(),
 
             "flatpak" => todo!(),
             "aab" => todo!(),

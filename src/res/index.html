@@ -36,26 +36,37 @@
         function _cala_js_function(i) {{ return Function(_cala_heap[i])(); }}
         function _cala_js_call(f, a, b) {{ return _cala_stack[f](_cala_heap[a], _cala_heap[b]); }}
         function _cala_js_free(i) {{ return _cala_garbage.push(i); }}
+        function _cala_js_readstr(j, p, l) {{
+            var buf = new Uint16Array(_cala_inst.exports.memory.buffer,p,l);
+            let get = _cala_heap[j];
+            for(var i = 0; i < l; i++) {{
+                buf[i] = get.charCodeAt(i);
+            }}
+            return get.length;
+        }}
         function _cala_js_read8(j, p, l) {{
             var buf = new Uint8Array(_cala_inst.exports.memory.buffer,p,l);
+            let get = _cala_heap[j];
             for(var i = 0; i < l; i++) {{
-                buf[i] = j[i];
+                buf[i] = get[i];
             }}
-            return j.length;
+            return get.length;
         }}
         function _cala_js_read16(j, p, l) {{
             var buf = new Uint16Array(_cala_inst.exports.memory.buffer,p,l);
+            let get = _cala_heap[j];
             for(var i = 0; i < l; i++) {{
-                buf[i] = j[i];
+                buf[i] = get[i];
             }}
-            return j.length;
+            return get.length;
         }}
         function _cala_js_read32(j, p, l) {{
             var buf = new Uint32Array(_cala_inst.exports.memory.buffer,p,l);
+            let get = _cala_heap[j];
             for(var i = 0; i < l; i++) {{
-                buf[i] = j[i];
+                buf[i] = get[i];
             }}
-            return j.length;
+            return get.length;
         }}
 
         // Load the web assembly module:
@@ -70,6 +81,7 @@
             _cala_js_function: _cala_js_function,
             _cala_js_call: _cala_js_call,
             _cala_js_free: _cala_js_free,
+            _cala_js_readstr: _cala_js_readstr,
             _cala_js_read8: _cala_js_read8,
             _cala_js_read16: _cala_js_read16,
             _cala_js_read32: _cala_js_read32,
