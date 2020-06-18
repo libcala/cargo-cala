@@ -1,6 +1,6 @@
 use std::{io::{Read, Write}, path::Path, process::{Command, Stdio}, str::FromStr};
 use tide::{Response, Error as TideError, StatusCode, http::Mime};
-use inotify::{Inotify, WatchMask};
+use inotify::{Inotify, WatchMask, EventMask};
 use devout::out;
 
 // Tags for prints.
@@ -33,7 +33,7 @@ fn build_loop() {
     std::fs::create_dir_all(path).expect("Failed to make wasm32 directory");
     let cargo_toml_lib = format!("[lib]\n\
     crate-type = [\"cdylib\"]\n\
-    path = \"src/{crate_name}.rs\"\n\
+    path = \"../../../src/{crate_name}.rs\"\n\
     ", crate_name = crate_name);
     let cargo_toml_path = super::generate_cargo_toml(&cala, crate_name, &path, &cargo_toml_lib);
 
@@ -43,7 +43,8 @@ fn build_loop() {
             .arg("rustc")
             .arg("--target")
             .arg("wasm32-unknown-unknown")
-            .arg("--debug")
+            .arg("--target-dir")
+            .arg("./target/")
             .arg("--lib")
             .arg("--manifest-path")
             .arg(&cargo_toml_path)
@@ -58,14 +59,15 @@ fn build_loop() {
             .arg("panic=abort")
             .stdout(Stdio::inherit())
             .stdin(Stdio::null())
-            .output()
-            .expect("Failed to build with Cargo");
+            .spawn()
+            .expect("Failed to build with Cargo")
+            .try_wait()
+            .unwrap();
+        if let Ok(buf) = std::fs::read(&cargo_out) {
         out!(TAG, "Copying wasm binary into static hosting…");
-        if std::fs::copy(&cargo_out, &app_bin).is_ok() {
         let mut config = walrus::ModuleConfig::new();
         config.generate_name_section(false);
         config.generate_producers_section(false);
-        let buf = std::fs::read(&format!("target/cargo-cala/web/out/{}.wasm", crate_name)).unwrap();
         let mut module = config.parse(&buf).unwrap();
 
         let mut customs = vec![];
@@ -83,11 +85,9 @@ fn build_loop() {
             .producers
             .add_processed_by(env!("CARGO_PKG_NAME"), env!("CARGO_PKG_VERSION"));
 
-        module
-            .emit_wasm_file(&format!("target/cargo-cala/web/out/{}.wasm", crate_name))
-            .unwrap();
+        module.emit_wasm_file(&app_bin).expect("Failed to emit WASM");
 
-        let mut file = std::fs::File::create("target/cargo-cala/web/out/index.html").unwrap();
+        let mut file = std::fs::File::create(app.join("index.html")).unwrap();
 
         let in_data = if let Ok(mut in_file) = std::fs::File::open("res/name.txt") {
             let mut in_data = String::new();
@@ -99,7 +99,7 @@ fn build_loop() {
 
         write!(file, include_str!("../res/index.html"), in_data, name = crate_name).unwrap();
 
-        let mut file = std::fs::File::create("target/cargo-cala/web/out/logo.svg").unwrap();
+        let mut file = std::fs::File::create(app.join("logo.svg")).unwrap();
 
         let in_data = if let Ok(mut in_file) = std::fs::File::open("res/logo.svg") {
             let mut in_data = vec![];
@@ -113,16 +113,39 @@ fn build_loop() {
 
         }
 
-        println!("Waiting for events...");
-        inotify
-            .read_events_blocking(&mut buffer)
-            .expect("Failed to read inotify events");
-        println!("Got an event!");
+        out!(TAG, "Waiting for events...");
+        'waiting: loop {
+            let events= inotify
+                .read_events_blocking(&mut buffer)
+                .expect("Failed to read inotify events");
+            'events: for event in events {
+                if event.mask.contains(EventMask::CREATE) {
+                    if event.mask.contains(EventMask::ISDIR) {
+                        println!("Directory created: {:?}", event.name);
+                    } else {
+                        println!("File created: {:?}", event.name);
+                    }
+                } else if event.mask.contains(EventMask::DELETE) {
+                    if event.mask.contains(EventMask::ISDIR) {
+                        println!("Directory deleted: {:?}", event.name);
+                    } else {
+                        println!("File deleted: {:?}", event.name);
+                    }
+                } else if event.mask.contains(EventMask::MODIFY) {
+                    if event.mask.contains(EventMask::ISDIR) {
+                        println!("Directory modified: {:?}", event.name);
+                    } else {
+                        println!("File modified: {:?}", event.name);
+                    }
+                }
+            }
+        }
+        out!(TAG, "Got an event!");
     }
 }
 
 async fn read_file(url: &str) -> Result<Response, TideError> {
-    let path = format!("./target/cargo-cala/web/out{}", url);
+    let path = Path::new(PATH).join("app").join(url);
     dbg!(&path);
     let out = async_std::fs::read(&path)
         .await
@@ -165,14 +188,9 @@ async fn handle_event(req: tide::Request<()>) -> Result<Response, TideError> {
 }
 
 pub(super) fn web() {
-    println!("Building for Web…");
+    out!(TAG, "Beginning Debugging for Web…");
 
-    std::fs::create_dir_all("target/cargo-cala/web/ffi").unwrap();
-    std::fs::create_dir_all("target/cargo-cala/web/out").unwrap();
-
-    {
-        let _file = std::fs::File::create("target/cargo-cala/web/out/index.html").unwrap();
-    }
+    std::fs::create_dir_all(Path::new(PATH).join("app")).unwrap();
 
     std::thread::spawn(build_loop);
 
@@ -181,7 +199,7 @@ pub(super) fn web() {
         ip.push_str(":8000");
         ip
     };
-    println!("Running on http://{}…", ip_port);
+    out!(TAG, "Started on: http://{}", ip_port);
 
     let future = async {
         // tide::log::start();

@@ -85,7 +85,7 @@ fn url_to_packagename(url: &str) -> String {
     };
     
     let (domain, url) = if let Some(index) = url.find('/') {
-        (url.get(..index).unwrap(), url.get(index..))
+        (url.get(..index).unwrap(), url.get(index+1..))
     } else {
         (url, None)
     };
@@ -136,8 +136,7 @@ fn generate_cargo_toml(cala: &Cala, crate_name: &str, path: &Path, extra_section
         authors = {crate_authors:?}\n\
         edition = \"{crate_edition}\"\n\
         homepage = \"{crate_homepage}\"\n\
-        {extra_section}
-        ",
+        {extra_section}",
         crate_edition = cala.edition,
         crate_version = cala.version,
         crate_homepage = cala.webpage,
@@ -146,12 +145,12 @@ fn generate_cargo_toml(cala: &Cala, crate_name: &str, path: &Path, extra_section
         extra_section = extra_section,
     );
     for dep in cala.deps.iter() {
-        cargo_toml_data.push_str(&format!("[depedencies.{}]\n", dep.name));
+        cargo_toml_data.push_str(&format!("[dependencies.{}]\n", dep.name));
         if let Some(ref version) = dep.version {
             cargo_toml_data.push_str(&format!("version = \"{}\"\n", version));
         }
         if let Some(ref path) = dep.path {
-            cargo_toml_data.push_str(&format!("path = \"{}\"\n", path));
+            cargo_toml_data.push_str(&format!("path = \"../../../{}\"\n", path));
         }
         if !dep.feature.is_empty() {
             cargo_toml_data.push_str(&format!("features = {:?}\n", dep.feature));
