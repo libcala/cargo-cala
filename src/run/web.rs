@@ -8,16 +8,15 @@ const TAG: &str = "cargo-cala/web";
 // Linux FlatPak target directory.
 const PATH: &str = "./target/.cala/web/";
 
-fn build_loop() {
-    out!(TAG, "Beginning Debugging For Web…");
+fn build_loop(url: &str) {
     let cala = super::Cala::new().expect("Couldn't parse `cala.muon`!");
     let packagename = super::url_to_packagename(&cala.webpage);
     let crate_name = packagename.get(..packagename.find('.').expect("bad packagename")).unwrap();
     // Paths
-    let cargo_out = Path::new("./target").join("wasm32-unknown-unknown").join("release").join(crate_name);
+    let cargo_out = Path::new("./target").join("wasm32-unknown-unknown").join("release").join(&format!("{}.wasm", crate_name));
     let path = Path::new(PATH);
     let app = path.join("app");
-    let app_bin = app.join(crate_name);
+    let app_bin = app.join(&format!("{}.wasm", crate_name));
 
     out!(TAG, "Initialize File Watching…");
     let mut inotify = Inotify::init().expect("Failed to initialize inotify");
@@ -46,6 +45,7 @@ fn build_loop() {
             .arg("--target-dir")
             .arg("./target/")
             .arg("--lib")
+            .arg("--release")
             .arg("--manifest-path")
             .arg(&cargo_toml_path)
             .arg("--")
@@ -61,7 +61,7 @@ fn build_loop() {
             .stdin(Stdio::null())
             .spawn()
             .expect("Failed to build with Cargo")
-            .try_wait()
+            .wait()
             .unwrap();
         if let Ok(buf) = std::fs::read(&cargo_out) {
         out!(TAG, "Copying wasm binary into static hosting…");
@@ -113,7 +113,7 @@ fn build_loop() {
 
         }
 
-        out!(TAG, "Waiting for events...");
+        out!(TAG, "Ready and updated at http://{}!", url);
         'waiting: loop {
             let events= inotify
                 .read_events_blocking(&mut buffer)
@@ -144,15 +144,19 @@ fn build_loop() {
     }
 }
 
-async fn read_file(url: &str) -> Result<Response, TideError> {
-    let path = Path::new(PATH).join("app").join(url);
-    dbg!(&path);
+async fn read_file(url: &str) -> (Result<Response, TideError>, bool) {
+    let mut text = false;
+    let path = Path::new(PATH).join(&format!("app{}", url));
     let out = async_std::fs::read(&path)
         .await
-        .map_err(|e| TideError::new(StatusCode::NotFound, e))?;
+        .map_err(|e| {
+            eprintln!("Failed Path: {:?}", path);
+            TideError::new(StatusCode::NotFound, e)
+        });
     let mut response = Response::new(StatusCode::Ok);
-    match path {
+    match path.to_str().unwrap() {
         a if a.ends_with(".html") => {
+            text = true;
             response.set_content_type(Mime::from_str("text/html;charset=utf-8").unwrap());
         }
         a if a.ends_with(".wasm") => {
@@ -161,27 +165,35 @@ async fn read_file(url: &str) -> Result<Response, TideError> {
         /*a if a.ends_with(".svg") => {
             "image/svg+xml"
         }*/
-        _ => {}// Mime::from_str("text/plain;charset=utf-8").unwrap() }
+        e => {
+            eprintln!("Unknown file ext: {}", e);
+        }// Mime::from_str("text/plain;charset=utf-8").unwrap() }
     }
-    response.set_body(out);
-    Ok(response)
+    match out {
+        Ok(out) => {
+            response.set_body(out);
+            (Ok(response), text)
+        }
+        Err(err) => {
+            (Err(err), text)
+        }
+    }
+    
 }
 
 async fn index(_req: tide::Request<()>) -> Result<Response, TideError> {
-    dbg!(_req.content_type());
-    let res = read_file("/index.html").await;
-    if res.is_err() {
-        read_file("/404.html").await
+    let (res, text) = read_file("/index.html").await;
+    if res.is_err() && text {
+        read_file("/404.html").await.0
     } else {
         res
     }
 }
 
 async fn handle_event(req: tide::Request<()>) -> Result<Response, TideError> {
-    dbg!(req.content_type());
-    let res = read_file(req.url().path()).await;
-    if res.is_err() {
-        read_file("/404.html").await
+    let (res, text) = read_file(req.url().path()).await;
+    if res.is_err() && text {
+        read_file("/404.html").await.0
     } else {
         res
     }
@@ -192,14 +204,14 @@ pub(super) fn web() {
 
     std::fs::create_dir_all(Path::new(PATH).join("app")).unwrap();
 
-    std::thread::spawn(build_loop);
-
     let ip_port = {
         let mut ip = whoami::hostname();
         ip.push_str(":8000");
         ip
     };
-    out!(TAG, "Started on: http://{}", ip_port);
+
+    let ip_port_copy = ip_port.clone();
+    std::thread::spawn(move || build_loop(&ip_port_copy));
 
     let future = async {
         // tide::log::start();
