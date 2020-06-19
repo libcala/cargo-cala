@@ -37,6 +37,9 @@ fn build_loop(url: &str) {
     let cargo_toml_path = super::generate_cargo_toml(&cala, crate_name, &path, &cargo_toml_lib);
 
     loop {
+        // Ignore errors, maybe the file doesn't exist and we don't care.
+        let _ = std::fs::remove_file(&cargo_out);
+
         out!(TAG, "Building cargo package \"{}\"…", crate_name);
         Command::new("cargo")
             .arg("rustc")
@@ -105,10 +108,9 @@ fn build_loop(url: &str) {
             include_bytes!("../../res/icon.svg").to_vec()
         };
         file.write_all(&in_data).unwrap();
-
-        }
-
         out!(TAG, "Ready and updated at http://{}!", url);
+        }
+        
         loop {
             use DebouncedEvent::*;
             match rx.recv().expect("Watch error, restart to continue") {
@@ -126,7 +128,6 @@ fn build_loop(url: &str) {
                 Error(_, _) => {},
             }
         }
-        out!(TAG, "Got an event!");
     }
 }
 
