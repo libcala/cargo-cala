@@ -11,7 +11,6 @@
     <script>
         // Set up globals
         var _cala_inst = null;
-        var _cala_stack = new Array();
         var _cala_heap = new Array();
         var _cala_garbage = new Array();
         function _cala_js_malloc(o) {{
@@ -33,8 +32,17 @@
             }}
             return _cala_js_malloc(str);
         }}
-        function _cala_js_function(i) {{ return Function(_cala_heap[i])(); }}
-        function _cala_js_call(f, a, b) {{ return _cala_stack[f](_cala_heap[a], _cala_heap[b]); }}
+        function _cala_js_function(i) {{
+            return _cala_js_malloc(Function(_cala_heap[i])());
+        }}
+        function _cala_js_call(f, a, b) {{
+            let o = _cala_heap[f](_cala_heap[a], _cala_heap[b]);
+            if(o == undefined) {{
+                return 4294967295;
+            }} else {{
+                return _cala_js_malloc(o);
+            }}
+        }}
         function _cala_js_free(i) {{ return _cala_garbage.push(i); }}
         function _cala_js_readstr(j, p, l) {{
             var buf = new Uint16Array(_cala_inst.exports.memory.buffer,p,l);
@@ -71,12 +79,6 @@
 
         // Load the web assembly module:
         const imports = {{ env: {{
-            /*cala_navigator_userAgent_Len:()=>l(navigator.userAgent),
-            cala_navigator_userAgent_Ptr:(ptr)=>m(ptr),
-            cala_console_warn:(ptr,len)=>console.warn(f(ptr,len)),
-            cala_console_info:(ptr,len)=>console.info(f(ptr,len)),
-            cala_console_debug:(ptr,len)=>console.debug(f(ptr,len)),
-            cala_alert:(ptr,len)=>alert(f(ptr,len)),*/
             _cala_js_string: _cala_js_string,
             _cala_js_function: _cala_js_function,
             _cala_js_call: _cala_js_call,
@@ -94,11 +96,9 @@
             console.log("Using non-streaming WASM (fallback)...");
             // Fallback to non-streaming
             fetch('{name}.wasm')
-                .then(response =>
-                    response.arrayBuffer()
-                ).then(bytes =>
-                    WebAssembly.instantiate(bytes, imports)
-                ).then(obj => {{
+                .then(response => response.arrayBuffer())
+                .then(bytes => WebAssembly.instantiate(bytes, imports))
+                .then(obj => {{
                     _cala_inst = obj.instance;
                     _cala_inst.exports.wasm_main();
                 }});
