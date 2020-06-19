@@ -1,4 +1,4 @@
-use std::{io::{Read, Write}, path::Path, process::{Command, Stdio}, str::FromStr, sync::mpsc::channel, time::Duration};
+use std::{io::Write, path::Path, process::{Command, Stdio}, str::FromStr, sync::mpsc::channel, time::Duration};
 use tide::{Response, Error as TideError, StatusCode, http::Mime};
 use notify::{Watcher, RecursiveMode, watcher, DebouncedEvent};
 use devout::out;
@@ -13,7 +13,7 @@ fn build_loop(url: &str) {
     let packagename = super::url_to_packagename(&cala.webpage);
     let crate_name = packagename.get(..packagename.find('.').expect("bad packagename")).unwrap();
     // Paths
-    let cargo_out = Path::new("./target").join("wasm32-unknown-unknown").join("release").join(&format!("{}.wasm", crate_name));
+    let cargo_out = Path::new("./target").join("wasm32-unknown-unknown").join("debug").join(&format!("{}.wasm", crate_name));
     let path = Path::new(PATH);
     let app = path.join("app");
     let app_bin = app.join(&format!("{}.wasm", crate_name));
@@ -45,7 +45,6 @@ fn build_loop(url: &str) {
             .arg("--target-dir")
             .arg("./target/")
             .arg("--lib")
-            .arg("--release")
             .arg("--manifest-path")
             .arg(&cargo_toml_path)
             .arg("--")
@@ -87,28 +86,24 @@ fn build_loop(url: &str) {
 
         module.emit_wasm_file(&app_bin).expect("Failed to emit WASM");
 
+        // Write index.html
         let mut file = std::fs::File::create(app.join("index.html")).unwrap();
-
-        let in_data = if let Ok(mut in_file) = std::fs::File::open("res/name.txt") {
-            let mut in_data = String::new();
-            in_file.read_to_string(&mut in_data).unwrap();
-            in_data
+        let in_data = if let Some(ref label) = cala.label {
+            let label_translations = std::fs::File::open(label).expect("label is an invalid path");
+            let label: super::super::translator::Translations = muon_rs::from_reader(label_translations).expect("Failed read on label");
+            label.english().unwrap_or_else(|| "Cala Project").to_string()
         } else {
             "Cala Project".to_string()
         };
+        write!(file, include_str!("../../res/index.html"), in_data, name = crate_name).unwrap();
 
-        write!(file, include_str!("../res/index.html"), in_data, name = crate_name).unwrap();
-
-        let mut file = std::fs::File::create(app.join("logo.svg")).unwrap();
-
-        let in_data = if let Ok(mut in_file) = std::fs::File::open("res/logo.svg") {
-            let mut in_data = vec![];
-            in_file.read_to_end(&mut in_data).unwrap();
-            in_data
+        // Write favicon.svg
+        let mut file = std::fs::File::create(app.join("favicon.svg")).unwrap();
+        let in_data = if let Some(ref icon) = cala.icon {
+            std::fs::read(icon).expect("icon is an invalid path")
         } else {
-            include_bytes!("../res/logo.svg").to_vec()
+            include_bytes!("../../res/icon.svg").to_vec()
         };
-
         file.write_all(&in_data).unwrap();
 
         }
@@ -153,9 +148,9 @@ async fn read_file(url: &str) -> (Result<Response, TideError>, bool) {
         a if a.ends_with(".wasm") => {
             response.set_content_type(Mime::from_str("application/wasm").unwrap());
         }
-        /*a if a.ends_with(".svg") => {
-            "image/svg+xml"
-        }*/
+        a if a.ends_with(".svg") => {
+            response.set_content_type(Mime::from_str("image/svg+xml").unwrap());
+        }
         e => {
             eprintln!("Unknown file ext: {}", e);
         }// Mime::from_str("text/plain;charset=utf-8").unwrap() }

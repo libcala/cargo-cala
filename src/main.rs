@@ -3,6 +3,7 @@ extern crate serde_derive;
 
 mod apk;
 mod run;
+mod translator;
 
 /// Start a program.
 fn run(prg: &str, args: &[&str]) -> std::process::ExitStatus {
