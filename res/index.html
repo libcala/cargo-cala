@@ -76,6 +76,19 @@
             }}
             return get.length;
         }}
+        function _cala_js_waker(j) {{
+            _cala_heap[j].then((o) => {{
+                if(o == undefined || o == null) {{
+                    _cala_inst.exports.wake(j, 4294967295);
+                    _cala_inst.exports.wasm_wake();
+                }} else {{
+                    _cala_inst.exports.wake(j, _cala_js_malloc(o))
+                    _cala_inst.exports.wasm_wake();
+                }}
+            }});
+        }}
+        function _cala_js_u32(o) {{ return _cala_js_malloc(o); }}
+        function _cala_js_read_u32(o) {{ return _cala_heap[o]; }}
 
         // Load the web assembly module:
         const imports = {{ env: {{
@@ -87,6 +100,9 @@
             _cala_js_read8: _cala_js_read8,
             _cala_js_read16: _cala_js_read16,
             _cala_js_read32: _cala_js_read32,
+            _cala_js_waker: _cala_js_waker,
+            _cala_js_u32: _cala_js_u32,
+            _cala_js_read_u32: _cala_js_read_u32,
         }} }};
         if (!('WebAssembly' in window)) {{
             // Fallback asm.js
@@ -109,7 +125,7 @@
             WebAssembly.instantiateStreaming(fetch('{name}.wasm'), imports)
                 .then(obj => {{
                     _cala_inst = obj.instance;
-                    _cala_inst.exports.wasm_main();
+                    _cala_inst.exports.wasm_wake();
                 }});
         }}
     </script>
